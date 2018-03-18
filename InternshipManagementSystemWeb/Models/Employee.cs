@@ -7,7 +7,7 @@ namespace InternshipManagementSystemWeb.Models
     using System.Data.Entity.Spatial;
 
     [Table("Employee")]
-    public partial class Employee
+    public partial class Employee : ApplicationUser
     {
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         //public int EmployeeId { get; set; }
@@ -43,18 +43,18 @@ namespace InternshipManagementSystemWeb.Models
 
         //public int EmployeeType { get; set; }
         //Create a name for the type (EmployeeType1). And put a name for the attribute (EmployeeType2).
-        public EmployeeType EmployeeType { get; set; }
+        //public EmployeeType EmployeeType { get; set; }
 
-        public virtual Admin Admin { get; set; }
+        //public virtual Admin Admin { get; set; }
 
-        public virtual Instructor Instructor { get; set; }
+        //public virtual Instructor Instructor { get; set; }
     }
 
-    public enum EmployeeType
-    {
-        //[Display(Name = "Attribute")],
-        Admin, Instructor
-    }
+    //public enum EmployeeType
+    //{
+    //    //[Display(Name = "Attribute")],
+    //    Admin, Instructor
+    //}
 
 }
 

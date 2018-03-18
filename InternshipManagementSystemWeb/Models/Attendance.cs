@@ -9,7 +9,7 @@ namespace InternshipManagementSystemWeb.Models
     [Table("Attendance")]
     public partial class Attendance
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int AttendanceId { get; set; }
 
         [Column(TypeName = "date")]

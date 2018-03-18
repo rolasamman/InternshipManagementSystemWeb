@@ -9,14 +9,13 @@ namespace InternshipManagementSystemWeb.Models
     [Table("Firm")]
     public partial class Firm
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Firm()
         {
             Attendances = new HashSet<Attendance>();
             Supervisors = new HashSet<Supervisor>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int FirmId { get; set; }
 
         [Required]
@@ -33,10 +32,8 @@ namespace InternshipManagementSystemWeb.Models
         [StringLength(80)]
         public string IndustryField { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attendance> Attendances { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Supervisor> Supervisors { get; set; }
     }
 }

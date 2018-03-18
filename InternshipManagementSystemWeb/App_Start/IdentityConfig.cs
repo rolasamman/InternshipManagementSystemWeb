@@ -108,9 +108,10 @@ namespace InternshipManagementSystemWeb
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
 
-        internal Task PasswordSignInAsync(object userName, string password, bool rememberMe, bool shouldLockout)
-        {
-            throw new NotImplementedException();
-        }
+        //HACK What is doing here?
+        //internal Task PasswordSignInAsync(object userName, string password, bool rememberMe, bool shouldLockout)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -9,14 +9,13 @@ namespace InternshipManagementSystemWeb.Models
     [Table("Supervisor")]
     public partial class Supervisor
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Supervisor()
         {
             Students = new HashSet<Student>();
             SupervisorEvaluations = new HashSet<SupervisorEvaluation>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SupervisorId { get; set; }
 
         [Required]
@@ -47,10 +46,8 @@ namespace InternshipManagementSystemWeb.Models
 
         public virtual Firm Firm { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SupervisorEvaluation> SupervisorEvaluations { get; set; }
     }
 }

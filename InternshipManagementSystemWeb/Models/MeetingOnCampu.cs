@@ -9,7 +9,7 @@ namespace InternshipManagementSystemWeb.Models
     public partial class MeetingOnCampu
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MeetingOnCampusId { get; set; }
 
         [Column(TypeName = "date")]

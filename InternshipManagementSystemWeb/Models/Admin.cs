@@ -7,24 +7,21 @@ namespace InternshipManagementSystemWeb.Models
     using System.Data.Entity.Spatial;
 
     [Table("Admin")]
-    public partial class Admin
+    public partial class Admin : Employee
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Admin()
         {
             Announcements = new HashSet<Announcement>();
             Complains = new HashSet<Complain>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int AdminId { get; set; }
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //public int AdminId { get; set; }
 
-        public virtual Employee Employee { get; set; }
+        //public virtual Employee Employee { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Announcement> Announcements { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Complain> Complains { get; set; }
     }
 }

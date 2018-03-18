@@ -9,13 +9,12 @@ namespace InternshipManagementSystemWeb.Models
     [Table("SupervisorEvaluation")]
     public partial class SupervisorEvaluation
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SupervisorEvaluation()
         {
             SupervisorCriterions = new HashSet<SupervisorCriterion>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SupervisorEvaluationId { get; set; }
 
         public DateTime EvaluationDate { get; set; }
@@ -28,7 +27,6 @@ namespace InternshipManagementSystemWeb.Models
 
         public virtual Supervisor Supervisor { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SupervisorCriterion> SupervisorCriterions { get; set; }
     }
 }

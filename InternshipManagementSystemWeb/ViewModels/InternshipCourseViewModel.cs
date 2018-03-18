@@ -25,9 +25,8 @@ namespace InternshipManagementSystemWeb.ViewModels
         [StringLength(500)]
         public string Description { get; set; }
 
-        public int Credit { get; set; }
+        public int Credits { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Section> Sections { get; set; }
 
     }

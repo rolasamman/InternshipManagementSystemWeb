@@ -7,9 +7,8 @@ namespace InternshipManagementSystemWeb.Models
     using System.Data.Entity.Spatial;
 
     [Table("Student")]
-    public partial class Student
+    public partial class Student : ApplicationUser
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Student()
         {
             Attendances = new HashSet<Attendance>();
@@ -20,8 +19,8 @@ namespace InternshipManagementSystemWeb.Models
             VisitOnSites = new HashSet<VisitOnSite>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int StudentId { get; set; }
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //public int StudentId { get; set; }
 
         [Required]
         [StringLength(10)]
@@ -43,17 +42,17 @@ namespace InternshipManagementSystemWeb.Models
         [StringLength(50)]
         public string Major { get; set; }
 
-        [Required]
-        [StringLength(100)]
-        public string Email { get; set; }
+        //[Required]
+        //[StringLength(100)]
+        //public string Email { get; set; }
 
         [Required]
         [StringLength(30)]
         public string Mobile { get; set; }
 
-        [Required]
-        [StringLength(100)]
-        public string Password { get; set; }
+        //[Required]
+        //[StringLength(100)]
+        //public string Password { get; set; }
 
         [StringLength(200)]
         public string Resume { get; set; }
@@ -74,26 +73,20 @@ namespace InternshipManagementSystemWeb.Models
 
         public int? SupervisorId { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attendance> Attendances { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Complain> Complains { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InternshipEvaluation> InternshipEvaluations { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MeetingOnCampu> MeetingOnCampus { get; set; }
 
         public virtual Section Section { get; set; }
 
         public virtual Supervisor Supervisor { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SupervisorEvaluation> SupervisorEvaluations { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VisitOnSite> VisitOnSites { get; set; }
     }
 }

@@ -52,13 +52,13 @@ namespace InternshipManagementSystemWeb.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Employee>()
-                .HasOptional(e => e.Admin)
-                .WithRequired(e => e.Employee);
+            //modelBuilder.Entity<Employee>()
+            //    .HasOptional(e => e.Admin)
+            //    .WithRequired(e => e.Employee);
 
-            modelBuilder.Entity<Employee>()
-                .HasOptional(e => e.Instructor)
-                .WithRequired(e => e.Employee);
+            //modelBuilder.Entity<Employee>()
+            //    .HasOptional(e => e.Instructor)
+            //    .WithRequired(e => e.Employee);
 
             modelBuilder.Entity<InternshipCourse>()
                 .HasMany(e => e.Sections)
@@ -76,6 +76,7 @@ namespace InternshipManagementSystemWeb.Models
                 .WillCascadeOnDelete(false);
         }
     }
+
     public class CustomUserRole : IdentityUserRole<int> { }
     public class CustomUserClaim : IdentityUserClaim<int> { }
     public class CustomUserLogin : IdentityUserLogin<int> { }

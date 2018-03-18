@@ -9,7 +9,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         {
         }
 
-        //public int Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [EmailAddress]
@@ -43,6 +43,12 @@ namespace InternshipManagementSystemWeb.ViewModels
         [StringLength(10)]
         [Display(Name = "Employee ID")]
         public string EmployeeUniversityId { get; set; }
+        
+        public string Office { get; set; }
+
+        public string Phone { get; set; }
+
+        public string Extension { get; set; }
 
     }
 }

@@ -9,14 +9,17 @@ namespace InternshipManagementSystemWeb.Models
     [Table("InternshipCourse")]
     public partial class InternshipCourse
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public InternshipCourse()
         {
             Sections = new HashSet<Section>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int InternshipCourseId { get; set; }
+
+        [Required]
+        [StringLength(10)]
+        public string CourseCode { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -26,9 +29,8 @@ namespace InternshipManagementSystemWeb.Models
         [StringLength(500)]
         public string Description { get; set; }
 
-        public int Credit { get; set; }
+        public int Credits { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Section> Sections { get; set; }
     }
 }

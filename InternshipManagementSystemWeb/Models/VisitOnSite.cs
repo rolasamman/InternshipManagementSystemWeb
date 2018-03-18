@@ -9,7 +9,7 @@ namespace InternshipManagementSystemWeb.Models
     [Table("VisitOnSite")]
     public partial class VisitOnSite
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int VisitOnSiteId { get; set; }
 
         [Column(TypeName = "date")]

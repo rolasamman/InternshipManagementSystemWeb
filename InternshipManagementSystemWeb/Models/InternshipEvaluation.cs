@@ -9,13 +9,12 @@ namespace InternshipManagementSystemWeb.Models
     [Table("InternshipEvaluation")]
     public partial class InternshipEvaluation
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public InternshipEvaluation()
         {
             InternshipCriterions = new HashSet<InternshipCriterion>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int InternshipEvaluationId { get; set; }
 
         public DateTime EvaluationDate { get; set; }
@@ -24,7 +23,6 @@ namespace InternshipManagementSystemWeb.Models
 
         public int? SectionId { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InternshipCriterion> InternshipCriterions { get; set; }
 
         public virtual Section Section { get; set; }

@@ -9,7 +9,7 @@ namespace InternshipManagementSystemWeb.Models
     [Table("Announcement")]
     public partial class Announcement
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int AnnouncementId { get; set; }
 
         [Required]

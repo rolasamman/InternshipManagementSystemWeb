@@ -9,7 +9,7 @@ namespace InternshipManagementSystemWeb.Models
     [Table("Complain")]
     public partial class Complain
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ComplainId { get; set; }
 
         [Required]
