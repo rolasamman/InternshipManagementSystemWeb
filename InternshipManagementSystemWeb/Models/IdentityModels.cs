@@ -75,6 +75,9 @@ namespace InternshipManagementSystemWeb.Models
                 .WithRequired(e => e.SupervisorEvaluation)
                 .WillCascadeOnDelete(false);
         }
+
+        object placeHolderVariable;
+        object placeHolderVariable;
     }
 
     public class CustomUserRole : IdentityUserRole<int> { }
