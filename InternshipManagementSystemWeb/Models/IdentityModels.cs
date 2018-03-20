@@ -76,8 +76,12 @@ namespace InternshipManagementSystemWeb.Models
                 .WillCascadeOnDelete(false);
         }
 
+        public System.Data.Entity.DbSet<InternshipManagementSystemWeb.ViewModels.StudentViewModel> StudentViewModels { get; set; }
+
         object placeHolderVariable;
-        object placeHolderVariable;
+
+        //object placeHolderVariable;
+        //object placeHolderVariable;
     }
 
     public class CustomUserRole : IdentityUserRole<int> { }

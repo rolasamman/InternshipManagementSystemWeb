@@ -5,9 +5,10 @@ namespace InternshipManagementSystemWeb.ViewModels
 {
     /// <summary>
     /// Student view model from the student model and used by student controller
-    /// The types of the properties should be the same as admin model
+    /// The types of the properties should be the same as student model
     /// Especialy nullable and non-nullable properties
     /// </summary>
+   
     public class StudentViewModel
     {
         public StudentViewModel()
@@ -15,6 +16,10 @@ namespace InternshipManagementSystemWeb.ViewModels
         }
 
         public int Id { get; set; }
+
+        [Required]
+        [StringLength(256)]
+        public string UserName { get; set; }
 
         [Required]
         [EmailAddress]
@@ -31,10 +36,6 @@ namespace InternshipManagementSystemWeb.ViewModels
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-
-        [Required]
-        [StringLength(256)]
-        public string UserName { get; set; }
 
         [Required]
         [Display(Name = "First Name")]

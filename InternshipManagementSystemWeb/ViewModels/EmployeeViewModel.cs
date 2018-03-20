@@ -3,6 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace InternshipManagementSystemWeb.ViewModels
 {
+    /// <summary>
+    /// Student view model from the Employee model and used by Employee controller
+    /// The types of the properties should be the same as Employee model
+    /// Especialy nullable and non-nullable properties
+    /// </summary>
+    
     public class EmployeeViewModel
     {
         public EmployeeViewModel()

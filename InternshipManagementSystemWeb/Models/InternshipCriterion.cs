@@ -11,7 +11,7 @@ namespace InternshipManagementSystemWeb.Models
     {
         [Key]
         [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int InternshipCriterionId { get; set; }
 
         [Required]
