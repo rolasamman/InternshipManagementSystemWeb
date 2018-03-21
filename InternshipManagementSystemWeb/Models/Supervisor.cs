@@ -6,6 +6,13 @@ namespace InternshipManagementSystemWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    /// <summary>
+    /// This is the supervisor model 
+    /// Supervisors are employees in different firms
+    /// they are responsible of supervising students during their internship
+    /// and they to be contacted for internship placement.
+    /// </summary>
+
     [Table("Supervisor")]
     public partial class Supervisor
     {

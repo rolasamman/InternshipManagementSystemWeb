@@ -6,6 +6,11 @@ namespace InternshipManagementSystemWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    /// <summary>
+    /// This is the firm model
+    /// Firms are companies or organizations where students can do their internship at
+    /// </summary>
+
     [Table("Firm")]
     public partial class Firm
     {

@@ -7,6 +7,16 @@ using System.Web;
 
 namespace InternshipManagementSystemWeb.ViewModels
 {
+
+    /// <summary>
+    /// This is supervisor view model from the supervisor model and used by the supervisor controller
+    /// The types of the properties should be the same as Supervisor model
+    /// Especialy nullable and non-nullable properties
+    /// Supervisors are employees in different firms
+    /// they are responsible of supervising students during their internship
+    /// and they to be contacted for internship placement
+    /// </summary>
+
     public class SupervisorViewModel
     {
         public SupervisorViewModel()
