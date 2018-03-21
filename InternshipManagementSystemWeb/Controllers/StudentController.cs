@@ -1,6 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using InternshipManagementSystemWeb.Models;
+using InternshipManagementSystemWeb.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,16 +13,48 @@ namespace InternshipManagementSystemWeb.Controllers
 {
     public class StudentController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         // GET: Student
         public ActionResult Index()
         {
-            return View();
+            {
+                var students = db.Students.ToList();
+                var model = new List<StudentViewModel>();
+
+                foreach (var item in students)
+                {
+                    if (!(item is Student))
+                    {
+                        model.Add(new StudentViewModel
+                        {
+                            Id = item.Id,
+                            Email = item.Email,
+                            FirstName = item.FirstName,
+                            LastName = item.LastName,
+                        });
+                    }
+                }
+                return View(model);
+            }
         }
 
         // GET: Student/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Student student = db.Students.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            StudentViewModel model = Mapper.Map<Student, StudentViewModel>(student);
+            return View(model);
         }
 
         // GET: Student/Create
@@ -28,62 +65,80 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // POST: Student/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(StudentViewModel model)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
+            if (ModelState.IsValid)
+            { 
+                Student student = Mapper.Map<StudentViewModel, Student>(model);
+                db.Students.Add(student);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+          return View(model);
         }
 
         // GET: Student/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Student student = db.Students.Find(id);
+
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            StudentViewModel model = Mapper.Map<Student, StudentViewModel>(student);
+           return View(model);
+
         }
 
         // POST: Student/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
+        [ValidateAntiForgeryToken]
 
+        public ActionResult Edit(StudentViewModel model)
+
+        {
+            if (ModelState.IsValid)
+            {
+                Student student = Mapper.Map<StudentViewModel, Student>(model);
+                db.Entry(student).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Student/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
+            return View(model);
         }
 
         // POST: Student/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            if (id == null)
             {
-                // TODO: Add delete logic here
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
+            Student student = db.Students.Find(id);
+
+            if (student == null)
             {
-                return View();
+                return HttpNotFound();
             }
+
+            StudentViewModel model = Mapper.Map<StudentViewModel>(student);
+            return View(model);
+        }
+
+        // GET: Student/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
         }
     }
 }

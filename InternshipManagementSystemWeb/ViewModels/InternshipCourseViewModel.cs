@@ -20,11 +20,16 @@ namespace InternshipManagementSystemWeb.ViewModels
         {
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int InternshipCourseId { get; set; }
 
         [Required]
+        [StringLength(10)]
+        [Display(Name = "Course Code")]
+        public string CourseCode { get; set; }
+
+        [Required]
         [StringLength(100)]
+        [Display(Name = "Course Name")]
         public string CourseName { get; set; }
 
         [Required]
@@ -33,7 +38,8 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         public int Credits { get; set; }
 
-        public virtual ICollection<Section> Sections { get; set; }
-
+        //public virtual ICollection<Section> Sections { get; set; }
+        // List of sections in this course
+        public List<Section> Sections { get; set; }
     }
 }

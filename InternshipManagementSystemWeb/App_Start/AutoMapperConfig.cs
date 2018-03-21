@@ -1,5 +1,5 @@
 ﻿using InternshipManagementSystemWeb.Models;
-//using InternshipManagementSystemWeb.ViewModels;
+using InternshipManagementSystemWeb.ViewModels;
 
 namespace InternshipManagementSystemWeb.App_Start
 {
@@ -13,8 +13,8 @@ namespace InternshipManagementSystemWeb.App_Start
         {
             AutoMapper.Mapper.Initialize(cfg =>
             {
-                //cfg.CreateMap<Employee, EmployeeViewModel>().ReverseMap();
-                //cfg.CreateMap<Faculty, FacultyViewModel>().ReverseMap();
+                cfg.CreateMap<Employee, EmployeeViewModel>().ReverseMap();
+                cfg.CreateMap<Student, StudentViewModel>().ReverseMap();
             });
         }
     }

@@ -1,4 +1,6 @@
 ﻿using InternshipManagementSystemWeb.Models;
+using InternshipManagementSystemWeb.ViewModels;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
@@ -58,7 +60,23 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            return View();
+            var users = db.Employees.ToList();
+            var model = new List<EmployeeViewModel>();
+
+            foreach (var item in users)
+            {
+                if (!(item is Employee))
+                {
+                    model.Add(new EmployeeViewModel
+                    {
+                        Id = item.Id,
+                        Email = item.Email,
+                        FirstName = item.FirstName,
+                        LastName = item.LastName,
+                    });
+                }
+            }
+            return View(model);
         }
 
         // GET: Employee/Details/5
@@ -75,21 +93,62 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // POST: Employee/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(EmployeeViewModel model, params string[] roles)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-                return RedirectToAction("Index");
+                Employee employee = new Employee
+                {
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    UserName = model.Email,
+                };
+
+                var result = UserManager.Create(employee, model.Password);
+                if (result.Succeeded)
+                {
+                    if (roles != null)
+                    {
+                        // Add user to selected roles
+                        var roleResult = UserManager.AddToRoles(employee.Id, roles);
+                        if (roleResult.Succeeded)
+                        {
+                            return RedirectToAction("Index");
+                        }
+
+                        else
+                        {
+                            // Display error messages in the view @Html.ValidationSummary()
+                            ModelState.AddModelError(string.Empty, roleResult.Errors.First());
+
+                            // Create a check list object
+                            ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
+
+                            // Return a view if you want to see error message saved in ModelState
+                            // Redirect() and RedirectToAction() clear the messages
+                            return View();
+                        }
+                    }
+                    return RedirectToAction("Index");
+                }
+
+                else
+                {
+                    // See above comment for ModelState errors
+                    ModelState.AddModelError(string.Empty, result.Errors.First());
+                    ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
+                    return View();
+                }
             }
-            catch
-            {
-                return View();
-            }
+            ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
+            return View();
         }
 
-        // GET: Employee/Edit/5
-        public ActionResult Edit(int id)
+
+            // GET: Employee/Edit/5
+            public ActionResult Edit(int id)
         {
             return View();
         }
