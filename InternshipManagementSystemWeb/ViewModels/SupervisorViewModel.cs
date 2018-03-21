@@ -44,8 +44,12 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         public virtual Firm Firm { get; set; }
 
-        public virtual ICollection<Student> Students { get; set; }
+        //public virtual ICollection<Student> Students { get; set; }
+        // List of students work with the supervisor
+        public List<Student> students { get; set; }
 
-        public virtual ICollection<SupervisorEvaluation> SupervisorEvaluations { get; set; }
+        //public virtual ICollection<SupervisorEvaluation> SupervisorEvaluations { get; set; }
+        // List of evaluations of this supervisor
+        public List<SupervisorEvaluation> SupervisorEvaluations { get; set; }
     }
 }

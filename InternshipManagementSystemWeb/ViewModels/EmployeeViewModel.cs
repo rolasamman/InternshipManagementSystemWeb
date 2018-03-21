@@ -1,4 +1,8 @@
-﻿using InternshipManagementSystemWeb.Models;
+﻿/*      Description: This is the employee view model 
+ *      Author: Rola Samman
+ */
+
+using InternshipManagementSystemWeb.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace InternshipManagementSystemWeb.ViewModels

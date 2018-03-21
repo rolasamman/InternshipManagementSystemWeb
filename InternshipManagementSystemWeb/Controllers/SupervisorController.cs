@@ -9,67 +9,74 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
-    public class FirmController : Controller
+    /// <summary>
+    /// Supervisor controller manages supervisors 
+    /// This controller uses supervisor and supervisorViewModel classes
+    /// This controller users AutoMapper
+    /// </summary>
+
+    public class SupervisorController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
-        // GET: Firm
+        // GET: Supervisor
         public ActionResult Index()
         {
-            var users = db.Firms.ToList();
-            var model = new List<FirmViewModel>();
+            var users = db.Supervisors.ToList();
+            var model = new List<SupervisorViewModel>();
 
             foreach (var item in users)
             {
-                if (!(item is Firm))
+                if (!(item is Supervisor))
                 {
-                    model.Add(new FirmViewModel
+                    model.Add(new SupervisorViewModel
                     {
-                        FirmId = item.FirmId,
-                        FirmName = item.FirmName,
-                        Address = item.Address,
-                        IndustryField = item.IndustryField,
-                        NumberOfVacencies = item.NumberOfVacencies,
+                        SupervisorId = item.SupervisorId,
+                        FirstName = item.FirstName,
+                        LastName = item.LastName,
+                        Email = item.Email,
+                        Phone = item.Phone,
+                        Mobile = item.Mobile,
+                        Department = item.Department,
                     });
                 }
             }
             return View(model);
         }
 
-        // GET: Firm/Details/5
+        // GET: Supervisor/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Firm/Create
+        // GET: Supervisor/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Firm/Create
+        // POST: Supervisor/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(FirmViewModel model)
+        public ActionResult Create(SupervisorViewModel model)
         {
             if (ModelState.IsValid)
             {
-                Firm firm = Mapper.Map<FirmViewModel, Firm>(model);
-                db.Firms.Add(firm);
+                Supervisor supervisor = Mapper.Map<SupervisorViewModel, Supervisor>(model);
+                db.Supervisors.Add(supervisor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(model);
         }
 
-        // GET: Firm/Edit/5
+        // GET: Supervisor/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Firm/Edit/5
+        // POST: Supervisor/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -85,13 +92,13 @@ namespace InternshipManagementSystemWeb.Controllers
             }
         }
 
-        // GET: Firm/Delete/5
+        // GET: Supervisor/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Firm/Delete/5
+        // POST: Supervisor/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
