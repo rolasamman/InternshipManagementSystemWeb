@@ -1,4 +1,5 @@
-﻿using InternshipManagementSystemWeb.Models;
+﻿using AutoMapper;
+using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,25 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: InternshipCourse
         public ActionResult Index()
         {
-            return View();
+            {
+                var students = db.Students.ToList();
+                var model = new List<StudentViewModel>();
+
+                foreach (var item in students)
+                {
+                    if (!(item is Student))
+                    {
+                        model.Add(new StudentViewModel
+                        {
+                            Id = item.Id,
+                            Email = item.Email,
+                            FirstName = item.FirstName,
+                            LastName = item.LastName,
+                        });
+                    }
+                }
+                return View(model);
+            }
         }
 
         // GET: InternshipCourse/Details/5
@@ -32,18 +51,17 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // POST: InternshipCourse/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(InternshipCourseViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                InternshipCourse internshipCourse = Mapper.Map<InternshipCourseViewModel, InternshipCourse>(model);
+                db.InternshipCourses.Add(internshipCourse);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
 
         // GET: InternshipCourse/Edit/5

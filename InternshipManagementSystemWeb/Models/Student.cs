@@ -55,7 +55,7 @@ namespace InternshipManagementSystemWeb.Models
         //public string Password { get; set; }
 
         [StringLength(200)]
-        public string Resume { get; set; }
+        public string Resume { get; set; } 
 
         [StringLength(200)]
         public string InternshipAgreementForm { get; set; }

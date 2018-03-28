@@ -1,5 +1,4 @@
-﻿@* This is a template to generate dropdown list for enums *@
-@model Enum
+﻿@model Enum
 
 @if (EnumHelper.IsValidForEnumHelper(ViewData.ModelMetadata))
 {
@@ -26,10 +25,11 @@
         }
     }
 
-    @Html.DisplayTextFor(model => displayName)
+    @
 }
 else
 {
     // This Enum type is not supported.  Fall back to the text.
-    @Html.DisplayTextFor(model => model)
+    @
 }
+

@@ -1,5 +1,6 @@
 ﻿using InternshipManagementSystemWeb.Models;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace InternshipManagementSystemWeb.ViewModels
 {
@@ -38,6 +39,11 @@ namespace InternshipManagementSystemWeb.ViewModels
         public string ConfirmPassword { get; set; }
 
         [Required]
+        [StringLength(10)]
+        [Display(Name = "Student ID")]
+        public string StudentUniversityId { get; set; }
+
+        [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
@@ -46,9 +52,8 @@ namespace InternshipManagementSystemWeb.ViewModels
         public string LastName { get; set; }
 
         [Required]
-        [StringLength(10)]
-        [Display(Name = "Student ID")]
-        public string StudentUniversityId { get; set; }
+        [StringLength(30)]
+        public string Mobile { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -60,5 +65,34 @@ namespace InternshipManagementSystemWeb.ViewModels
         [Display(Name = "Major")]
         public string Major { get; set; }
 
+        //[StringLength(200)]
+        //public string Resume { get; set; }
+
+        //[StringLength(200)]
+        //public string InternshipAgreementForm { get; set; }
+
+        //[StringLength(200)]
+        //public string RiskIdentificationForm { get; set; }
+
+        // The outline file as object (used to upload a file)
+        [Display(Name = "Resume")]
+        public HttpPostedFileBase ResumeFile { get; set; }
+
+        // The outline file path as string (used to display the path)
+        public string Resume { get; set; }
+
+        // The outline file as object (used to upload a file)
+        [Display(Name = "Internship Agreement Form")]
+        public HttpPostedFileBase InternshipAgreement { get; set; }
+
+        // The outline file path as string (used to display the path)
+        public string InternshipAgreementForm { get; set; }
+
+        // The outline file as object (used to upload a file)
+        [Display(Name = "Risk Identification Form")]
+        public HttpPostedFileBase RiskIdentification { get; set; }
+
+        // The outline file path as string (used to display the path)
+        public string RiskIdentificationForm { get; set; }
     }
 }
