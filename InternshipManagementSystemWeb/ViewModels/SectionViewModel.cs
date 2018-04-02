@@ -8,6 +8,13 @@ namespace InternshipManagementSystemWeb.ViewModels
 {
     public class SectionViewModel
     {
+        /// <summary>
+        /// Section view model from the section model and used by section controller
+        /// The types of the properties should be the same as section model
+        /// Sections are part of internship course, a course may have more than one section
+        /// A section is a collection of students 
+        /// </summary>
+
         public SectionViewModel()
         {
         }

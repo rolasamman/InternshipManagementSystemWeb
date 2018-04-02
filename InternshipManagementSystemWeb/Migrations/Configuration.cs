@@ -89,8 +89,7 @@ namespace InternshipManagementSystemWeb.Migrations
                 new InternshipCourse { CourseCode = "BBIS 4403", CourseName = "Internship: Business Information System",
                     Description = "Internship course for BIS students.", Credits = 3},
                 new InternshipCourse { CourseCode = "FINC", CourseName = "Internship: Banking and finance",
-                    Description = "Internship course for Banking and finance students.", Credits = 3,},
-
+                    Description = "Internship course for Banking and finance students.", Credits = 3,}
             };
 
             // Add examples of firms
@@ -99,8 +98,25 @@ namespace InternshipManagementSystemWeb.Migrations
                 new Firm { FirmName = "Unilever", Address = "8770 King Abdulaziz Branch Rd, Ash Shati, Jeddah 23514-3261 https://goo.gl/maps/XdUEEe8v4zS2",
                     NumberOfVacencies = 10, IndustryField = "Consumer Goods"},
                 new Firm { FirmName = "NCB", Address = "Al Shaty, Jeddah 23513 https://goo.gl/maps/Hs5rjJgj6NA2",
-                    NumberOfVacencies = 9, IndustryField = "Banking and Finance"}
+                    NumberOfVacencies = 9, IndustryField = "Banking and Finance"},
+                new Firm { FirmName = "Savola", Address = "Prince Faisal Bin Fahd, Ash Shati, Jeddah 23513 https://goo.gl/maps/7FyRoS3NSLw",
+                    NumberOfVacencies = 2, IndustryField = "Investment Management"}
+
             };
+
+            // Add examples of announceements
+            var Announcement = new List<Announcement>
+            {
+                new Announcement {Subject = "Graphic Design needed",
+                    Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
+                new Announcement {Subject = "HR Internship opportunity",
+                    Description = "Internhsip student majored in HR needed, three months internship program" },
+                new Announcement {Subject = "Coop program for MIS",
+                    Description = "Savola is offering a trained coop program for MIS students" },
+                new Announcement {Subject = "STEAM Compitition",
+                    Description = "Limited opportunity for all student to joing the challenge" }
+            };
+
         }
     }
 }

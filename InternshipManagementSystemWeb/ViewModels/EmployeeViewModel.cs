@@ -8,9 +8,10 @@ using System.ComponentModel.DataAnnotations;
 namespace InternshipManagementSystemWeb.ViewModels
 {
     /// <summary>
-    /// Student view model from the Employee model and used by Employee controller
+    /// Employee view model from the Employee model and used by Employee controller
     /// The types of the properties should be the same as Employee model
     /// Especialy nullable and non-nullable properties
+    /// Employees can bee admin and instructor
     /// </summary>
     
     public class EmployeeViewModel

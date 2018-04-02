@@ -7,7 +7,6 @@ using System.Web;
 
 namespace InternshipManagementSystemWeb.ViewModels
 {
-
     /// <summary>
     /// This is supervisor view model from the supervisor model and used by the supervisor controller
     /// The types of the properties should be the same as Supervisor model

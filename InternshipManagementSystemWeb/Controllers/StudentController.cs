@@ -40,20 +40,34 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Student/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
             Student student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
             }
 
-            StudentViewModel model = Mapper.Map<Student, StudentViewModel>(student);
+            var model = new StudentViewModel
+            {
+                Id = student.Id ,
+                UserName = student.UserName,
+                Email = student.Email,
+                StudentUniversityId = student.StudentUniversityId,
+                FirstName = student.FirstName,
+                LastName = student.LastName,
+                Mobile = student.Mobile,
+                Department = student.Department,
+                Major = student.Major,
+                Resume = student.Resume,
+                InternshipAgreementForm = student.InternshipAgreementForm,
+                RiskIdentificationForm = student.RiskIdentificationForm
+            };
+
             return View(model);
         }
 

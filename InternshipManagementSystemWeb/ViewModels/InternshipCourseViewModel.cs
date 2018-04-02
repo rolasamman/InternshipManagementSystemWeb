@@ -11,7 +11,7 @@ namespace InternshipManagementSystemWeb.ViewModels
     /// <summary>
     /// Internship Course view model from the Internship Course model and used by Internship Course controller
     /// The types of the properties should be the same as Internship Course model
-    /// Especialy nullable and non-nullable properties
+    /// Internship couse is the course that students need to be registered at in order to complete the internship requirements
     /// </summary>
 
     public class InternshipCourseViewModel

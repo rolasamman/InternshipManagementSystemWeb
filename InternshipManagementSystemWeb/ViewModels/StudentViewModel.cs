@@ -8,6 +8,7 @@ namespace InternshipManagementSystemWeb.ViewModels
     /// Student view model from the student model and used by student controller
     /// The types of the properties should be the same as student model
     /// Especialy nullable and non-nullable properties
+    /// Students are the registered students in the university
     /// </summary>
    
     public class StudentViewModel

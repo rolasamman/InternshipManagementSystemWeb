@@ -175,6 +175,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\FirmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -210,13 +211,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\AnnouncementViewModel.cs" />
+    <Compile Include="ViewModels\AttendanceViewModel.cs" />
+    <Compile Include="ViewModels\ComplainViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\FirmViewModel.cs" />
     <Compile Include="ViewModels\InstructorViewModel.cs" />
     <Compile Include="ViewModels\InternshipCourseViewModel.cs" />
+    <Compile Include="ViewModels\InternshipCriterionViewModel.cs" />
+    <Compile Include="ViewModels\InternshipEvaluationViewModel.cs" />
+    <Compile Include="ViewModels\MeetingOnCampusViewModel.cs" />
     <Compile Include="ViewModels\SectionViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
+    <Compile Include="ViewModels\SupervisorCriterionViewModel.cs" />
+    <Compile Include="ViewModels\SupervisorEvaluationViewModel.cs" />
     <Compile Include="ViewModels\SupervisorViewModel.cs" />
+    <Compile Include="ViewModels\VisitOnSiteViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -292,10 +302,13 @@
     <Content Include="Views\InternshipCourse\Create.cshtml" />
     <Content Include="Views\InternshipCourse\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Announcement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Uploads\" />
+    <Folder Include="Views\AnnouncementViewModel\" />
     <Folder Include="Views\Section\" />
   </ItemGroup>
   <ItemGroup>
