@@ -1,0 +1,75 @@
+﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.ComplainViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ComplainId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Feedback)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComplainId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Feedback)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

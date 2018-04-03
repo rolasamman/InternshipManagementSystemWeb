@@ -3,7 +3,9 @@ using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -16,31 +18,40 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: InternshipCourse
         public ActionResult Index()
         {
-            {
-                var students = db.Students.ToList();
-                var model = new List<StudentViewModel>();
+            var internshipCourses = db.InternshipCourses.ToList();
 
-                foreach (var item in students)
+            var model = new List<InternshipCourseViewModel>();
+            foreach (var item in internshipCourses)
+            {
+                model.Add(new InternshipCourseViewModel
                 {
-                    if (!(item is Student))
-                    {
-                        model.Add(new StudentViewModel
-                        {
-                            Id = item.Id,
-                            Email = item.Email,
-                            FirstName = item.FirstName,
-                            LastName = item.LastName,
-                        });
-                    }
-                }
-                return View(model);
+                    InternshipCourseId = item.InternshipCourseId,
+                    CourseCode = item.CourseCode,
+                    CourseName = item.CourseName,
+                    Description = item.Description,
+                    Credits = item.Credits,
+
+                });
             }
+            return View(model);
         }
 
         // GET: InternshipCourse/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
+            if (internshipCourse == null)
+            {
+                return HttpNotFound();
+            }
+
+            InternshipCourseViewModel model = Mapper.Map<InternshipCourse, InternshipCourseViewModel>(internshipCourse);
+
+            return View(model);
         }
 
         // GET: InternshipCourse/Create
@@ -65,74 +76,95 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: InternshipCourse/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
+            if (internshipCourse == null)
+            {
+                return HttpNotFound();
+            }
+            InternshipCourseViewModel model = Mapper.Map<InternshipCourse, InternshipCourseViewModel>(internshipCourse);
+            return View(model);
         }
 
         // POST: InternshipCourse/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(InternshipCourseViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                InternshipCourse internshipCourse = Mapper.Map<InternshipCourseViewModel, InternshipCourse>(model);
+                db.Entry(internshipCourse).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
 
         // GET: InternshipCourse/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
+            if (internshipCourse == null)
+            {
+                return HttpNotFound();
+            }
+            InternshipCourseViewModel model = Mapper.Map<InternshipCourseViewModel>(internshipCourse);
+            return View(model);
         }
 
         // POST: InternshipCourse/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
+            db.InternshipCourses.Remove(internshipCourse);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // GET: /InternshipCourse/ListSections/5
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        //GET: /InternshipCourse/ListSections/5
         //public PartialViewResult ListSectionsPartial(int id)
         //{
-        //    var users = db.section.Where(d => d.InternshipCourseId == id).ToList();
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+
+        //    var sections = db.Sections.Where(c => c.IntrenshipCourseId == id).ToList();
 
         //    var model = new List<SectionViewModel>();
-        //    foreach (var user in users)
+        //    foreach (var section in sections)
         //    {
         //        model.Add(new SectionViewModel
         //        {
-        //            Id = user.Id,
-
-        //            Email = user.Email,
-
-        //            FirstName = user.FirstName,
-
-        //            LastName = user.LastName,
-
-        //            Speciality = user.Speciality,
-
-        //            Level = user.Level,
-
-        //            Department = user.Department.Name,
+        //            SectionId = section.SectionId,
+        //            Semester = section.Semester,
+        //            Year = section.Year,
+        //            Capacity = section.Capacity
         //        });
         //    }
-            //return PartialView(model);
-        }
+        //    return PartialView(model);
+        //}
+    }
 }

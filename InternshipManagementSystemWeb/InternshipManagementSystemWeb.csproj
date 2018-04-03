@@ -176,9 +176,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\ComplainController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\FirmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\InternshipCourseController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
@@ -293,22 +296,26 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Firm\Create.cshtml" />
     <Content Include="Views\Firm\Index.cshtml" />
     <Content Include="Views\Supervisor\Create.cshtml" />
     <Content Include="Views\Supervisor\Index.cshtml" />
-    <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\InternshipCourse\Create.cshtml" />
     <Content Include="Views\InternshipCourse\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Announcement\Index.cshtml" />
+    <Content Include="Views\Announcement\Create.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Complain\Index.cshtml" />
+    <Content Include="Views\Complain\Create.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Uploads\" />
-    <Folder Include="Views\AnnouncementViewModel\" />
+    <Folder Include="Views\Attendance\" />
+    <Folder Include="Views\Instructor\" />
     <Folder Include="Views\Section\" />
   </ItemGroup>
   <ItemGroup>

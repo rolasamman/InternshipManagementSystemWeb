@@ -1,8 +1,10 @@
-﻿using InternshipManagementSystemWeb.Models;
+﻿using AutoMapper;
+using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -15,13 +17,36 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Section
         public ActionResult Index()
         {
-            return View();
+            var sections = db.Sections.ToList();
+
+            var model = new List<SectionViewModel>();
+            foreach (var item in sections)
+            {
+                model.Add(new SectionViewModel
+                {
+                    SectionId = item.SectionId,
+                    //Semester = item.Semester,
+                    Year = item.Year,
+                    Capacity = item.Capacity
+                });
+            }
+            return View(model);
         }
 
         // GET: Section/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Section section = db.Sections.Find(id);
+            if (section == null)
+            {
+                return HttpNotFound();
+            }
+            SectionViewModel model = Mapper.Map<Section, SectionViewModel>(section);
+            return View(model);
         }
 
         // GET: Section/Create
@@ -32,18 +57,17 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // POST: Section/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(SectionViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                Section section = Mapper.Map<SectionViewModel, Section>(model);
+                db.Sections.Add(section);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
 
         // GET: Section/Edit/5

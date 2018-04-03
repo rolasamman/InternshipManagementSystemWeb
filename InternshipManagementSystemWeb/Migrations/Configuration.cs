@@ -65,7 +65,6 @@ namespace InternshipManagementSystemWeb.Migrations
             }
 
             // Add admin user to admin role
-
             // roles[0] is "Admin"
 
             var user = userManager.FindByName(admin.UserName);
@@ -74,49 +73,71 @@ namespace InternshipManagementSystemWeb.Migrations
                 userManager.AddToRole(admin.Id, roles[0]);
             }
 
-            // Add examples of Sections
-            var sections = new List<Section>
-            {
-                  new Section {Semester = Semester.Fall, Year = 2019, Capacity = 20 },
-                  new Section {Semester = Semester.Spring, Year = 2019, Capacity = 20 },
-                  new Section {Semester = Semester.Fall, Year = 2019, Capacity = 15 },
-                  new Section {Semester = Semester.Fall, Year = 2019, Capacity = 10 }
-            };
+            //Add examples of Sections
+                var sections = new List<Section>
+                {
+                      new Section {Semester = Semester.Fall, Year = 2019, Capacity = 20 },
+                      new Section {Semester = Semester.Spring, Year = 2019, Capacity = 20 },
+                      new Section {Semester = Semester.Fall, Year = 2019, Capacity = 15 },
+                      new Section {Semester = Semester.Fall, Year = 2019, Capacity = 10 }
+                };
+            sections.ForEach(c => context.Sections.AddOrUpdate(m => m.Semester, c));
+            context.SaveChanges();
 
             // Add examples of internship courses
-            var Course = new List<InternshipCourse>
-            {
-                new InternshipCourse { CourseCode = "BBIS 4403", CourseName = "Internship: Business Information System",
-                    Description = "Internship course for BIS students.", Credits = 3},
-                new InternshipCourse { CourseCode = "FINC", CourseName = "Internship: Banking and finance",
-                    Description = "Internship course for Banking and finance students.", Credits = 3,}
-            };
+            var internshipCourses = new List<InternshipCourse>
+                {
+                    new InternshipCourse { CourseCode = "BBIS 4403", CourseName = "Internship: Business Information System",
+                        Description = "Internship course for BIS students.", Credits = 3},
+                    new InternshipCourse { CourseCode = "FINC", CourseName = "Internship: Banking and finance",
+                        Description = "Internship course for Banking and finance students.", Credits = 3,}
+                };
+            internshipCourses.ForEach(c => context.InternshipCourses.AddOrUpdate(m => m.CourseName, c));
+            context.SaveChanges();
 
             // Add examples of firms
-            var Firm = new List<Firm>
-            {
-                new Firm { FirmName = "Unilever", Address = "8770 King Abdulaziz Branch Rd, Ash Shati, Jeddah 23514-3261 https://goo.gl/maps/XdUEEe8v4zS2",
-                    NumberOfVacencies = 10, IndustryField = "Consumer Goods"},
-                new Firm { FirmName = "NCB", Address = "Al Shaty, Jeddah 23513 https://goo.gl/maps/Hs5rjJgj6NA2",
-                    NumberOfVacencies = 9, IndustryField = "Banking and Finance"},
-                new Firm { FirmName = "Savola", Address = "Prince Faisal Bin Fahd, Ash Shati, Jeddah 23513 https://goo.gl/maps/7FyRoS3NSLw",
-                    NumberOfVacencies = 2, IndustryField = "Investment Management"}
+            var firms = new List<Firm>
+                {
+                    new Firm { FirmName = "Unilever", Address = "8770 King Abdulaziz Branch Rd, Ash Shati, Jeddah 23514-3261 https://goo.gl/maps/XdUEEe8v4zS2",
+                        NumberOfVacencies = 10, IndustryField = "Consumer Goods"},
+                    new Firm { FirmName = "NCB", Address = "Al Shaty, Jeddah 23513 https://goo.gl/maps/Hs5rjJgj6NA2",
+                        NumberOfVacencies = 9, IndustryField = "Banking and Finance"},
+                    new Firm { FirmName = "Savola", Address = "Prince Faisal Bin Fahd, Ash Shati, Jeddah 23513 https://goo.gl/maps/7FyRoS3NSLw",
+                        NumberOfVacencies = 2, IndustryField = "Investment Management"}
+                };
+            firms.ForEach(c => context.Firms.AddOrUpdate(m => m.FirmName, c));
+            context.SaveChanges();
 
-            };
 
             // Add examples of announceements
-            var Announcement = new List<Announcement>
-            {
-                new Announcement {Subject = "Graphic Design needed",
-                    Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
-                new Announcement {Subject = "HR Internship opportunity",
-                    Description = "Internhsip student majored in HR needed, three months internship program" },
-                new Announcement {Subject = "Coop program for MIS",
-                    Description = "Savola is offering a trained coop program for MIS students" },
-                new Announcement {Subject = "STEAM Compitition",
-                    Description = "Limited opportunity for all student to joing the challenge" }
-            };
+            var announcements = new List<Announcement>
+                {
+                    new Announcement {Subject = "Graphic Design needed",
+                        Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
+                    new Announcement {Subject = "HR Internship opportunity",
+                        Description = "Internhsip student majored in HR needed, three months internship program" },
+                    new Announcement {Subject = "Coop program for MIS",
+                        Description = "Savola is offering a trained coop program for MIS students" },
+                    new Announcement {Subject = "STEAM Compitition",
+                        Description = "Limited opportunity for all student to joing the challenge" }
+                };
+            announcements.ForEach(c => context.Announcements.AddOrUpdate(m => m.Subject, c));
+            context.SaveChanges();
 
+            // Add examples of Instructors
+            var instructors = new List<Announcement>
+                {
+                    new Announcement {Subject = "Graphic Design needed",
+                        Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
+                    new Announcement {Subject = "HR Internship opportunity",
+                        Description = "Internhsip student majored in HR needed, three months internship program" },
+                    new Announcement {Subject = "Coop program for MIS",
+                        Description = "Savola is offering a trained coop program for MIS students" },
+                    new Announcement {Subject = "STEAM Compitition",
+                        Description = "Limited opportunity for all student to joing the challenge" }
+                };
+            announcements.ForEach(c => context.Announcements.AddOrUpdate(m => m.Subject, c));
+            context.SaveChanges();
         }
     }
 }

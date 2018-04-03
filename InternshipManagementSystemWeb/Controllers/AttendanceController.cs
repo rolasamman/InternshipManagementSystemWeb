@@ -11,81 +11,69 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
-    public class AnnouncementController : Controller
+    public class AttendanceController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Announcement
+        // GET: Attendance
         public ActionResult Index()
         {
-            var announcements = db.Announcements.ToList();
-            var model = new List<AnnouncementViewModel>();
-
-            foreach (var item in announcements)
-            {               
-               model.Add(new AnnouncementViewModel
-               {
-                  AnnouncementId = item.AnnouncementId,
-                  Subject = item.Subject,
-                  AnnouncementDate = item.AnnouncementDate,
-                  Description = item.Description
-               });           
+            var attendances = db.Attendances.ToList();
+            var model = new List<AttendanceViewModel>();
+            foreach (var item in attendances)
+            {
+                model.Add(new AttendanceViewModel
+                {
+                    AttendanceId = item.AttendanceId,
+                    AttendanceDate = item.AttendanceDate,
+                    TimeIn = item.TimeIn,
+                    TimeOut = item.TimeOut,
+                    Description = item.Description
+                });
             }
-            return View();
+            return View(model);
         }
 
-        // GET: Announcement/Details/5
+        // GET: Attendance/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Announcement announcement = db.Announcements.Find(id);
-            if (announcement == null)
+            Attendance attendance = db.Attendances.Find(id);
+            if (attendance == null)
             {
                 return HttpNotFound();
             }
-
-            var model = new AnnouncementViewModel
-            {
-                AnnouncementId = announcement.AnnouncementId,
-                Subject = announcement.Subject,
-                AnnouncementDate = announcement.AnnouncementDate,
-                Description = announcement.Description
-            };
-
+            AttendanceViewModel model = Mapper.Map<Attendance, AttendanceViewModel>(attendance);
             return View(model);
         }
 
-
-        // GET: Announcement/Create
+        // GET: Attendance/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Announcement/Create
+        // POST: Attendance/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(AnnouncementViewModel model)
+        public ActionResult Create(AttendanceViewModel model)
         {
             if (ModelState.IsValid)
             {
-                Announcement announcement = Mapper.Map<AnnouncementViewModel, Announcement>(model);
-                announcement.AnnouncementDate = DateTime.Now;
-                db.Announcements.Add(announcement);
+                Attendance attendance = Mapper.Map<AttendanceViewModel, Attendance>(model);
+
+                db.Attendances.Add(attendance);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(model);
         }
 
-
-
-        // GET: Announcement/Edit/5
+        // GET: Attendance/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -93,60 +81,58 @@ namespace InternshipManagementSystemWeb.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Announcement announcement = db.Announcements.Find(id);
-            if (announcement == null)
+            Attendance attendance = db.Attendances.Find(id);
+            if (attendance == null)
             {
                 return HttpNotFound();
             }
-
-            AnnouncementViewModel model = Mapper.Map<Announcement, AnnouncementViewModel>(announcement);
+            AttendanceViewModel model = Mapper.Map<Attendance, AttendanceViewModel>(attendance);
             return View(model);
         }
 
-
-        // POST: Announcement/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for      
+        // POST: Attendance/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(AnnouncementViewModel model)
+        public ActionResult Edit(AttendanceViewModel model)
         {
             if (ModelState.IsValid)
             {
-                Announcement announcement = Mapper.Map<AnnouncementViewModel, Announcement>(model);
-                db.Entry(announcement).State = EntityState.Modified;
+                Attendance attendance = Mapper.Map<AttendanceViewModel, Attendance>(model);
+                db.Entry(attendance).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(model);
         }
 
-        // GET: Announcement/Delete/5
+
+        // GET: Attendance/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Announcement announcement = db.Announcements.Find(id);
-            if (announcement == null)
+            Attendance attendance = db.Attendances.Find(id);
+            if (attendance == null)
             {
                 return HttpNotFound();
             }
-            AnnouncementViewModel model = Mapper.Map<AnnouncementViewModel>(announcement);
-
+            AttendanceViewModel model = Mapper.Map<AttendanceViewModel>(attendance);
             return View(model);
         }
 
-        // POST: Announcement/Delete/5
+        // POST: Attendance/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Announcement announcement = db.Announcements.Find(id);
-            db.Announcements.Remove(announcement);
+            Attendance attendance = db.Attendances.Find(id);
+            db.Attendances.Remove(attendance);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -62,6 +62,5 @@ namespace InternshipManagementSystemWeb.ViewModels
         public string Extension { get; set; }
 
         public string Roles { get; set; }
-
     }
 }

@@ -3,7 +3,9 @@ using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -14,32 +16,64 @@ namespace InternshipManagementSystemWeb.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Firm
+        //public ActionResult Index()
+        //{
+        //    var users = db.Firms.ToList();
+        //    var model = new List<FirmViewModel>();
+
+        //    foreach (var item in users)
+        //    {
+        //        if (!(item is Firm))
+        //        {
+        //            model.Add(new FirmViewModel
+        //            {
+        //                FirmId = item.FirmId,
+        //                FirmName = item.FirmName,
+        //                Address = item.Address,
+        //                IndustryField = item.IndustryField,
+        //                NumberOfVacencies = item.NumberOfVacencies,
+        //            });
+        //        }
+        //    }
+        //    return View(model);
+        //}
+
         public ActionResult Index()
         {
-            var users = db.Firms.ToList();
+            var firms = db.Firms.ToList();
+          
             var model = new List<FirmViewModel>();
-
-            foreach (var item in users)
+            foreach (var item in firms)
             {
-                if (!(item is Firm))
+                model.Add(new FirmViewModel
                 {
-                    model.Add(new FirmViewModel
-                    {
-                        FirmId = item.FirmId,
-                        FirmName = item.FirmName,
-                        Address = item.Address,
-                        IndustryField = item.IndustryField,
-                        NumberOfVacencies = item.NumberOfVacencies,
-                    });
-                }
+                    FirmId = item.FirmId,
+                    FirmName = item.FirmName,
+                    Address = item.Address,
+                    IndustryField = item.IndustryField,
+                    NumberOfVacencies = item.NumberOfVacencies,
+                });
             }
             return View(model);
         }
 
+
         // GET: Firm/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Firm firm = db.Firms.Find(id);
+            if (firm == null)
+            {
+                return HttpNotFound();
+            }
+
+            FirmViewModel model = Mapper.Map<Firm, FirmViewModel>(firm);
+
+            return View(model);
         }
 
         // GET: Firm/Create
@@ -64,47 +98,73 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Firm/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Firm firm = db.Firms.Find(id);
+            if (firm == null)
+            {
+                return HttpNotFound();
+            }
+            FirmViewModel model = Mapper.Map<Firm, FirmViewModel>(firm);
+            return View(model);
         }
 
         // POST: Firm/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(FirmViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                Firm firm = Mapper.Map<FirmViewModel, Firm>(model);
+                db.Entry(firm).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
-        }
+            return View(model);
+        } 
+
 
         // GET: Firm/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Firm firm = db.Firms.Find(id);
+            if (firm == null)
+            {
+                return HttpNotFound();
+            }
+            FirmViewModel model = Mapper.Map<FirmViewModel>(firm);
+            return View(model);
         }
 
         // POST: Firm/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Firm firm = db.Firms.Find(id);
+            db.Firms.Remove(firm);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                return View();
+                db.Dispose();
             }
+            base.Dispose(disposing);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         [StringLength(100)]
         public string Subject { get; set; }
 
-        public DateTime AnnouncementDate { get; set; }
+        public DateTime? AnnouncementDate { get; set; }
 
         [Required]
         [StringLength(900)]

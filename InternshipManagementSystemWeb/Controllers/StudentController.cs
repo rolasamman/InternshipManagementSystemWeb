@@ -130,29 +130,16 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: Student/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+        //[HttpPost]
+        //public ActionResult Delete(int id, FormCollection collection)
+        //{
+        //    return View(model);
+        //}
 
-            Student student = db.Students.Find(id);
-
-            if (student == null)
-            {
-                return HttpNotFound();
-            }
-
-            StudentViewModel model = Mapper.Map<StudentViewModel>(student);
-            return View(model);
-        }
-
-        // GET: Student/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //// GET: Student/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
     }
 }
