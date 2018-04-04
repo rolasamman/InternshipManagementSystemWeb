@@ -1,4 +1,8 @@
-﻿using AutoMapper;
+﻿/*      Description:    This class is a controller for firm from the firm view model
+ *      Author:         Rola Samman
+*/
+
+using AutoMapper;
 using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
@@ -16,33 +20,11 @@ namespace InternshipManagementSystemWeb.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Firm
-        //public ActionResult Index()
-        //{
-        //    var users = db.Firms.ToList();
-        //    var model = new List<FirmViewModel>();
-
-        //    foreach (var item in users)
-        //    {
-        //        if (!(item is Firm))
-        //        {
-        //            model.Add(new FirmViewModel
-        //            {
-        //                FirmId = item.FirmId,
-        //                FirmName = item.FirmName,
-        //                Address = item.Address,
-        //                IndustryField = item.IndustryField,
-        //                NumberOfVacencies = item.NumberOfVacencies,
-        //            });
-        //        }
-        //    }
-        //    return View(model);
-        //}
-
         public ActionResult Index()
         {
-            var firms = db.Firms.ToList();
-          
+            var firms = db.Firms.ToList();     
             var model = new List<FirmViewModel>();
+
             foreach (var item in firms)
             {
                 model.Add(new FirmViewModel

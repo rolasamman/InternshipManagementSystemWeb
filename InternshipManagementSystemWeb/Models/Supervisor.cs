@@ -33,6 +33,9 @@ namespace InternshipManagementSystemWeb.Models
         [StringLength(50)]
         public string LastName { get; set; }
 
+        [NotMapped]
+        public string FullName { get { return (FirstName + " " + LastName); } }
+
         [Required]
         [StringLength(200)]
         public string Email { get; set; }

@@ -1,4 +1,8 @@
-﻿using AutoMapper;
+﻿/*      Description:    This class is a controller for supervisors from the supervisor view model
+ *      Author:         Rola Samman
+*/
+
+using AutoMapper;
 using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
@@ -113,5 +117,12 @@ namespace InternshipManagementSystemWeb.Controllers
                 return View();
             }
         }
+
+        ////GET: /InternshipCourse/ListSections/5
+        //public PartialViewResult ListSupervisorFullName(int id)
+        //{
+        //    var list = db.Supervisors.ToList().Select(e => new { e.SupervisorId, e.FullName });
+        //    ViewBag.SupervisorId = new SelectList(list, "Id", "FullName");
+        //}
     }
 }

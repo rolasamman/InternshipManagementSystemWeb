@@ -1,4 +1,8 @@
-﻿using AutoMapper;
+﻿/*      Description:    This class is a controller for announcemtn from the announcement view model
+ *      Author:         Rola Samman
+*/
+
+using AutoMapper;
 using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
@@ -16,7 +20,7 @@ namespace InternshipManagementSystemWeb.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Announcement
-        public ActionResult Index()
+        public ActionResult Index() 
         {
             var announcements = db.Announcements.ToList();
             var model = new List<AnnouncementViewModel>();
@@ -27,7 +31,7 @@ namespace InternshipManagementSystemWeb.Controllers
                {
                   AnnouncementId = item.AnnouncementId,
                   Subject = item.Subject,
-                  AnnouncementDate = item.AnnouncementDate,
+                  //AnnouncementDate = item.AnnouncementDate,
                   Description = item.Description
                });           
             }

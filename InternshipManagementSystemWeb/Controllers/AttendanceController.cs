@@ -1,4 +1,8 @@
-﻿using AutoMapper;
+﻿/*      Description:    This class is a controller for attendance from the attendance view model
+ *      Author:         Rola Samman
+*/
+
+using AutoMapper;
 using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;

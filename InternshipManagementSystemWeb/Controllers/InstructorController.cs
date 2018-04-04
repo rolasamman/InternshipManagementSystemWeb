@@ -1,4 +1,8 @@
-﻿using InternshipManagementSystemWeb.Models;
+﻿/*      Description:    This class is a controller for instructor from the instructor view model
+ *      Author:         Rola Samman
+*/
+
+using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using Microsoft.AspNet.Identity.Owin;
 using System;
