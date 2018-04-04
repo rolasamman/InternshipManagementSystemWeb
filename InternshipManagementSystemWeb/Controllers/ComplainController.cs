@@ -21,9 +21,7 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Complain
         public ActionResult Index()
         {
-
             var complains = db.Complains.ToList();
-
             var model = new List<ComplainViewModel>();
             foreach (var item in complains)
             {
@@ -32,7 +30,7 @@ namespace InternshipManagementSystemWeb.Controllers
                    ComplainId = item.ComplainId,
                    Title = item.Title,
                    Description = item.Description,
-                   CreationDate = item.CreationDate,
+                   //CreationDate = item.CreationDate,
                    //ComplainStatus = item.ComplainStatus
                 });
             }
@@ -43,19 +41,10 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Complain/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Complain complain = db.Complains.Find(id);
-            if (complain == null)
-            {
-                return HttpNotFound();
-            }
             ComplainViewModel model = Mapper.Map<Complain, ComplainViewModel>(complain);
-            return View(model);
+            return View(model); 
         }
-
 
         // GET: Complain/Create
         public ActionResult Create()
@@ -65,18 +54,18 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // POST: Complain/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ComplainViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                Complain complain = Mapper.Map<ComplainViewModel, Complain>(model);
+                complain.CreationDate = DateTime.Now;
+                db.Complains.Add(complain);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
 
         // GET: Complain/Edit/5

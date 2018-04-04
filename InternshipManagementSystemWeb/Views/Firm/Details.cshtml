@@ -1,0 +1,58 @@
+﻿@model InternshipManagementSystemWeb.ViewModels.FirmViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FirmViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirmId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirmId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirmName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirmName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfVacencies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfVacencies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IndustryField)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IndustryField)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

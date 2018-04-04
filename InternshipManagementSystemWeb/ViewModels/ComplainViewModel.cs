@@ -29,7 +29,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         [StringLength(900)]
         public string Description { get; set; }
 
-        public DateTime CreationDate { get; set; }
+        public DateTime? CreationDate { get; set; }
 
         //public int Status { get; set; }
 

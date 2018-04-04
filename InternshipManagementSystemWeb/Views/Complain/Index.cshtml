@@ -23,7 +23,7 @@
         <th>
             @Html.DisplayNameFor(model => model.CreationDate)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.ReplyDate)
         </th>
         <th>
@@ -34,7 +34,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StudentId)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -52,7 +52,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.CreationDate)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.ReplyDate)
         </td>
         <td>
@@ -63,7 +63,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StudentId)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |

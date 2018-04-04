@@ -76,48 +76,48 @@ namespace InternshipManagementSystemWeb.Migrations
             ///////////////////////////////////////////////////////////////////  Seeding:
 
             //Add examples of Admins
-            //var admins = new List<Admin>
-            //    {
-            //          new Admin {EmployeeUniversityId = "2012", FirstName = "Mervat", LastName = "Khodary", Office = "370",
-            //        Email = "mkhodary@dah.edu.sa", Phone = "6000012", Extension = "64" //Mobile = "0543222210" 
-            //          },
-            //    };
+            var admins = new List<Admin>
+                {
+                      new Admin {EmployeeUniversityId = "2012", FirstName = "Mervat", LastName = "Khodary", Office = "370",
+                    Email = "mkhodary@dah.edu.sa", Phone = "6000012", Extension = "64" //Mobile = "0543222210" 
+                      },
+                };
 
-            //admins.ForEach(c => context.Admins.AddOrUpdate(m => m.EmployeeUniversityId, c));
-            //context.SaveChanges();
+            admins.ForEach(c => context.Admins.AddOrUpdate(m => m.EmployeeUniversityId, c));
+            context.SaveChanges();
 
             // Add examples of Instructors
-            //var instructors = new List<Instructor>
-            //    {
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "1234", FirstName = "Huda", LastName = "Saied", Office = "301",
-            //        Email = "hsaied@dah.edu.sa", Phone = "6000012", Extension = "55" //Mobile = "0555432123"
-            //        },
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "2345", FirstName = "Salma", LastName = "Nasif", Office = "064",
-            //        Email = "snasif@dah.edu.sa", Phone = "6000012", Extension = "23" //Mobile = "0543243215"
-            //        },
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "5678", FirstName = "Hanaa", LastName = "Haitham", Office = "211",
-            //        Email = "hhaitham@dah.edu.sa", Phone = "6000012", Extension = "70" //Mobile = "0598734503"
-            //        },
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "1223", FirstName = "Samar", LastName = "Alafan", Office = "332",
-            //        Email = "salafan@dah.edu.sa", Phone = "6000012", Extension = "35" //Mobile = "0543211298"
-            //        },
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "4503", FirstName = "Amal", LastName = "Alsamad", Office = "119",
-            //        Email = "aalsamad@dah.edu.sa", Phone = "6000012", Extension = "88" //Mobile = "0500054321"
-            //        },
-            //    };
+            var instructors = new List<Instructor>
+                {
+                 new Instructor
+                    {
+                    EmployeeUniversityId = "1234", FirstName = "Huda", LastName = "Saied", Office = "301",
+                    Email = "hsaied@dah.edu.sa", Phone = "6000012", Extension = "55" //Mobile = "0555432123"
+                    },
+                 new Instructor
+                    {
+                    EmployeeUniversityId = "2345", FirstName = "Salma", LastName = "Nasif", Office = "064",
+                    Email = "snasif@dah.edu.sa", Phone = "6000012", Extension = "23" //Mobile = "0543243215"
+                    },
+                 new Instructor
+                    {
+                    EmployeeUniversityId = "5678", FirstName = "Hanaa", LastName = "Haitham", Office = "211",
+                    Email = "hhaitham@dah.edu.sa", Phone = "6000012", Extension = "70" //Mobile = "0598734503"
+                    },
+                 new Instructor
+                    {
+                    EmployeeUniversityId = "1223", FirstName = "Samar", LastName = "Alafan", Office = "332",
+                    Email = "salafan@dah.edu.sa", Phone = "6000012", Extension = "35" //Mobile = "0543211298"
+                    },
+                 new Instructor
+                    {
+                    EmployeeUniversityId = "4503", FirstName = "Amal", LastName = "Alsamad", Office = "119",
+                    Email = "aalsamad@dah.edu.sa", Phone = "6000012", Extension = "88" //Mobile = "0500054321"
+                    },
+                };
 
-            //instructors.ForEach(c => context.Instructors.AddOrUpdate(m => m.EmployeeUniversityId, c));
-            //context.SaveChanges();
+            instructors.ForEach(c => context.Instructors.AddOrUpdate(m => m.EmployeeUniversityId, c));
+            context.SaveChanges();
 
             // Add examples of announceements
             var announcements = new List<Announcement>
@@ -176,15 +176,15 @@ namespace InternshipManagementSystemWeb.Migrations
             context.SaveChanges();
 
             // Add examples of internship courses
-            //var internshipCourses = new List<InternshipCourse>
-            //    {
-            //        new InternshipCourse { CourseCode = "BBIS 4403", CourseName = "Internship: Business Information System",
-            //            Description = "Internship course for BIS students.", Credits = 3},
-            //        new InternshipCourse { CourseCode = "FINC", CourseName = "Internship: Banking and finance",
-            //            Description = "Internship course for Banking and finance students.", Credits = 3,}
-            //    };
-            //internshipCourses.ForEach(c => context.InternshipCourses.AddOrUpdate(m => m.CourseName, c));
-            //context.SaveChanges();
+            var internshipCourses = new List<InternshipCourse>
+                {
+                    new InternshipCourse { CourseCode = "BBIS 4403", CourseName = "Internship: Business Information System",
+                        Description = "Internship course for BIS students.", Credits = 3},
+                    new InternshipCourse { CourseCode = "FINC", CourseName = "Internship: Banking and finance",
+                        Description = "Internship course for Banking and finance students.", Credits = 3,}
+                };
+            internshipCourses.ForEach(c => context.InternshipCourses.AddOrUpdate(m => m.CourseName, c));
+            context.SaveChanges();
 
             // Add examples of Supervisors
             //var supervisors = new List<Announcement>

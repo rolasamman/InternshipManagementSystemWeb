@@ -43,18 +43,8 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Firm/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Firm firm = db.Firms.Find(id);
-            if (firm == null)
-            {
-                return HttpNotFound();
-            }
-
             FirmViewModel model = Mapper.Map<Firm, FirmViewModel>(firm);
-
             return View(model);
         }
 
@@ -76,22 +66,13 @@ namespace InternshipManagementSystemWeb.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(model);
+            return View(model); 
         }
 
         // GET: Firm/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Firm firm = db.Firms.Find(id);
-            if (firm == null)
-            {
-                return HttpNotFound();
-            }
+            Firm firm = db.Firms.Find(id);          
             FirmViewModel model = Mapper.Map<Firm, FirmViewModel>(firm);
             return View(model);
         }
@@ -116,15 +97,7 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Firm/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Firm firm = db.Firms.Find(id);
-            if (firm == null)
-            {
-                return HttpNotFound();
-            }
             FirmViewModel model = Mapper.Map<FirmViewModel>(firm);
             return View(model);
         }
