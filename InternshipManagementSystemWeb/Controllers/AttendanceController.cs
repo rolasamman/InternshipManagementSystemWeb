@@ -1,4 +1,5 @@
-﻿/*      Description:    This class is a controller for attendance from the attendance view model
+﻿/*    
+ *      Description:    This class is a controller for attendance from the attendance view model
  *      Author:         Rola Samman
 */
 

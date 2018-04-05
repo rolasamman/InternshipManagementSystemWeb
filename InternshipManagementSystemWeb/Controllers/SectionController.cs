@@ -1,4 +1,5 @@
-﻿/*      Description:    This class is a controller for section from the section view model
+﻿/*      
+ *      Description:    This class is a controller for section from the section view model
  *      Author:         Rola Samman
 */
 

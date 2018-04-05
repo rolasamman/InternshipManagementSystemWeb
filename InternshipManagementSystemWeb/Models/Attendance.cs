@@ -1,3 +1,9 @@
+/*      
+ *      Description:    Attendance model is for student attendance
+ *                      students need to log their attendance to be in record
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

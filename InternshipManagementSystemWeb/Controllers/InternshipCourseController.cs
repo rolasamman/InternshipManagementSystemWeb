@@ -1,4 +1,5 @@
-﻿/*      Description:    This class is a controller for internship course from the internship course view model
+﻿/*  
+ *      Description:    This class is a controller for internship course from the internship course view model
  *      Author:         Rola Samman
 */
 

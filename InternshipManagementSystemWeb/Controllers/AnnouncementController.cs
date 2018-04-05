@@ -1,4 +1,5 @@
-﻿/*      Description:    This class is a controller for announcemtn from the announcement view model
+﻿/*     
+ *     Description:    This class is a controller for announcemtn from the announcement view model
  *      Author:         Rola Samman
 */
 
@@ -31,7 +32,7 @@ namespace InternshipManagementSystemWeb.Controllers
                {
                   AnnouncementId = item.AnnouncementId,
                   Subject = item.Subject,
-                  //AnnouncementDate = item.AnnouncementDate,
+                  AnnouncementDate = item.AnnouncementDate,
                   Description = item.Description
                });           
             }

@@ -1,4 +1,5 @@
-﻿/*      Description:    This class is a controller for supervisors from the supervisor view model
+﻿/*      
+ *      Description:    This class is a controller for supervisors from the supervisor view model
  *      Author:         Rola Samman
 */
 

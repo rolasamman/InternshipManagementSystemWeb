@@ -1,4 +1,5 @@
-﻿/*      Description:    This class is a controller for firm from the firm view model
+﻿/*   
+ *      Description:    This class is a controller for firm from the firm view model
  *      Author:         Rola Samman
 */
 

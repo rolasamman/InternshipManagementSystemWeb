@@ -1,3 +1,9 @@
+/*      
+ *      Description:    This class is the internship evaluation model
+ *                      by the end of the internship period students need to evalate their work experience and work surpervisors
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

@@ -1,3 +1,10 @@
+/*      
+ *      Description:    This class is the internship course model
+ *                      the internship course is the course dedicated for internship 
+ *                      students register in the course and instructors assigned to courses
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

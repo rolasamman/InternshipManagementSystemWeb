@@ -1,3 +1,9 @@
+/*      
+ *      Description:    This class is the internship criterion model
+ *                      internship criterion creates the criteria used for evalating the internship course by the students
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

@@ -1,3 +1,10 @@
+/*      
+ *      Description:    This class is the instructor model 
+ *                      instructors are emloyees of the university 
+ *                      they responsible for students and supervise their progress in the internship in the university
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

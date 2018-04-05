@@ -1,3 +1,10 @@
+/*      
+ *      Description:    This class is the meeting on campus model
+ *                      during the internship instructors meet with their students 
+ *                      to discuss the students progress in the internship
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

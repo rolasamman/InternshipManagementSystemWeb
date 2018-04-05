@@ -1,3 +1,11 @@
+/*      
+ *      Description:    This class is the supervisor evalutaion model                     
+ *                      as they are not part of the university and they cannot access the system by the end 
+ *                      of the internship period, an evaluation link is to be sent to the supervisor
+ *                      then the supervisor have to evaluate students
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

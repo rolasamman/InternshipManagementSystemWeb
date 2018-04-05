@@ -1,4 +1,5 @@
-﻿/*      Description:    This class is a controller for instructor from the instructor view model
+﻿/*    
+ *      Description:    This class is a controller for instructor from the instructor view model
  *      Author:         Rola Samman
 */
 

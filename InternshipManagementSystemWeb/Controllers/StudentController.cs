@@ -1,4 +1,5 @@
-﻿/*      Description:    This class is a controller for student from the student view model
+﻿/*      
+ *      Description:    This class is a controller for student from the student view model
  *      Author:         Rola Samman
 */
 

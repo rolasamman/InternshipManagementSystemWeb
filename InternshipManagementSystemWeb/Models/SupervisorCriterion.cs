@@ -1,3 +1,10 @@
+/*      
+ *      Description:    This class is the supervisor criterion model
+ *                      by the end of the internship period, an evaluation link is to be sent to the supervisor
+ *                      supervisor criterion model is about the criteria supervisors need to follow to evaluate students
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

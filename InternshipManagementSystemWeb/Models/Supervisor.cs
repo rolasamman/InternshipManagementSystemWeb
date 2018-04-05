@@ -1,3 +1,13 @@
+/*      
+ *      Description:    This class is the supervisor model
+ *                      supervisors are employees in different firms where students intern at 
+ *                      supervisors are responsibel to supervise students in the firm and train them or assign them to projects
+ *                      by the end of the internship period, supervisors need to 
+ *                      evaluate the student's performance and growth throughout the internshup period
+ *                      they are not part of the university and they cannot access the system 
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

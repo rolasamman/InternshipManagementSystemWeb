@@ -1,3 +1,10 @@
+/*      
+ *      Description:    This class is the announcement model
+ *                      announcements are made by the admin regarding internship matters 
+ *                      announcements can be viewed by students and instructors
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

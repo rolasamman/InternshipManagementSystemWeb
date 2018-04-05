@@ -1,3 +1,10 @@
+/*      
+ *      Description:    This class is the complain model
+ *                      complains are submitted by students to the admin
+ *                      the admin handels complains with students and work on processing their issues
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

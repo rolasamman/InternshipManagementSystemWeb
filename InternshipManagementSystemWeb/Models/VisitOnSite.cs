@@ -1,3 +1,9 @@
+/*      
+ *      Description:    This class is the visit on site model                     
+ *                      instructors need to visit students and their firm supervisor and document their visit 
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

@@ -1,3 +1,9 @@
+/*      
+ *      Description:    This class is the student model
+ *                      students enrolled in the university and registered in the internship course
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

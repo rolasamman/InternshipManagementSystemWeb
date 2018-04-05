@@ -1,3 +1,10 @@
+/*      
+ *      Description:    This class is the admins model
+ *                      the admin is an employee from the internship department 
+ *                      her responsibility is to manage and coordinate internship matters
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

@@ -1,4 +1,5 @@
-﻿/*      Description:    This class is a controller for complain from the complain view model
+﻿/*
+ *      Description:    This class is a controller for complain from the complain view model
  *      Author:         Rola Samman
 */
 

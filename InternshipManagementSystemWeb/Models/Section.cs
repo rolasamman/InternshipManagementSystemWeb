@@ -1,3 +1,9 @@
+/*      
+ *      Description:    This class is the section model
+ *                      an internship course has a number of sections 
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

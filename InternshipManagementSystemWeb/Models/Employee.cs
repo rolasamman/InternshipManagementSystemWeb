@@ -1,3 +1,9 @@
+/*      
+ *      Description:    This class is the Employee model
+ *                      employees are members of the university and they can be admins or instructors 
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;

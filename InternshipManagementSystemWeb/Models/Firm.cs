@@ -1,3 +1,9 @@
+/*      
+ *      Description:    This class is the firm model
+ *                      firms are institutions or organizations where students apply and attend at for internship
+ *      Author:         Rola Samman
+*/
+
 namespace InternshipManagementSystemWeb.Models
 {
     using System;
