@@ -313,6 +313,8 @@
     <Content Include="Views\Complain\Create.cshtml" />
     <Content Include="Views\Complain\Index.cshtml" />
     <Content Include="Views\Announcement\Index.cshtml" />
+    <Content Include="Views\Attendance\Create.cshtml" />
+    <Content Include="Views\Attendance\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,15 +21,23 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         public int AttendanceId { get; set; }
 
-        //[Column(TypeName = "date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date")]
         public DateTime AttendanceDate { get; set; }
 
+        [DataType(DataType.Time)]
+        [DisplayFormat(DataFormatString = "{0:t}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Time In")]
         public TimeSpan TimeIn { get; set; }
 
+        [DataType(DataType.Time)]
+        [DisplayFormat(DataFormatString = "{0:hh:mm}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Time Out")]
         public TimeSpan TimeOut { get; set; }
 
         [Required]
+        [DataType(DataType.MultilineText)]
         [StringLength(900)]
         public string Description { get; set; }
 

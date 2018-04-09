@@ -1,6 +1,6 @@
 ﻿/*     
  *     Description:    This class is a controller for announcemtn from the announcement view model
- *      Author:         Rola Samman
+ *      Author:        Rola Samman
 */
 
 using AutoMapper;

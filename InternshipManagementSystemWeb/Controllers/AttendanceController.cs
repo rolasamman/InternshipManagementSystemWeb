@@ -62,7 +62,6 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: Attendance/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(AttendanceViewModel model)
@@ -70,7 +69,6 @@ namespace InternshipManagementSystemWeb.Controllers
             if (ModelState.IsValid)
             {
                 Attendance attendance = Mapper.Map<AttendanceViewModel, Attendance>(model);
-
                 db.Attendances.Add(attendance);
                 db.SaveChanges();
                 return RedirectToAction("Index");
