@@ -31,19 +31,16 @@ namespace InternshipManagementSystemWeb.Controllers
 
             foreach (var item in users)
             {
-                if (!(item is Supervisor))
+                model.Add(new SupervisorViewModel
                 {
-                    model.Add(new SupervisorViewModel
-                    {
-                        SupervisorId = item.SupervisorId,
-                        FirstName = item.FirstName,
-                        LastName = item.LastName,
-                        Email = item.Email,
-                        Phone = item.Phone,
-                        Mobile = item.Mobile,
-                        Department = item.Department,
-                    });
-                }
+                    SupervisorId = item.SupervisorId,
+                    FirstName = item.FirstName,
+                    LastName = item.LastName,
+                    Email = item.Email,
+                    Phone = item.Phone,
+                    Mobile = item.Mobile,
+                    Department = item.Department,
+                });           
             }
             return View(model);
         }

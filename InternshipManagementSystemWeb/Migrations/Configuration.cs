@@ -120,19 +120,19 @@ namespace InternshipManagementSystemWeb.Migrations
             //context.SaveChanges();
 
             // Add examples of announceements
-            //var announcements = new List<Announcement>
-            //    {
-            //        new Announcement {Subject = "Graphic Design needed",
-            //            Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
-            //        new Announcement {Subject = "HR Internship opportunity",
-            //            Description = "Internhsip student majored in HR needed, three months internship program" },
-            //        new Announcement {Subject = "Coop program for MIS",
-            //            Description = "Savola is offering a trained coop program for MIS students" },
-            //        new Announcement {Subject = "STEAM Compitition",
-            //            Description = "Limited opportunity for all student to joing the challenge" }
-            //    };
-            //announcements.ForEach(c => context.Announcements.AddOrUpdate(m => m.Subject, c));
-            //context.SaveChanges();
+            var announcements = new List<Announcement>
+                {
+                    new Announcement {Subject = "Graphic Design needed",
+                        Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
+                    new Announcement {Subject = "HR Internship opportunity",
+                        Description = "Internhsip student majored in HR needed, three months internship program" },
+                    new Announcement {Subject = "Coop program for MIS",
+                        Description = "Savola is offering a trained coop program for MIS students" },
+                    new Announcement {Subject = "STEAM Compitition",
+                        Description = "Limited opportunity for all student to joing the challenge" }
+                };
+            announcements.ForEach(c => context.Announcements.AddOrUpdate(m => m.Subject, c));
+            context.SaveChanges();
 
             // Add examples of attendances
             //var attendances = new List<Attendance>
@@ -168,10 +168,10 @@ namespace InternshipManagementSystemWeb.Migrations
             //Add examples of Sections
             var sections = new List<Section>
                 {
-                      new Section {Semester = Semester.SummerI, Year = 2018, Capacity = 20 },
-                      new Section {Semester = Semester.Fall, Year = 2019, Capacity = 20 },
-                      new Section {Semester = Semester.Fall, Year = 2019, Capacity = 15 },
-                      new Section {Semester = Semester.Spring, Year = 2019, Capacity = 10 }
+                      new Section {Semester = Semester.SummerI, Year = 2018, Capacity = 20},
+                      new Section {Semester = Semester.Fall, Year = 2019, Capacity = 20},
+                      new Section {Semester = Semester.Fall, Year = 2019, Capacity = 15},
+                      new Section {Semester = Semester.Spring, Year = 2019, Capacity = 10}
                 };
 
             sections.ForEach(c => context.Sections.AddOrUpdate(m => m.Semester, c));
@@ -190,14 +190,18 @@ namespace InternshipManagementSystemWeb.Migrations
             context.SaveChanges();
 
             // Add examples of Supervisors
-            //var supervisors = new List<Announcement>
-            //    {
-            //        new Announcement {Subject = "Graphic Design needed",
-            //            Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
+            var supervisors = new List<Supervisor>
+                {
+                    new Supervisor {FirstName = "Amal", LastName = "Al-Nahdi", Email = "amal-alnahdi@unilever.com",
+                        Phone = "0126789009", Mobile = "0566665678", Department = "Human Resources", FirmId = 1},
+                    new Supervisor {FirstName = "Zainab", LastName = "Bin Mahfoz", Email = "Zainabbinmahfoz@ncb.sa",
+                        Phone = "0126654321", Mobile = "0554321234", Department = "Human Resources", FirmId = 2},
+                     new Supervisor {FirstName = "Ahmad", LastName = "Abdulrahman", Email = "ahmadabdulrahman@savola.com",
+                        Phone = "01267890000", Mobile = "0542222212", Department = "Human Resources", FirmId = 3},
 
-            //    };
-            //supervisors.ForEach(c => context.Supervisors.AddOrUpdate(m => m.name, c));
-            //context.SaveChanges();
+                };
+            supervisors.ForEach(c => context.Supervisors.AddOrUpdate(m => m.Email, c));
+            context.SaveChanges();
 
         }
     }

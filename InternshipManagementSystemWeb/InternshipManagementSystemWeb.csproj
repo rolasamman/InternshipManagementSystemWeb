@@ -187,6 +187,7 @@
     <Compile Include="Controllers\SectionController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SupervisorController.cs" />
+    <Compile Include="Controllers\VisitOnSiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -254,6 +255,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -298,7 +301,6 @@
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <Content Include="Views\Firm\Create.cshtml" />
     <Content Include="Views\Supervisor\Create.cshtml" />
-    <Content Include="Views\Supervisor\Index.cshtml" />
     <Content Include="Views\InternshipCourse\Create.cshtml" />
     <Content Include="Views\InternshipCourse\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
@@ -315,6 +317,9 @@
     <Content Include="Views\Announcement\Index.cshtml" />
     <Content Include="Views\Attendance\Create.cshtml" />
     <Content Include="Views\Attendance\Index.cshtml" />
+    <Content Include="Views\Section\Index.cshtml" />
+    <Content Include="Views\Supervisor\Index.cshtml" />
+    <Content Include="Views\VisitOnSite\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
