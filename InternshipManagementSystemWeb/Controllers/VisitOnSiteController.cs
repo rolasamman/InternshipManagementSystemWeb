@@ -22,8 +22,8 @@ namespace InternshipManagementSystemWeb.Controllers
             {
                 //model.Add(new VisitOnSiteViewModel
                 //{
-                    
-                   
+
+
                 //});
             }
             return View(model);

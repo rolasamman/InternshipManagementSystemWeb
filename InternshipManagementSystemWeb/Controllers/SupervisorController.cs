@@ -9,6 +9,7 @@ using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -48,7 +49,26 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Supervisor/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Supervisor supervisor = db.Supervisors.Find(id);
+            if (supervisor == null)
+            {
+                return HttpNotFound();
+            }
+            var model = new SupervisorViewModel
+            {
+                SupervisorId = supervisor.SupervisorId,
+                FirstName = supervisor.FirstName,
+                LastName = supervisor.LastName,
+                Email = supervisor.Email,
+                Phone = supervisor.Phone,
+                Mobile = supervisor.Mobile,
+                Department = supervisor.Department,
+            };
+            return View(model);
         }
 
         // GET: Supervisor/Create
@@ -101,19 +121,22 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: Supervisor/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
+            Supervisor supervisor = db.Supervisors.Find(id);
+            db.Supervisors.Remove(supervisor);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                db.Dispose();
             }
-            catch
-            {
-                return View();
-            }
+            base.Dispose(disposing);
         }
 
         ////GET: /InternshipCourse/ListSections/5

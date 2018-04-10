@@ -35,6 +35,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         public string LastName { get; set; }
 
         [NotMapped]
+        [Display(Name = "Name")]
         public string FullName { get { return (FirstName + " " + LastName); } }
 
         [Required]

@@ -189,6 +189,15 @@ namespace InternshipManagementSystemWeb.Migrations
             internshipCourses.ForEach(c => context.InternshipCourses.AddOrUpdate(m => m.CourseName, c));
             context.SaveChanges();
 
+            // Add examples of internship courses
+            //var students = new List<Student>
+            //    {
+            //        new Student { FirstName = "Abeer", LastName = "Mohammed", StudentUniversityId = "1510987", 
+            //    };
+
+            //internshipCourses.ForEach(c => context.InternshipCourses.AddOrUpdate(m => m.CourseName, c));
+            //context.SaveChanges();
+
             // Add examples of Supervisors
             var supervisors = new List<Supervisor>
                 {
@@ -203,6 +212,15 @@ namespace InternshipManagementSystemWeb.Migrations
             supervisors.ForEach(c => context.Supervisors.AddOrUpdate(m => m.Email, c));
             context.SaveChanges();
 
+            // Add examples of Supervisors
+            //var visitOnSites = new List<VisitOnSite>
+            //    {
+            //        new VisitOnSite {VisitDate = "2018-3-3", StartTime = "10:00 AM", EndTime = "04:00 PM",
+            //            Feedback = "Discussed student progress"},
+
+            //    };
+            //visitOnSites.ForEach(c => context.VisitOnSites.AddOrUpdate(m => m.VisitDate, c));
+            //context.SaveChanges();
         }
     }
 }
