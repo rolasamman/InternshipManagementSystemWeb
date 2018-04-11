@@ -27,7 +27,7 @@ namespace InternshipManagementSystemWeb.Migrations
 
             string adminEmail = "admin@dah.edu";
 
-            string adminUserName = "admin@dah.edu";
+            string adminUserName = "admin";
 
             string adminPassword = "admin123";
 
@@ -100,37 +100,76 @@ namespace InternshipManagementSystemWeb.Migrations
                 {
                  new Instructor
                     {
-                    UserName = "hsaied", EmployeeUniversityId = "1234", FirstName = "Huda", LastName = "Saied", Office = "301",
-                    Email = "hsaied@dah.edu.sa", Phone = "6000012", Extension = "55", Mobile = "0555432123"
+                     UserName = "hsaied",
+                     EmployeeUniversityId = "1234",
+                     FirstName = "Huda",
+                     LastName = "Saied",
+                     Office = "301",
+                     Email = "hsaied@dah.edu.sa",
+                     Phone = "6000012",
+                     Extension = "55",
+                     Mobile = "0555432123",
+                     Department = "Marketing"
                     },
                  new Instructor
                     {
-                    UserName = "snasif", EmployeeUniversityId = "2345", FirstName = "Salma", LastName = "Nasif", Office = "064",
-                    Email = "snasif@dah.edu.sa", Phone = "6000012", Extension = "23", Mobile = "0543243215"
+                     UserName = "snasif",
+                     EmployeeUniversityId = "2345",
+                     FirstName = "Salma",
+                     LastName = "Nasif",
+                     Office = "064",
+                     Email = "snasif@dah.edu.sa",
+                     Phone = "6000012",
+                     Extension = "23",
+                     Mobile = "0543243215",
+                     Department = "MIS"
                     },
                  new Instructor
                     {
-                    UserName = "hhaitham", EmployeeUniversityId = "5678", FirstName = "Hanaa", LastName = "Haitham", Office = "211",
-                    Email = "hhaitham@dah.edu.sa", Phone = "6000012", Extension = "70", Mobile = "0598734503"
+                     UserName = "hhaitham",
+                     EmployeeUniversityId = "5678",
+                     FirstName = "Hanaa",
+                     LastName = "Haitham",
+                     Office = "211",
+                     Email = "hhaitham@dah.edu.sa",
+                     Phone = "6000012",
+                     Extension = "70",
+                     Mobile = "0598734503",
+                     Department = "MIS"
                     },
                  new Instructor
                     {
-                    UserName = "salafan", EmployeeUniversityId = "1223", FirstName = "Samar", LastName = "Alafan", Office = "332",
-                    Email = "salafan@dah.edu.sa", Phone = "6000012", Extension = "35", Mobile = "0543211298"
+                     UserName = "salafan",
+                     EmployeeUniversityId = "1223",
+                     FirstName = "Samar",
+                     LastName = "Alafan",
+                     Office = "332",
+                     Email = "salafan@dah.edu.sa",
+                     Phone = "6000012",
+                     Extension = "35",
+                     Mobile = "0543211298",
+                     Department = "HR",
                     },
                  new Instructor
                     {
-                    UserName = "aalsamad", EmployeeUniversityId = "4503", FirstName = "Amal", LastName = "Alsamad", Office = "119",
-                    Email = "aalsamad@dah.edu.sa", Phone = "6000012", Extension = "88", Mobile = "0500054321"
-                    },
+                     UserName = "aalsamad",
+                     EmployeeUniversityId = "4503",
+                     FirstName = "Amal",
+                     LastName = "Alsamad",
+                     Office = "119",
+                     Email = "aalsamad@dah.edu.sa",
+                     Phone = "6000012",
+                     Extension = "88",
+                     Mobile = "0500054321",
+                     Department = "Design"
+                    }
                 };
-
 
             foreach (var instructor in instructors)
             {
                 if (userManager.FindByName(instructor.UserName) == null)
                 {
-                    userManager.Create(instructor, "instructor123");
+                    userManager.Create(instructor, "inst123");
                 }
 
                 var usertemp = userManager.FindByName(instructor.UserName);
