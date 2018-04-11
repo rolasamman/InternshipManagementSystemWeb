@@ -195,7 +195,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Announcement.cs" />
-    <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Complain.cs" />
     <Compile Include="Models\Employee.cs" />

@@ -18,7 +18,7 @@ namespace InternshipManagementSystemWeb.Models
         }
     }
 
-    public partial class ApplicationDbContext : IdentityDbContext<ApplicationUser, CustomRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, CustomRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
         public ApplicationDbContext()
             : base("DefaultConnection")
