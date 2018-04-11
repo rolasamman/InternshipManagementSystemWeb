@@ -143,13 +143,13 @@ namespace InternshipManagementSystemWeb.Migrations
             // Add examples of announceements
             var announcements = new List<Announcement>
                 {
-                    new Announcement {AnnouncementDate = new DateTime(2018,2,3), Subject = "Graphic Design needed",
+                    new Announcement {Subject = "Graphic Design needed", AnnouncementDate = new DateTime(2018,2,3),
                         Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
-                    new Announcement {AnnouncementDate = new DateTime(2018,2,11), Subject = "HR Internship opportunity",
+                    new Announcement {Subject = "HR Internship opportunity", AnnouncementDate = new DateTime(2018,2,11),
                         Description = "Internhsip student majored in HR needed, three months internship program" },
-                    new Announcement {AnnouncementDate = new DateTime(2018,3,4), Subject = "Coop program for MIS",
+                    new Announcement {Subject = "Coop program for MIS", AnnouncementDate = new DateTime(2018,3,4),
                         Description = "Savola is offering a trained coop program for MIS students" },
-                    new Announcement {AnnouncementDate = new DateTime(2018,3,7), Subject = "STEAM Compitition",
+                    new Announcement {Subject = "STEAM Compitition", AnnouncementDate = new DateTime(2018,3,7),
                         Description = "Limited opportunity for all student to joing the challenge" }
                 };
             announcements.ForEach(c => context.Announcements.AddOrUpdate(m => m.Subject, c));
