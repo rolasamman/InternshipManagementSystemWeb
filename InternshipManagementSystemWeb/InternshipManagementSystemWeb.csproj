@@ -353,12 +353,10 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Firm\Index.cshtml" />
-    <Content Include="Views\Firm\Details.cshtml" />
     <Content Include="Views\Firm\Edit.cshtml" />
     <Content Include="Views\Firm\Delete.cshtml" />
     <Content Include="Views\Complain\Create.cshtml" />
     <Content Include="Views\Complain\Index.cshtml" />
-    <Content Include="Views\Announcement\Index.cshtml" />
     <Content Include="Views\Attendance\Create.cshtml" />
     <Content Include="Views\Attendance\Index.cshtml" />
     <Content Include="Views\Section\Index.cshtml" />
@@ -366,6 +364,8 @@
     <Content Include="Views\VisitOnSite\Create.cshtml" />
     <Content Include="Views\Supervisor\Details.cshtml" />
     <Content Include="Views\Supervisor\Delete.cshtml" />
+    <Content Include="Views\Firm\Details.cshtml" />
+    <Content Include="Views\Announcement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

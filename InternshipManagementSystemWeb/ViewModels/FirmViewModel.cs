@@ -35,5 +35,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         [Required]
         [StringLength(80)]
         public string IndustryField { get; set; }
+
+
     }
 }

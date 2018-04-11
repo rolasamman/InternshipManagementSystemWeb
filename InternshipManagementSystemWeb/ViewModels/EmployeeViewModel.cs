@@ -61,6 +61,10 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         public string Extension { get; set; }
 
+        [Required]
+        [StringLength(20)]
+        public string Mobile { get; set; }
+
         public string Roles { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         public int AttendanceId { get; set; }
 
-        [DataType(DataType.Date)]
+        //[DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date")]
         public DateTime AttendanceDate { get; set; }

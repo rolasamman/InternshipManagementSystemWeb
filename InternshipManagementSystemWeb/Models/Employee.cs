@@ -43,9 +43,9 @@ namespace InternshipManagementSystemWeb.Models
         [StringLength(4)]
         public string Extension { get; set; }
 
-        //[Required]
-        //[StringLength(20)]
-        //public string Mobile { get; set; }
+        [Required]
+        [StringLength(20)]
+        public string Mobile { get; set; }
 
         //public int EmployeeType { get; set; }
         //Create a name for the type (EmployeeType1). And put a name for the attribute (EmployeeType2).

@@ -73,62 +73,83 @@ namespace InternshipManagementSystemWeb.Migrations
                 userManager.AddToRole(admin.Id, roles[0]);
             }
 
-            ///////////////////////////////////////////////////////////////////  Seeding:
-
             //Add examples of Admins
             //var admins = new List<Admin>
             //    {
-            //          new Admin {EmployeeUniversityId = "2012", FirstName = "Mervat", LastName = "Khodary", Office = "370",
-            //        Email = "mkhodary@dah.edu.sa", Phone = "6000012", Extension = "64" //Mobile = "0543222210" 
+            //          new Admin {UserName = "mkhodary", EmployeeUniversityId = "2012", FirstName = "Mervat", LastName = "Khodary",
+            //              Office = "370", Email = "mkhodary@dah.edu.sa", Phone = "6000012", Extension = "64" Mobile = "0543222210" 
             //          },
             //    };
 
-            //admins.ForEach(c => context.Admins.AddOrUpdate(m => m.EmployeeUniversityId, c));
-            //context.SaveChanges();
+            //foreach (var admin in admins)
+            //{
+            //    if (userManager.FindByName(admin.UserName) == null)
+            //    {
+            //        userManager.Create(admin, "admin123");
+            //    }
+
+            //    var usertemp = userManager.FindByName(admin.UserName);
+            //    if (!userManager.IsInRole(usertemp.Id, roles[1]))
+            //    {
+            //        userManager.AddToRole(usertemp.Id, roles[1]);
+            //    }
+            //}
 
             // Add examples of Instructors
-            //var instructors = new List<Instructor>
-            //    {
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "1234", FirstName = "Huda", LastName = "Saied", Office = "301",
-            //        Email = "hsaied@dah.edu.sa", Phone = "6000012", Extension = "55" //Mobile = "0555432123"
-            //        },
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "2345", FirstName = "Salma", LastName = "Nasif", Office = "064",
-            //        Email = "snasif@dah.edu.sa", Phone = "6000012", Extension = "23" //Mobile = "0543243215"
-            //        },
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "5678", FirstName = "Hanaa", LastName = "Haitham", Office = "211",
-            //        Email = "hhaitham@dah.edu.sa", Phone = "6000012", Extension = "70" //Mobile = "0598734503"
-            //        },
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "1223", FirstName = "Samar", LastName = "Alafan", Office = "332",
-            //        Email = "salafan@dah.edu.sa", Phone = "6000012", Extension = "35" //Mobile = "0543211298"
-            //        },
-            //     new Instructor
-            //        {
-            //        EmployeeUniversityId = "4503", FirstName = "Amal", LastName = "Alsamad", Office = "119",
-            //        Email = "aalsamad@dah.edu.sa", Phone = "6000012", Extension = "88" //Mobile = "0500054321"
-            //        },
-            ////    };
+            var instructors = new List<Instructor>
+                {
+                 new Instructor
+                    {
+                    UserName = "hsaied", EmployeeUniversityId = "1234", FirstName = "Huda", LastName = "Saied", Office = "301",
+                    Email = "hsaied@dah.edu.sa", Phone = "6000012", Extension = "55", Mobile = "0555432123"
+                    },
+                 new Instructor
+                    {
+                    UserName = "snasif", EmployeeUniversityId = "2345", FirstName = "Salma", LastName = "Nasif", Office = "064",
+                    Email = "snasif@dah.edu.sa", Phone = "6000012", Extension = "23", Mobile = "0543243215"
+                    },
+                 new Instructor
+                    {
+                    UserName = "hhaitham", EmployeeUniversityId = "5678", FirstName = "Hanaa", LastName = "Haitham", Office = "211",
+                    Email = "hhaitham@dah.edu.sa", Phone = "6000012", Extension = "70", Mobile = "0598734503"
+                    },
+                 new Instructor
+                    {
+                    UserName = "salafan", EmployeeUniversityId = "1223", FirstName = "Samar", LastName = "Alafan", Office = "332",
+                    Email = "salafan@dah.edu.sa", Phone = "6000012", Extension = "35", Mobile = "0543211298"
+                    },
+                 new Instructor
+                    {
+                    UserName = "aalsamad", EmployeeUniversityId = "4503", FirstName = "Amal", LastName = "Alsamad", Office = "119",
+                    Email = "aalsamad@dah.edu.sa", Phone = "6000012", Extension = "88", Mobile = "0500054321"
+                    },
+                };
 
-            //instructors.ForEach(c => context.Instructors.AddOrUpdate(m => m.EmployeeUniversityId, c));
-            //context.SaveChanges();
+
+            foreach (var instructor in instructors)
+            {
+                if (userManager.FindByName(instructor.UserName) == null)
+                {
+                    userManager.Create(instructor, "instructor123");
+                }
+
+                var usertemp = userManager.FindByName(instructor.UserName);
+                if (!userManager.IsInRole(usertemp.Id, roles[2]))
+                {
+                    userManager.AddToRole(usertemp.Id, roles[2]);
+                }
+            }
 
             // Add examples of announceements
             var announcements = new List<Announcement>
                 {
-                    new Announcement {Subject = "Graphic Design needed",
+                    new Announcement {AnnouncementDate = new DateTime(2018,2,3), Subject = "Graphic Design needed",
                         Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
-                    new Announcement {Subject = "HR Internship opportunity",
+                    new Announcement {AnnouncementDate = new DateTime(2018,2,11), Subject = "HR Internship opportunity",
                         Description = "Internhsip student majored in HR needed, three months internship program" },
-                    new Announcement {Subject = "Coop program for MIS",
+                    new Announcement {AnnouncementDate = new DateTime(2018,3,4), Subject = "Coop program for MIS",
                         Description = "Savola is offering a trained coop program for MIS students" },
-                    new Announcement {Subject = "STEAM Compitition",
+                    new Announcement {AnnouncementDate = new DateTime(2018,3,7), Subject = "STEAM Compitition",
                         Description = "Limited opportunity for all student to joing the challenge" }
                 };
             announcements.ForEach(c => context.Announcements.AddOrUpdate(m => m.Subject, c));
@@ -213,14 +234,18 @@ namespace InternshipManagementSystemWeb.Migrations
             context.SaveChanges();
 
             // Add examples of Supervisors
-            //var visitOnSites = new List<VisitOnSite>
-            //    {
-            //        new VisitOnSite {VisitDate = "2018-3-3", StartTime = "10:00 AM", EndTime = "04:00 PM",
-            //            Feedback = "Discussed student progress"},
+            var visitOnSites = new List<VisitOnSite>
+                {
+                    new VisitOnSite {VisitDate = new DateTime(2018,3,3), StartTime = new TimeSpan(8,30,0) , EndTime = new TimeSpan(10,30,0),
+                        Feedback = "Discussed student progress"},
+                    new VisitOnSite {VisitDate = new DateTime(2018,3,6), StartTime = new TimeSpan(10,0,0) , EndTime = new TimeSpan(11,30,0),
+                        Feedback = "Introduction and dicuss student learning outcome"},
+                    new VisitOnSite {VisitDate = new DateTime(2018,3,7), StartTime = new TimeSpan(9,30,0) , EndTime = new TimeSpan(11,0,0),
+                        Feedback = "Checking student positioning and settlment"}
 
-            //    };
-            //visitOnSites.ForEach(c => context.VisitOnSites.AddOrUpdate(m => m.VisitDate, c));
-            //context.SaveChanges();
+                };
+            visitOnSites.ForEach(c => context.VisitOnSites.AddOrUpdate(m => m.VisitDate, c));
+            context.SaveChanges();
         }
     }
 }

@@ -27,16 +27,16 @@ namespace InternshipManagementSystemWeb.Controllers
             var model = new List<AnnouncementViewModel>();
 
             foreach (var item in announcements)
-            {               
-               model.Add(new AnnouncementViewModel
-               {
-                  AnnouncementId = item.AnnouncementId,
-                  Subject = item.Subject,
-                  AnnouncementDate = item.AnnouncementDate,
-                  Description = item.Description
-               });           
+            {
+                model.Add(new AnnouncementViewModel
+                {
+                 AnnouncementId = item.AnnouncementId,
+                 AnnouncementDate = item.AnnouncementDate,
+                 Subject = item.Subject,
+                 Description = item.Description
+                });
             }
-            return View();
+            return View(model);
         }
 
         // GET: Announcement/Details/5

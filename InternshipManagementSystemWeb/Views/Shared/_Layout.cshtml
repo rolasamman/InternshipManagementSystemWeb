@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Internship Management System</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -23,14 +24,14 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @*<li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                     @*<li>@Html.ActionLink("Employees", "Index", "Employee")</li>*@
                     <li>@Html.ActionLink("Admins", "Index", "Admin")</li>
                     @*<li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>*@
-                       <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                       <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
-                       <li>@Html.ActionLink("Submit Complain", "Create", "Complain")</li>
-                       @*<li>@Html.ActionLink("View Complains", "Index", "Complain")</li>*@
+                    <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                    <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                    <li>@Html.ActionLink("Submit Complain", "Create", "Complain")</li>
+                    @*<li>@Html.ActionLink("View Complains", "Index", "Complain")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -45,6 +46,7 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
