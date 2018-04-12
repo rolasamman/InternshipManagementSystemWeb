@@ -76,8 +76,8 @@ namespace InternshipManagementSystemWeb.Migrations
             //Add examples of Admins
             //var admins = new List<Admin>
             //    {
-            //          new Admin {UserName = "mkhodary", EmployeeUniversityId = "2012", FirstName = "Mervat", LastName = "Khodary",
-            //              Office = "370", Email = "mkhodary@dah.edu.sa", Phone = "6000012", Extension = "64" Mobile = "0543222210" 
+            //          new Admin {UserName = "mismail", EmployeeUniversityId = "2012", FirstName = "Mervat", LastName = "Ismail",
+            //              Office = "370", Email = "mismail@dah.edu.sa", Phone = "6000012", Extension = "64" Mobile = "0543222210"
             //          },
             //    };
 
@@ -109,7 +109,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "55",
                      Mobile = "0555432123",
-                     Department = "Marketing"
+                     Department = "Business and Law"
                     },
                  new Instructor
                     {
@@ -122,7 +122,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "23",
                      Mobile = "0543243215",
-                     Department = "MIS"
+                     Department = "Business and Law"
                     },
                  new Instructor
                     {
@@ -135,7 +135,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "70",
                      Mobile = "0598734503",
-                     Department = "MIS"
+                     Department = "Design and Archeticture"
                     },
                  new Instructor
                     {
@@ -148,7 +148,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "35",
                      Mobile = "0543211298",
-                     Department = "HR",
+                     Department = "Design and Archeticture",
                     },
                  new Instructor
                     {
@@ -161,7 +161,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "88",
                      Mobile = "0500054321",
-                     Department = "Design"
+                     Department = "Business and Law"
                     }
                 };
 
@@ -195,21 +195,25 @@ namespace InternshipManagementSystemWeb.Migrations
             context.SaveChanges();
 
             // Add examples of attendances
-            //var attendances = new List<Attendance>
-            //    {
-            //        new Attendance {AttendanceDate = },
-
-            //    };
-            //attendances.ForEach(c => context.Attendances.AddOrUpdate(m => m.AttendanceDate, c));
-            //context.SaveChanges();
+            var attendances = new List<Attendance>
+                {
+                    new Attendance {AttendanceDate = new DateTime(2018,2,3), TimeIn = new TimeSpan(8,30,0) ,
+                        TimeOut = new TimeSpan(4,30,0), Description = "Observing and learning about the work environment", StudentId = 1, FirmId = 1 },
+                    new Attendance {AttendanceDate = new DateTime(2018,2,11), TimeIn = new TimeSpan(9,0,0) ,
+                        TimeOut = new TimeSpan(5,0,0), Description = "Meeting with the employees and asking them questions", StudentId = 2, FirmId = 2 },
+                    new Attendance {AttendanceDate = new DateTime(2018,2,20), TimeIn = new TimeSpan(8,0,0) ,
+                        TimeOut = new TimeSpan(4,0,0), Description = "Reviewing assigned tasks with the supervisor", StudentId = 3, FirmId = 3 },
+                };
+            attendances.ForEach(c => context.Attendances.AddOrUpdate(m => m.AttendanceDate, c));
+            context.SaveChanges();
 
             //Add examples of complains
-            //var complains = new List<Complain>
-            //    {
-            //          new Complain {},                
-            //    };
-            //complains.ForEach(c => context.Complains.AddOrUpdate(m => m.Title, c));
-            //context.SaveChanges();
+            var complains = new List<Complain>
+                {
+                      new Complain {},
+                };
+            complains.ForEach(c => context.Complains.AddOrUpdate(m => m.Title, c));
+            context.SaveChanges();
 
             // Add examples of firms
             var firms = new List<Firm>
@@ -236,6 +240,8 @@ namespace InternshipManagementSystemWeb.Migrations
 
             sections.ForEach(c => context.Sections.AddOrUpdate(m => m.Semester, c));
             context.SaveChanges();
+
+
 
             // Add examples of internship courses
             var internshipCourses = new List<InternshipCourse>

@@ -9,43 +9,25 @@
 <p>
     @Html.ActionLink("Create New Announcement", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AnnouncementId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Subject)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AnnouncementDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <div>
+        <div>
             @Html.DisplayFor(modelItem => item.AnnouncementId)
-        </td>
-        <td>
+        </div>
+        <div>
             @Html.DisplayFor(modelItem => item.Subject)
-        </td>
-        <td>
+        </div>
+        <div>
             @Html.DisplayFor(modelItem => item.AnnouncementDate)
-        </td>
-        <td>
+        </div>
+        <div>
             @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
+        </div>
+        <div>
             @Html.ActionLink("Edit", "Edit", new { id = item.AnnouncementId }) |
             @Html.ActionLink("Details", "Details", new { id = item.AnnouncementId }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.AnnouncementId })
-        </td>
-    </tr>
+        </div>
+    </div>
 }
-
-</table>

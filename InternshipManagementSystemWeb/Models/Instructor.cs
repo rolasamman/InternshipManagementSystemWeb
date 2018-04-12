@@ -26,10 +26,6 @@ namespace InternshipManagementSystemWeb.Models
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         //public int InstructorId { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Department { get; set; }
-
         //public virtual Employee Employee { get; set; }
 
         public virtual ICollection<MeetingOnCampu> MeetingOnCampus { get; set; }
@@ -37,5 +33,16 @@ namespace InternshipManagementSystemWeb.Models
         public virtual ICollection<Section> Sections { get; set; }
 
         public virtual ICollection<VisitOnSite> VisitOnSites { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Department { get; set; }
+
+        //    public Department Department { get; set; }
     }
+    //public enum Department
+    //{
+    //    //[Display(Name = "Attribute")],
+    //    BusinessAndLaw, DesignAndArcheticture, HelthScienceandLearning
+    //}
 }

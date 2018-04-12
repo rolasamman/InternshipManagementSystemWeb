@@ -75,7 +75,7 @@ namespace InternshipManagementSystemWeb.Controllers
                     Phone = user.Phone,
                     Extension = user.Extension,
                     //Mobile = user.Mobile,
-                    Department = user.Department
+                    //Department = user.Department.
                 });
             }
             return View(model);
