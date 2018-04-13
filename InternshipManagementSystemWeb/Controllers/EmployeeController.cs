@@ -71,8 +71,6 @@ namespace InternshipManagementSystemWeb.Controllers
 
             foreach (var item in users)
             {
-                if (!(item is Employee))
-                {
                     model.Add(new EmployeeViewModel
                     {
                         Id = item.Id,
@@ -84,9 +82,9 @@ namespace InternshipManagementSystemWeb.Controllers
                         Office = item.Office,
                         Phone = item.Phone,
                         Extension = item.Extension,
+                        Mobile = item.Mobile,
                         //Roles = item.Roles,
                     });
-                }
             }
             return View(model);
         }
@@ -195,30 +193,16 @@ namespace InternshipManagementSystemWeb.Controllers
                     return View();
                 }
             }
-
             ViewBag.Roles = new SelectList(db.Roles.ToList(), "Admin", "Instructor");
             return View();
         }
 
-
-
         // GET: Employee/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id != null)
-            {
                 var userId = id ?? default(int);
-
                 var employee = (Employee)UserManager.FindById(userId);
-                if (employee == null)
-                {
-                    //return HttpNotFound();
-                    return View("Error");
-                }
-
-                // Use automapper instead of copying properties one by one
                 EmployeeViewModel model = Mapper.Map<EmployeeViewModel>(employee);
-
                 var userRoles = UserManager.GetRoles(userId);
                 var rolesSelectList = db.Roles.ToList().Select(r => new SelectListItem()
                 {
@@ -226,14 +210,8 @@ namespace InternshipManagementSystemWeb.Controllers
                     Text = r.Name,
                     Value = r.Name
                 });
-
                 ViewBag.RolesSelectList = rolesSelectList;
-
                 return View(model);
-            }
-
-            //return HttpNotFound();
-            return View("Error");
         }
 
 
@@ -295,21 +273,13 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Employee/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id != null)
-            {
+           
                 var userId = id ?? default(int);
-                var employee = (Employee)UserManager.FindById(userId);
-                if (employee == null)
-                {
-                    return HttpNotFound();
-                }
-
+                var employee = (Employee)UserManager.FindById(userId);           
                 EmployeeViewModel model = Mapper.Map<EmployeeViewModel>(employee);
                 model.Roles = string.Join(" ", UserManager.GetRoles(userId).ToArray());
                 return View(model);
-            }
-
-            return HttpNotFound();
+           
         }
 
         // POST: Employee/Delete/5

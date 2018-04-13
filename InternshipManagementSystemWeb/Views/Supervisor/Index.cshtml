@@ -71,9 +71,9 @@
             @Html.DisplayFor(modelItem => item.FirmId)
         </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new {id=item.SupervisorId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.SupervisorId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.SupervisorId })
         </td>
     </tr>
 }

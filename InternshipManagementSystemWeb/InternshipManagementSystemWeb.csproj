@@ -183,10 +183,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\InternshipCourseController.cs" />
+    <Compile Include="Controllers\InternshipCriterionController.cs" />
+    <Compile Include="Controllers\InternshipEvaluationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SupervisorController.cs" />
+    <Compile Include="Controllers\SupervisorCriterionController.cs" />
+    <Compile Include="Controllers\SupervisorEvaluationController.cs" />
     <Compile Include="Controllers\VisitOnSiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -345,13 +349,9 @@
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <Content Include="Views\Firm\Create.cshtml" />
     <Content Include="Views\Supervisor\Create.cshtml" />
-    <Content Include="Views\InternshipCourse\Create.cshtml" />
     <Content Include="Views\InternshipCourse\Index.cshtml" />
-    <Content Include="Views\Student\Create.cshtml" />
-    <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Announcement\Create.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Firm\Index.cshtml" />
     <Content Include="Views\Firm\Edit.cshtml" />
     <Content Include="Views\Firm\Delete.cshtml" />
@@ -372,10 +372,27 @@
     <Content Include="Views\Attendance\Details.cshtml" />
     <Content Include="Views\Attendance\Edit.cshtml" />
     <Content Include="Views\Attendance\Delete.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Instructor\Index.cshtml" />
+    <Content Include="Views\InternshipCourse\Details.cshtml" />
+    <Content Include="Views\InternshipCourse\Create.cshtml" />
+    <Content Include="Views\InternshipCourse\Edit.cshtml" />
+    <Content Include="Views\InternshipCourse\Delete.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Complain\Details.cshtml" />
+    <Content Include="Views\Complain\Edit.cshtml" />
+    <Content Include="Views\Complain\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Uploads\" />
+    <Folder Include="Views\InternshipCriterion\" />
+    <Folder Include="Views\InternshipEvaluation\" />
+    <Folder Include="Views\SupervisorCriterion\" />
+    <Folder Include="Views\SupervisorEvaluation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

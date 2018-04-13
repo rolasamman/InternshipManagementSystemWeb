@@ -1,0 +1,82 @@
+﻿@model InternshipManagementSystemWeb.ViewModels.ComplainViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ComplainViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReplyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReplyDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Feedback)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Feedback)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

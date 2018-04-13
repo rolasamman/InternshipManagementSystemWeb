@@ -1,15 +1,22 @@
-﻿@model InternshipManagementSystemWeb.ViewModels.StudentViewModel
+﻿@model InternshipManagementSystemWeb.ViewModels.EmployeeViewModel
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Employees</h2>
 
 <div>
-    <h4>StudentViewModel</h4>
+    <h4>Details</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeUniversityId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeUniversityId)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.UserName)
         </dt>
@@ -17,39 +24,26 @@
         <dd>
             @Html.DisplayFor(model => model.UserName)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Email)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Password)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Password)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.ConfirmPassword)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ConfirmPassword)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentUniversityId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StudentUniversityId)
-        </dd>
-
+        </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
@@ -65,6 +59,29 @@
         <dd>
             @Html.DisplayFor(model => model.LastName)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Office)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Office)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extension)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extension)
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Mobile)
@@ -74,49 +91,13 @@
             @Html.DisplayFor(model => model.Mobile)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Department)
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Roles)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Department)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Major)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Major)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Resume)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Resume)
-            <a href="@Url.Content(Model.Resume)">Student Resume</a>
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InternshipAgreementForm)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InternshipAgreementForm)
-            <a href="@Url.Content(Model.InternshipAgreementForm)">Student InternshipAgreementForm</a>
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RiskIdentificationForm)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RiskIdentificationForm)
-            <a href="@Url.Content(Model.RiskIdentificationForm)">Student RiskIdentificationForm</a>
-        </dd>
-
+            @Html.DisplayFor(model => model.Roles)
+        </dd>*@
     </dl>
 </div>
 <p>

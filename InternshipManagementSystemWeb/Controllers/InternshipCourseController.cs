@@ -44,18 +44,8 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: InternshipCourse/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
-            if (internshipCourse == null)
-            {
-                return HttpNotFound();
-            }
-
             InternshipCourseViewModel model = Mapper.Map<InternshipCourse, InternshipCourseViewModel>(internshipCourse);
-
             return View(model);
         }
 
@@ -83,16 +73,7 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: InternshipCourse/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
             InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
-            if (internshipCourse == null)
-            {
-                return HttpNotFound();
-            }
             InternshipCourseViewModel model = Mapper.Map<InternshipCourse, InternshipCourseViewModel>(internshipCourse);
             return View(model);
         }
@@ -115,15 +96,7 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: InternshipCourse/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
-            if (internshipCourse == null)
-            {
-                return HttpNotFound();
-            }
             InternshipCourseViewModel model = Mapper.Map<InternshipCourseViewModel>(internshipCourse);
             return View(model);
         }
@@ -149,27 +122,21 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         //GET: /InternshipCourse/ListSections/5
-        //public PartialViewResult ListSectionsPartial(int id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-
-        //    var sections = db.Sections.Where(c => c.IntrenshipCourseId == id).ToList();
-
-        //    var model = new List<SectionViewModel>();
-        //    foreach (var section in sections)
-        //    {
-        //        model.Add(new SectionViewModel
-        //        {
-        //            SectionId = section.SectionId,
-        //            Semester = section.Semester,
-        //            Year = section.Year,
-        //            Capacity = section.Capacity
-        //        });
-        //    }
-        //    return PartialView(model);
-        //}
+        public PartialViewResult ListSectionsPartial(int id)
+        {
+            var sections = db.Sections.Where(c => c.IntrenshipCourseId == id).ToList();
+            var model = new List<SectionViewModel>();
+            foreach (var section in sections)
+            {
+                model.Add(new SectionViewModel
+                {
+                    SectionId = section.SectionId,
+                    //Semester = section.Semester,
+                    Year = section.Year,
+                    Capacity = section.Capacity
+                });
+            }
+            return PartialView(model);
+        }
     }
 }

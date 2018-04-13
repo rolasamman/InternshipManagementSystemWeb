@@ -8,6 +8,7 @@ using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -70,47 +71,53 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Complain/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            Complain complain = db.Complains.Find(id);
+            ComplainViewModel model = Mapper.Map<Complain, ComplainViewModel>(complain);
+            return View(model);
         }
 
         // POST: Complain/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ComplainViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                Complain complain = Mapper.Map<ComplainViewModel, Complain>(model);
+                db.Entry(complain).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
 
         // GET: Complain/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Complain complain = db.Complains.Find(id);
+            ComplainViewModel model = Mapper.Map<Complain, ComplainViewModel>(complain);
+            return View(model);
         }
 
         // POST: Complain/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
+            Complain complain = db.Complains.Find(id);
+            db.Complains.Remove(complain);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                db.Dispose();
             }
-            catch
-            {
-                return View();
-            }
+            base.Dispose(disposing);
         }
     }
 }

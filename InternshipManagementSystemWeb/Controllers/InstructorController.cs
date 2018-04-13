@@ -74,12 +74,11 @@ namespace InternshipManagementSystemWeb.Controllers
                     Office = user.Office,
                     Phone = user.Phone,
                     Extension = user.Extension,
-                    //Mobile = user.Mobile,
+                    Mobile = user.Mobile,
                     //Department = user.Department.
                 });
             }
             return View(model);
-
         }
 
         // GET: Instructor/Details/5

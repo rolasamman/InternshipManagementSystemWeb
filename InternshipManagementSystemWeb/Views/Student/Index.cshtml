@@ -1,101 +1,97 @@
-﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.EmployeeViewModel>
+﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.StudentViewModel>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Employee</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Add New Employee", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EmployeeUniversityId)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.UserName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
-        @*<th>
+        <th>
             @Html.DisplayNameFor(model => model.Password)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ConfirmPassword)
-        </th>*@
-
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentUniversityId)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LastName)
         </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.Office)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Extension)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Mobile)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.Roles)
-        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Major)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InternshipAgreementForm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskIdentificationForm)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.EmployeeUniversityId)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.UserName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Email)
         </td>
-        @*<td>
+        <td>
             @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ConfirmPassword)
-        </td>*@
-
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentUniversityId)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
-
-        <td>
-            @Html.DisplayFor(modelItem => item.Office)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Extension)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Mobile)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Roles)
-        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            @Html.DisplayFor(modelItem => item.Major)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InternshipAgreementForm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RiskIdentificationForm)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

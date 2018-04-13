@@ -77,7 +77,7 @@ namespace InternshipManagementSystemWeb.Controllers
         {
             Announcement announcement = db.Announcements.Find(id);
             AnnouncementViewModel model = Mapper.Map<Announcement, AnnouncementViewModel>(announcement);
-            return View(model);
+            return View(model); 
         }
 
         // POST: Announcement/Edit/5
