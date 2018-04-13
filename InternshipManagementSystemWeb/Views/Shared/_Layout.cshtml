@@ -23,14 +23,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @*<li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                    @*<li>@Html.ActionLink("Employees", "Index", "Employee")</li>*@
-                    <li>@Html.ActionLink("Admins", "Index", "Admin")</li>
-                    @*<li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>*@
-                    <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
                     <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
-                    <li>@Html.ActionLink("Submit Complain", "Create", "Complain")</li>
+                    <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                    <li>@Html.ActionLink("Log Attendance", "Create", "Attendance")</li>
+
+                    @*<li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>*@
+                    @*<li>@Html.ActionLink("Submit Complain", "Create", "Complain")</li>*@
                     @*<li>@Html.ActionLink("View Complains", "Index", "Complain")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")

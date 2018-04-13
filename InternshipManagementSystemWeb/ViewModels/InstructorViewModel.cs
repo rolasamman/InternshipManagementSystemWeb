@@ -60,15 +60,14 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         public string Mobile { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Department { get; set; }
+        //[Required]
+        //[StringLength(50)]
+        //public string Department { get; set; }
 
-        //public Department Department { get; set; }
+        public Department Department { get; set; }
     }
-    //public enum Department
-    //{
-    //   //[Display(Name = "Attribute")],
-    //   BusinessAndLaw, DesignAndArcheticture, HelthScienceandLearning
-    //}
+    public enum Department
+    {
+        BusinessAndLaw, DesignAndArchitecture, EducationAndHealthScience
+    }
 }

@@ -42,24 +42,8 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Announcement/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Announcement announcement = db.Announcements.Find(id);
-            if (announcement == null)
-            {
-                return HttpNotFound();
-            }
-
-            var model = new AnnouncementViewModel
-            {
-                AnnouncementId = announcement.AnnouncementId,
-                Subject = announcement.Subject,
-                AnnouncementDate = announcement.AnnouncementDate,
-                Description = announcement.Description
-            };
-
+            AnnouncementViewModel model = Mapper.Map<Announcement, AnnouncementViewModel>(announcement);
             return View(model);
         }
 
@@ -88,26 +72,13 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
-
-
         // GET: Announcement/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
             Announcement announcement = db.Announcements.Find(id);
-            if (announcement == null)
-            {
-                return HttpNotFound();
-            }
-
             AnnouncementViewModel model = Mapper.Map<Announcement, AnnouncementViewModel>(announcement);
             return View(model);
         }
-
 
         // POST: Announcement/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for      
@@ -128,17 +99,8 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Announcement/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Announcement announcement = db.Announcements.Find(id);
-            if (announcement == null)
-            {
-                return HttpNotFound();
-            }
             AnnouncementViewModel model = Mapper.Map<AnnouncementViewModel>(announcement);
-
             return View(model);
         }
 

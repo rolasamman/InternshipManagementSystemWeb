@@ -16,7 +16,5 @@ namespace InternshipManagementSystemWeb.ViewModels
         public AdminViewModel()
         {
         }
-
-
     }
 }

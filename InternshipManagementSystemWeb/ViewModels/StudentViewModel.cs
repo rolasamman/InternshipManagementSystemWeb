@@ -57,13 +57,13 @@ namespace InternshipManagementSystemWeb.ViewModels
         public string Mobile { get; set; }
 
         [Required]
-        [StringLength(50)]
-        [Display(Name = "Department")]
-        public string Department { get; set; }
+        //[StringLength(50)]
+        //[Display(Name = "Department")]
+        //public string Department { get; set; }
+        public Department Department { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Major")]
         public string Major { get; set; }
 
         //[StringLength(200)]

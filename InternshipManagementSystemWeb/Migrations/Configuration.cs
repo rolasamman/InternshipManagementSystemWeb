@@ -73,27 +73,35 @@ namespace InternshipManagementSystemWeb.Migrations
                 userManager.AddToRole(admin.Id, roles[0]);
             }
 
-            //Add examples of Admins
-            //var admins = new List<Admin>
-            //    {
-            //          new Admin {UserName = "mismail", EmployeeUniversityId = "2012", FirstName = "Mervat", LastName = "Ismail",
-            //              Office = "370", Email = "mismail@dah.edu.sa", Phone = "6000012", Extension = "64" Mobile = "0543222210"
-            //          },
-            //    };
+            //Add example of admin employees
+            var employees = new List<Employee>
+                {
+                      new Employee {
+                          UserName = "mismail",
+                          EmployeeUniversityId = "2012",
+                          FirstName = "Mervat",
+                          LastName = "Ismail",
+                          Office = "370",
+                          Email = "mismail@dah.edu.sa",
+                          Phone = "6000012",
+                          Extension = "64",
+                          Mobile = "0543222210"
+                      },
+                };
 
-            //foreach (var admin in admins)
-            //{
-            //    if (userManager.FindByName(admin.UserName) == null)
-            //    {
-            //        userManager.Create(admin, "admin123");
-            //    }
+            foreach (var employee in employees)
+            {
+                if (userManager.FindByName(employee.UserName) == null)
+                {
+                    userManager.Create(employee, "admin123");
+                }
 
-            //    var usertemp = userManager.FindByName(admin.UserName);
-            //    if (!userManager.IsInRole(usertemp.Id, roles[1]))
-            //    {
-            //        userManager.AddToRole(usertemp.Id, roles[1]);
-            //    }
-            //}
+                var usertemp = userManager.FindByName(admin.UserName);
+                if (!userManager.IsInRole(usertemp.Id, roles[0]))
+                {
+                    userManager.AddToRole(usertemp.Id, roles[0]);
+                }
+            }
 
             // Add examples of Instructors
             var instructors = new List<Instructor>
@@ -109,7 +117,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "55",
                      Mobile = "0555432123",
-                     Department = "Business and Law"
+                     Department = Department.BusinessAndLaw
                     },
                  new Instructor
                     {
@@ -122,7 +130,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "23",
                      Mobile = "0543243215",
-                     Department = "Business and Law"
+                     Department = Department.BusinessAndLaw
                     },
                  new Instructor
                     {
@@ -135,7 +143,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "70",
                      Mobile = "0598734503",
-                     Department = "Design and Archeticture"
+                     Department = Department.DesignAndArchitecture
                     },
                  new Instructor
                     {
@@ -148,7 +156,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "35",
                      Mobile = "0543211298",
-                     Department = "Design and Archeticture",
+                     Department = Department.DesignAndArchitecture
                     },
                  new Instructor
                     {
@@ -161,8 +169,8 @@ namespace InternshipManagementSystemWeb.Migrations
                      Phone = "6000012",
                      Extension = "88",
                      Mobile = "0500054321",
-                     Department = "Business and Law"
-                    }
+                     Department = Department.BusinessAndLaw
+                     }
                 };
 
             foreach (var instructor in instructors)
@@ -173,6 +181,65 @@ namespace InternshipManagementSystemWeb.Migrations
                 }
 
                 var usertemp = userManager.FindByName(instructor.UserName);
+                if (!userManager.IsInRole(usertemp.Id, roles[1]))
+                {
+                    userManager.AddToRole(usertemp.Id, roles[1]);
+                }
+            }
+
+            // Add examples of students
+            var students = new List<Student>
+                {
+                    new Student {
+                        UserName = "amohammed",
+                        FirstName = "Abeer",
+                        LastName = "Mohammed",
+                        StudentUniversityId = "1510987",
+                        Email = "amohaammed@dah.edu.sa",
+                        Mobile = "0555543444",
+                        Department = Department.BusinessAndLaw,
+                        Major = "Marketing",                     
+                    },
+                     new Student {
+                        UserName = "hsameh",
+                        FirstName = "Hind",
+                        LastName = "Sameh",
+                        StudentUniversityId = "1610098",
+                        Email = "hsameh@dah.edu.sa",
+                        Mobile = "0544432345",
+                        Department = Department.BusinessAndLaw,
+                        Major = "Banking and Finance",
+                    },
+                     new Student {
+                        UserName = "dsalama",
+                        FirstName = "Doaa",
+                        LastName = "Salamah",
+                        StudentUniversityId = "1710989",
+                        Email = "dsalama@dah.edu.sa",
+                        Mobile = "0541231111",
+                        Department = Department.BusinessAndLaw,
+                        Major = "Human Resources",
+                    },
+                     new Student {
+                        UserName = "dzamil",
+                        FirstName = "Dina",
+                        LastName = "Zamil",
+                        StudentUniversityId = "1610009",
+                        Email = "dzamil@dah.edu.sa",
+                        Mobile = "0556777789",
+                        Department = Department.DesignAndArchitecture,
+                        Major = "Interior Design",
+                    },              
+                };
+
+            foreach (var student in students)
+            {
+                if (userManager.FindByName(student.UserName) == null)
+                {
+                    userManager.Create(student, "std123");
+                }
+
+                var usertemp = userManager.FindByName(student.UserName);
                 if (!userManager.IsInRole(usertemp.Id, roles[2]))
                 {
                     userManager.AddToRole(usertemp.Id, roles[2]);
@@ -182,13 +249,21 @@ namespace InternshipManagementSystemWeb.Migrations
             // Add examples of announceements
             var announcements = new List<Announcement>
                 {
-                    new Announcement {Subject = "Graphic Design needed", AnnouncementDate = new DateTime(2018,2,3),
+                    new Announcement {
+                        Subject = "Graphic Design Student Needed",
+                        AnnouncementDate = new DateTime(2018,2,3),
                         Description = "Internship opportunity for graphic design students, three students needed, send your portfolio" },
-                    new Announcement {Subject = "HR Internship opportunity", AnnouncementDate = new DateTime(2018,2,11),
+                    new Announcement {
+                        Subject = "HR Internship opportunity",
+                        AnnouncementDate = new DateTime(2018,2,11),
                         Description = "Internhsip student majored in HR needed, three months internship program" },
-                    new Announcement {Subject = "Coop program for MIS", AnnouncementDate = new DateTime(2018,3,4),
+                    new Announcement {
+                        Subject = "Coop Program for MIS",
+                        AnnouncementDate = new DateTime(2018,3,4),
                         Description = "Savola is offering a trained coop program for MIS students" },
-                    new Announcement {Subject = "STEAM Compitition", AnnouncementDate = new DateTime(2018,3,7),
+                    new Announcement {
+                        Subject = "STEAM Challenge",
+                        AnnouncementDate = new DateTime(2018,3,7),
                         Description = "Limited opportunity for all student to joing the challenge" }
                 };
             announcements.ForEach(c => context.Announcements.AddOrUpdate(m => m.Subject, c));
@@ -197,12 +272,27 @@ namespace InternshipManagementSystemWeb.Migrations
             // Add examples of attendances
             var attendances = new List<Attendance>
                 {
-                    new Attendance {AttendanceDate = new DateTime(2018,2,3), TimeIn = new TimeSpan(8,30,0) ,
-                        TimeOut = new TimeSpan(4,30,0), Description = "Observing and learning about the work environment", StudentId = 1, FirmId = 1 },
-                    new Attendance {AttendanceDate = new DateTime(2018,2,11), TimeIn = new TimeSpan(9,0,0) ,
-                        TimeOut = new TimeSpan(5,0,0), Description = "Meeting with the employees and asking them questions", StudentId = 2, FirmId = 2 },
-                    new Attendance {AttendanceDate = new DateTime(2018,2,20), TimeIn = new TimeSpan(8,0,0) ,
-                        TimeOut = new TimeSpan(4,0,0), Description = "Reviewing assigned tasks with the supervisor", StudentId = 3, FirmId = 3 },
+                    new Attendance {
+                        AttendanceDate = new DateTime(2018,2,3),
+                        TimeIn = new TimeSpan(8,30,0) ,
+                        TimeOut = new TimeSpan(4,30,0),
+                        Description = "Observing and learning about the work environment",
+                        StudentId = 1,
+                        FirmId = 1 },
+                    new Attendance {
+                        AttendanceDate = new DateTime(2018,2,11),
+                        TimeIn = new TimeSpan(9,0,0) ,
+                        TimeOut = new TimeSpan(5,0,0),
+                        Description = "Meeting with the employees and asking them questions",
+                        StudentId = 2,
+                        FirmId = 2 },
+                    new Attendance {
+                        AttendanceDate = new DateTime(2018,2,20),
+                        TimeIn = new TimeSpan(8,0,0) ,
+                        TimeOut = new TimeSpan(4,0,0),
+                        Description = "Reviewing assigned tasks with the supervisor",
+                        StudentId = 3,
+                        FirmId = 3 },
                 };
             attendances.ForEach(c => context.Attendances.AddOrUpdate(m => m.AttendanceDate, c));
             context.SaveChanges();
@@ -218,15 +308,58 @@ namespace InternshipManagementSystemWeb.Migrations
             // Add examples of firms
             var firms = new List<Firm>
                 {
-                    new Firm { FirmName = "Unilever", Address = "8770 King Abdulaziz Branch Rd, Ash Shati, Jeddah 23514-3261 https://goo.gl/maps/XdUEEe8v4zS2",
-                        NumberOfVacencies = 10, IndustryField = "Consumer Goods"},
-                    new Firm { FirmName = "NCB", Address = "Al Shaty, Jeddah 23513 https://goo.gl/maps/Hs5rjJgj6NA2",
-                        NumberOfVacencies = 9, IndustryField = "Banking and Finance"},
-                    new Firm { FirmName = "Savola", Address = "Prince Faisal Bin Fahd, Ash Shati, Jeddah 23513 https://goo.gl/maps/7FyRoS3NSLw",
-                        NumberOfVacencies = 2, IndustryField = "Investment Management"}
+                    new Firm {
+                        FirmName = "Unilever",
+                        FirmDescription = "Be part of the world’s most successful, purpose-led business. " +
+                        "Work with brands that are well-loved around the world, that improve the lives " +
+                        "of our consumers and the communities around us. We promote innovation, big and small, " +
+                        "to make our business win and grow; and we believe in business as a force for good. ",
+                        Address = "8770 King Abdulaziz Branch Rd, Ash Shati, Jeddah 23514-3261",
+                        MapLink = "https://goo.gl/maps/XdUEEe8v4zS2",
+                        NumberOfVacencies = 10,
+                        IndustryField = "Consumer Goods",
+                        //Supervisors = Supervisor.s
+                    },
+                    new Firm {
+                        FirmName = "NCB",
+                        FirmDescription = "NCB Capital was launched in 2007 as the investment banking arm of " +
+                        "The National Commercial Bank, the largest bank in Saudi Arabia, " +
+                        "to provide investment banking services to individual, " +
+                        "institutional and corporate clients in the Kingdom.",
+                        Address = "Al Shaty, Jeddah 23513 ", 
+                        MapLink = "https://goo.gl/maps/Hs5rjJgj6NA2",
+                        NumberOfVacencies = 9,
+                        IndustryField = "Banking and Finance",
+                        //Supervisors = Supervisor
+                    },
+                    new Firm {
+                        FirmName = "Savola Group",
+                        FirmDescription = "With 5.34 billion Saudi Riyals and over 30 thousand employees, " +
+                        "Savola shined as the biggest investment holding group in the Middle East and North Africa, " +
+                        "specialized in foods and retail. Savola owns leading brands for foods like Afia Oils, " +
+                        "Al Rawabi Ghee,  Al Osra Sugar, Al Malikah Pasta and others. " +
+                        "In retail, Savola’s investment in Panda, Hyper-panda and Pandati is " +
+                        "an example for well - planned expansion and dependability through providing the consumers’ basic needs.",
+                        Address = "Prince Faisal Bin Fahd, Ash Shati, Jeddah 23513",
+                        MapLink ="https://goo.gl/maps/7FyRoS3NSLw",
+                        NumberOfVacencies = 2,
+                        IndustryField = "Investment Management",
+                    }
                 };
 
             firms.ForEach(c => context.Firms.AddOrUpdate(m => m.FirmName, c));
+            context.SaveChanges();
+
+            // Add examples of internship courses
+            var internshipCourses = new List<InternshipCourse>
+                {
+                    new InternshipCourse { CourseCode = "BBIS 4403", CourseName = "Internship: Business Information System",
+                        Description = "Internship course for BIS students.", Credits = 3},
+                    new InternshipCourse { CourseCode = "FINC", CourseName = "Internship: Banking and finance",
+                        Description = "Internship course for Banking and finance students.", Credits = 3,}
+                };
+
+            internshipCourses.ForEach(c => context.InternshipCourses.AddOrUpdate(m => m.CourseName, c));
             context.SaveChanges();
 
             //Add examples of Sections
@@ -241,39 +374,33 @@ namespace InternshipManagementSystemWeb.Migrations
             sections.ForEach(c => context.Sections.AddOrUpdate(m => m.Semester, c));
             context.SaveChanges();
 
-
-
-            // Add examples of internship courses
-            var internshipCourses = new List<InternshipCourse>
-                {
-                    new InternshipCourse { CourseCode = "BBIS 4403", CourseName = "Internship: Business Information System",
-                        Description = "Internship course for BIS students.", Credits = 3},
-                    new InternshipCourse { CourseCode = "FINC", CourseName = "Internship: Banking and finance",
-                        Description = "Internship course for Banking and finance students.", Credits = 3,}
-                };
-
-            internshipCourses.ForEach(c => context.InternshipCourses.AddOrUpdate(m => m.CourseName, c));
-            context.SaveChanges();
-
-            // Add examples of internship courses
-            //var students = new List<Student>
-            //    {
-            //        new Student { FirstName = "Abeer", LastName = "Mohammed", StudentUniversityId = "1510987", 
-            //    };
-
-            //internshipCourses.ForEach(c => context.InternshipCourses.AddOrUpdate(m => m.CourseName, c));
-            //context.SaveChanges();
-
             // Add examples of Supervisors
             var supervisors = new List<Supervisor>
                 {
-                    new Supervisor {FirstName = "Amal", LastName = "Al-Nahdi", Email = "amal-alnahdi@unilever.com",
-                        Phone = "0126789009", Mobile = "0566665678", Department = "Human Resources", FirmId = 1},
-                    new Supervisor {FirstName = "Zainab", LastName = "Bin Mahfoz", Email = "Zainabbinmahfoz@ncb.sa",
-                        Phone = "0126654321", Mobile = "0554321234", Department = "Human Resources", FirmId = 2},
-                     new Supervisor {FirstName = "Ahmad", LastName = "Abdulrahman", Email = "ahmadabdulrahman@savola.com",
-                        Phone = "01267890000", Mobile = "0542222212", Department = "Human Resources", FirmId = 3},
-
+                    new Supervisor {
+                        FirstName = "Amal",
+                        LastName = "Al-Nahdi",
+                        Email = "amal-alnahdi@unilever.com",
+                        Phone = "0126789009",
+                        Mobile = "0566665678",
+                        Department = "Human Resources",
+                        FirmId = 1},
+                    new Supervisor {
+                        FirstName = "Zainab",
+                        LastName = "Bin Mahfoz",
+                        Email = "Zainabbinmahfoz@ncb.sa",
+                        Phone = "0126654321",
+                        Mobile = "0554321234",
+                        Department = "Human Resources",
+                        FirmId = 2},
+                     new Supervisor {
+                         FirstName = "Ahmad",
+                         LastName = "Abdulrahman",
+                         Email = "ahmadabdulrahman@savola.com",
+                        Phone = "01267890000",
+                         Mobile = "0542222212",
+                         Department = "Human Resources",
+                         FirmId = 3},
                 };
             supervisors.ForEach(c => context.Supervisors.AddOrUpdate(m => m.Email, c));
             context.SaveChanges();
@@ -281,13 +408,21 @@ namespace InternshipManagementSystemWeb.Migrations
             // Add examples of Supervisors
             var visitOnSites = new List<VisitOnSite>
                 {
-                    new VisitOnSite {VisitDate = new DateTime(2018,3,3), StartTime = new TimeSpan(8,30,0) , EndTime = new TimeSpan(10,30,0),
+                    new VisitOnSite {
+                        VisitDate = new DateTime(2018,3,3),
+                        StartTime = new TimeSpan(8,30,0) ,
+                        EndTime = new TimeSpan(10,30,0),
                         Feedback = "Discussed student progress"},
-                    new VisitOnSite {VisitDate = new DateTime(2018,3,6), StartTime = new TimeSpan(10,0,0) , EndTime = new TimeSpan(11,30,0),
+                    new VisitOnSite {
+                        VisitDate = new DateTime(2018,3,6),
+                        StartTime = new TimeSpan(10,0,0) ,
+                        EndTime = new TimeSpan(11,30,0),
                         Feedback = "Introduction and dicuss student learning outcome"},
-                    new VisitOnSite {VisitDate = new DateTime(2018,3,7), StartTime = new TimeSpan(9,30,0) , EndTime = new TimeSpan(11,0,0),
+                    new VisitOnSite {
+                        VisitDate = new DateTime(2018,3,7),
+                        StartTime = new TimeSpan(9,30,0) ,
+                        EndTime = new TimeSpan(11,0,0),
                         Feedback = "Checking student positioning and settlment"}
-
                 };
             visitOnSites.ForEach(c => context.VisitOnSites.AddOrUpdate(m => m.VisitDate, c));
             context.SaveChanges();

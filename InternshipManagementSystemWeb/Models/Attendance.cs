@@ -36,5 +36,8 @@ namespace InternshipManagementSystemWeb.Models
         public virtual Firm Firm { get; set; }
 
         public virtual Student Student { get; set; }
+
+        [StringLength(200)]
+        public string ApprovedAttendance { get; set; }
     }
 }

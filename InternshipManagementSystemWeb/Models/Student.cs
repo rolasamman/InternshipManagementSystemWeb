@@ -28,6 +28,10 @@ namespace InternshipManagementSystemWeb.Models
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         //public int StudentId { get; set; }
 
+        //[Required]
+        //[StringLength(256)]
+        //public string UserName { get; set; }
+
         [Required]
         [StringLength(10)]
         public string StudentUniversityId { get; set; }
@@ -40,9 +44,11 @@ namespace InternshipManagementSystemWeb.Models
         [StringLength(50)]
         public string LastName { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Department { get; set; }
+        //[Required]
+        //[StringLength(50)]
+        //public string Department { get; set; }
+
+        public Department Department { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -94,5 +100,6 @@ namespace InternshipManagementSystemWeb.Models
         public virtual ICollection<SupervisorEvaluation> SupervisorEvaluations { get; set; }
 
         public virtual ICollection<VisitOnSite> VisitOnSites { get; set; }
+
     }
 }

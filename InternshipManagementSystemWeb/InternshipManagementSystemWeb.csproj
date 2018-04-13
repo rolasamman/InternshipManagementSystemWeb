@@ -366,6 +366,9 @@
     <Content Include="Views\Supervisor\Delete.cshtml" />
     <Content Include="Views\Firm\Details.cshtml" />
     <Content Include="Views\Announcement\Index.cshtml" />
+    <Content Include="Views\Announcement\Details.cshtml" />
+    <Content Include="Views\Announcement\Edit.cshtml" />
+    <Content Include="Views\Announcement\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

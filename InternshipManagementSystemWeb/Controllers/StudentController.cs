@@ -66,7 +66,7 @@ namespace InternshipManagementSystemWeb.Controllers
                 FirstName = student.FirstName,
                 LastName = student.LastName,
                 Mobile = student.Mobile,
-                Department = student.Department,
+                //Department = student.Department,
                 Major = student.Major,
                 Resume = student.Resume,
                 InternshipAgreementForm = student.InternshipAgreementForm,

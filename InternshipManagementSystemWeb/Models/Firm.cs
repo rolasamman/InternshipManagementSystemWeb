@@ -43,6 +43,14 @@ namespace InternshipManagementSystemWeb.Models
         [StringLength(80)]
         public string IndustryField { get; set; }
 
+        public string Logo { get; set; }
+
+        [StringLength(500)]
+        public string FirmDescription { get; set; }
+
+        [StringLength(200)]
+        public string MapLink { get; set; }
+
         public virtual ICollection<Attendance> Attendances { get; set; }
 
         public virtual ICollection<Supervisor> Supervisors { get; set; }

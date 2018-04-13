@@ -35,6 +35,8 @@ namespace InternshipManagementSystemWeb.Controllers
                     Address = item.Address,
                     IndustryField = item.IndustryField,
                     NumberOfVacencies = item.NumberOfVacencies,
+                    FirmDescription = item.FirmDescription,
+                    MapLink = item.MapLink
                 });
             }
             return View(model);
@@ -45,7 +47,7 @@ namespace InternshipManagementSystemWeb.Controllers
         public ActionResult Details(int? id)
         {
             Firm firm = db.Firms.Find(id);
-            FirmViewModel model = Mapper.Map<Firm, FirmViewModel>(firm);
+            FirmViewModel model = Mapper.Map<Firm, FirmViewModel>(firm); 
             return View(model);
         }
 

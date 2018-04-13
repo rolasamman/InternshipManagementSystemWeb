@@ -34,6 +34,7 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         [Required]
         [StringLength(500)]
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
         public int Credits { get; set; }

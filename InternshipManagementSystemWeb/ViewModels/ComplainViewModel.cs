@@ -27,6 +27,7 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         [Required]
         [StringLength(900)]
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
         public DateTime? CreationDate { get; set; }

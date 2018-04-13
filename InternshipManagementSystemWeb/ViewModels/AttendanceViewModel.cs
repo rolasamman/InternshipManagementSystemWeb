@@ -48,5 +48,11 @@ namespace InternshipManagementSystemWeb.ViewModels
         public virtual Firm Firm { get; set; }
 
         public virtual Student Student { get; set; }
+
+        [StringLength(200)]
+        public string ApprovedAttendance { get; set; }
+
+        [Display(Name = "Approved Attendance")]
+        public HttpPostedFileBase ApprovedAttendanceFile { get; set; }
     }
 }

@@ -31,6 +31,7 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         [Required]
         [StringLength(900)]
+        [DataType(DataType.MultilineText)]
         public string Feedback { get; set; }
 
         public int? InstructorId { get; set; }

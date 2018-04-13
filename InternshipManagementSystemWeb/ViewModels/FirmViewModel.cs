@@ -36,6 +36,21 @@ namespace InternshipManagementSystemWeb.ViewModels
         [StringLength(80)]
         public string IndustryField { get; set; }
 
+        // The outline file as object (used to upload a file)
+        [Display(Name = "Logo")]
+        public HttpPostedFileBase LogoImage { get; set; }
+
+        // The outline file path as string (used to display the path)
+        public string Logo { get; set; }
+
+        [StringLength(500)]
+        [DataType(DataType.MultilineText)]
+        public string FirmDescription { get; set; }
+
+        [StringLength(200)]
+        public string MapLink { get; set; }
+
+        public List<SupervisorViewModel> Supervisors { get; set; }
 
     }
 }
