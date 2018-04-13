@@ -369,6 +369,9 @@
     <Content Include="Views\Announcement\Details.cshtml" />
     <Content Include="Views\Announcement\Edit.cshtml" />
     <Content Include="Views\Announcement\Delete.cshtml" />
+    <Content Include="Views\Attendance\Details.cshtml" />
+    <Content Include="Views\Attendance\Edit.cshtml" />
+    <Content Include="Views\Attendance\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

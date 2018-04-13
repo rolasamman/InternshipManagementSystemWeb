@@ -300,7 +300,25 @@ namespace InternshipManagementSystemWeb.Migrations
             //Add examples of complains
             var complains = new List<Complain>
                 {
-                      new Complain {},
+                      new Complain {
+                      Title = "Work place is not friendly",
+                      CreationDate = new DateTime(2018,3,20),
+                      Description = "Supervisor has not guid me through the company",
+                      ComplainStatus = ComplainStatus.Submitted
+                      },
+                       new Complain {
+                      Title = "No place to work",
+                      CreationDate = new DateTime(2018,3,17),
+                      Description = "Supervisor has not provide me with an office or desk or a place to work",
+                      ComplainStatus = ComplainStatus.InProgress
+                      },
+                        new Complain {
+                      Title = "Uncomfortable work environment",
+                      CreationDate = new DateTime(2018,3,26),
+                      Description = "The office is crowded with people all the time",
+                      ComplainStatus = ComplainStatus.Viewed
+                      },
+
                 };
             complains.ForEach(c => context.Complains.AddOrUpdate(m => m.Title, c));
             context.SaveChanges();

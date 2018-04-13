@@ -1,0 +1,82 @@
+﻿@model InternshipManagementSystemWeb.ViewModels.AttendanceViewModel
+
+@{
+    ViewBag.Title = "Attendance";
+}
+
+<h2>Attendance</h2>
+
+<div>
+    @*<h4>Details</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AttendanceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AttendanceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AttendanceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AttendanceDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirmId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirmId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovedAttendance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovedAttendance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

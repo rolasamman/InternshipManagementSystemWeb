@@ -52,6 +52,6 @@ namespace InternshipManagementSystemWeb.ViewModels
     public enum ComplainStatus
     {
         //[Display(Name = "Attribute")],
-        Open, Closed
+        Submitted, InProgress, Closed, Solved, Viewed
     }
 }

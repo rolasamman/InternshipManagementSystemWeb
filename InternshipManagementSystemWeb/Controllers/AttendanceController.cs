@@ -42,15 +42,7 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Attendance/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Attendance attendance = db.Attendances.Find(id);
-            if (attendance == null)
-            {
-                return HttpNotFound();
-            }
             AttendanceViewModel model = Mapper.Map<Attendance, AttendanceViewModel>(attendance);
             return View(model);
         }
@@ -79,16 +71,7 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Attendance/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
             Attendance attendance = db.Attendances.Find(id);
-            if (attendance == null)
-            {
-                return HttpNotFound();
-            }
             AttendanceViewModel model = Mapper.Map<Attendance, AttendanceViewModel>(attendance);
             return View(model);
         }
@@ -111,16 +94,8 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // GET: Attendance/Delete/5
         public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+        {     
             Attendance attendance = db.Attendances.Find(id);
-            if (attendance == null)
-            {
-                return HttpNotFound();
-            }
             AttendanceViewModel model = Mapper.Map<AttendanceViewModel>(attendance);
             return View(model);
         }
