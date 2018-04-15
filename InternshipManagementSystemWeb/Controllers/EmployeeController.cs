@@ -63,6 +63,7 @@ namespace InternshipManagementSystemWeb.Controllers
             }
         }
 
+        // The index action allow displaying and listing the users that are in the employee table/model
         // GET: Employee
         public ActionResult Index()
         {
@@ -89,6 +90,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The details action allow displaying the details of a selected user by Id in the employee table/model 
         // GET: Employee/Details/5
         // The is parameter changed from int to int? to accept nulls
         public ActionResult Details(int? id)
@@ -134,6 +136,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View();
         }
 
+        // The create action allows adding a new user to the employee table/model
         // POST: Employee/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

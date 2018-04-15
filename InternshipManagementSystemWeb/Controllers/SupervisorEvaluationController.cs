@@ -8,12 +8,15 @@ namespace InternshipManagementSystemWeb.Controllers
 {
     public class SupervisorEvaluationController : Controller
     {
+
+        // The index action allow displaying and listing the items that are in the supervisorEvaluation table/model
         // GET: SupervisorEvaluation
         public ActionResult Index()
         {
             return View();
         }
 
+        // The details action allow displaying the details of a selected item by Id in the supervisorEvaluation table/model 
         // GET: SupervisorEvaluation/Details/5
         public ActionResult Details(int id)
         {
@@ -26,6 +29,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View();
         }
 
+        // The create action allows adding a new item to the supervisorEvaluation table/model
         // POST: SupervisorEvaluation/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)

@@ -20,6 +20,7 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        // The index action allow displaying and listing the users that are in the student table/model
         // GET: Student
         public ActionResult Index()
         {
@@ -44,6 +45,7 @@ namespace InternshipManagementSystemWeb.Controllers
             }
         }
 
+        // The details action allow displaying the details of a selected user by Id in the student table/model 
         // GET: Student/Details/5
         public ActionResult Details(int? id)
         {
@@ -58,6 +60,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View();
         }
 
+        // The create action allows adding a new user to the student table/model
         // POST: Student/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

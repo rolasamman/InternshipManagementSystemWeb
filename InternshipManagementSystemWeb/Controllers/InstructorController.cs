@@ -58,6 +58,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         public object UserManeger { get; private set; }
 
+        // The index action allow displaying and listing the users that are in the instructor table/model
         // GET: Instructor
         public ActionResult Index()
         {
@@ -83,6 +84,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The details action allow displaying the details of a selected user by Id in the instructor table/model 
         // GET: Instructor/Details/5
         public ActionResult Details(int id)
         {
@@ -97,6 +99,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View();
         }
 
+        // The create action allows adding a new user to the instructor table/model
         // POST: Instructor/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

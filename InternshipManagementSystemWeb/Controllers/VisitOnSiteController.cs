@@ -19,6 +19,7 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        // The index action allow displaying and listing the items that are in the visitOnSite table/model
         // GET: VisitOnSite
         public ActionResult Index()
         {
@@ -34,6 +35,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The details action allow displaying the details of a selected item by Id in the visiteOnSite table/model 
         // GET: VisitOnSite/Details/5
         public ActionResult Details(int id)
         {
@@ -48,6 +50,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View();
         }
 
+        // The create action allows adding a new item to the visitOnSite table/model
         // POST: VisitOnSite/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

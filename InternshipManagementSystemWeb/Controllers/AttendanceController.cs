@@ -20,6 +20,7 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        // The index action allow displaying and listing the items that are in the attendance table/model
         // GET: Attendance
         public ActionResult Index()
         {
@@ -39,6 +40,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The details action allow displaying the details of a selected item by Id in the attendance table/model 
         // GET: Attendance/Details/5
         public ActionResult Details(int? id)
         {
@@ -53,6 +55,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View();
         }
 
+        // The create action allows adding a new item to the attendance table/model
         // POST: Attendance/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

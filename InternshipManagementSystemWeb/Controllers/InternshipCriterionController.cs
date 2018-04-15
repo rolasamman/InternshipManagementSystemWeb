@@ -8,12 +8,14 @@ namespace InternshipManagementSystemWeb.Controllers
 {
     public class InternshipCriterionController : Controller
     {
+        // The index action allow displaying and listing the items that are in the internshipCriterion table/model
         // GET: InternshipCriterion
         public ActionResult Index()
         {
             return View();
         }
 
+        // The details action allow displaying the details of a selected item by Id in the internshipCriterion table/model 
         // GET: InternshipCriterion/Details/5
         public ActionResult Details(int id)
         {
@@ -26,6 +28,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View();
         }
 
+        // The create action allows adding a new item to the InternshipCriterion table/model
         // POST: InternshipCriterion/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)

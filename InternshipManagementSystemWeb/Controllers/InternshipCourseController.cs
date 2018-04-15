@@ -20,6 +20,7 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        // The index action allow displaying and listing the items that are in the internshipCourse table/model
         // GET: InternshipCourse
         public ActionResult Index()
         {
@@ -41,6 +42,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The details action allow displaying the details of a selected item by Id in the internshipCourse table/model 
         // GET: InternshipCourse/Details/5
         public ActionResult Details(int? id)
         {
@@ -55,6 +57,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View();
         }
 
+        // The create action allows adding a new item to the internshipCourse table/model
         // POST: InternshipCourse/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

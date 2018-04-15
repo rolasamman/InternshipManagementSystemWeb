@@ -20,6 +20,7 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        // The index action allow displaying and listing the items that are in the firm table/model
         // GET: Firm
         public ActionResult Index()
         {
@@ -43,6 +44,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
 
+        // The details action allow displaying the details of a selected item by Id in the firm table/model 
         // GET: Firm/Details/5
         public ActionResult Details(int? id)
         {
@@ -57,6 +59,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View();
         }
 
+        // The create action allows adding a new item to the firm table/model
         // POST: Firm/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
