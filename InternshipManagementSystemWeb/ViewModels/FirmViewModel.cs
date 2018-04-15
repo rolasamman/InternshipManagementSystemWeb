@@ -34,6 +34,7 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         [Required]
         [StringLength(80)]
+        [Display(Name = "Industry Field")]
         public string IndustryField { get; set; }
 
         // The outline file as object (used to upload a file)
@@ -45,9 +46,11 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         [StringLength(500)]
         [DataType(DataType.MultilineText)]
+        [Display(Name = "About the Company")]
         public string FirmDescription { get; set; }
 
         [StringLength(200)]
+        [Display(Name = "Map Link")]
         public string MapLink { get; set; }
 
         public List<SupervisorViewModel> Supervisors { get; set; }

@@ -47,32 +47,8 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Student/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Student student = db.Students.Find(id);
-            if (student == null)
-            {
-                return HttpNotFound();
-            }
-
-            var model = new StudentViewModel
-            {
-                Id = student.Id ,
-                UserName = student.UserName,
-                Email = student.Email,
-                StudentUniversityId = student.StudentUniversityId,
-                FirstName = student.FirstName,
-                LastName = student.LastName,
-                Mobile = student.Mobile,
-                //Department = student.Department,
-                Major = student.Major,
-                Resume = student.Resume,
-                InternshipAgreementForm = student.InternshipAgreementForm,
-                RiskIdentificationForm = student.RiskIdentificationForm
-            };
-
+            StudentViewModel model = Mapper.Map<Student, StudentViewModel>(student);
             return View(model);
         }
 
@@ -100,29 +76,15 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Student/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
             Student student = db.Students.Find(id);
-
-            if (student == null)
-            {
-                return HttpNotFound();
-            }
-
             StudentViewModel model = Mapper.Map<Student, StudentViewModel>(student);
-           return View(model);
-
+            return View(model);
         }
 
         // POST: Student/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-
         public ActionResult Edit(StudentViewModel model)
-
         {
             if (ModelState.IsValid)
             {
@@ -135,16 +97,32 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: Student/Delete/5
-        //[HttpPost]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    return View(model);
-        //}
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            Student student = db.Students.Find(id);
+            StudentViewModel model = Mapper.Map<Student, StudentViewModel>(student);
+            return View(model);
+        }
 
         //// GET: Student/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Student student = db.Students.Find(id);
+            db.Students.Remove(student);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

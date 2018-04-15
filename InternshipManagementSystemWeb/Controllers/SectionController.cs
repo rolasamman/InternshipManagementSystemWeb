@@ -8,6 +8,7 @@ using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -41,15 +42,7 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Section/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Section section = db.Sections.Find(id);
-            if (section == null)
-            {
-                return HttpNotFound();
-            }
             SectionViewModel model = Mapper.Map<Section, SectionViewModel>(section);
             return View(model);
         }
@@ -78,45 +71,52 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Section/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Section section = db.Sections.Find(id);
+            SectionViewModel model = Mapper.Map<Section, SectionViewModel>(section);
+            return View(model);
         }
 
         // POST: Section/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(SectionViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                Section section = Mapper.Map<SectionViewModel, Section>(model);
+                db.Entry(section).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
 
         // GET: Section/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Section section = db.Sections.Find(id);
+            SectionViewModel model = Mapper.Map<Section, SectionViewModel>(section);
+            return View(model);
         }
 
         // POST: Section/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Section section = db.Sections.Find(id);
+            db.Sections.Remove(section);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                return View();
+                db.Dispose();
             }
+            base.Dispose(disposing);
         }
 
         // GET: /Section/ListStudents/5

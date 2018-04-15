@@ -24,6 +24,7 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Title")]
         public string Subject { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

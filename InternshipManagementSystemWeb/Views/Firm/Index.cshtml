@@ -7,51 +7,39 @@
 <h2>Companies</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Company", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirmId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirmName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfVacencies)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IndustryField)
-        </th>
-        <th></th>
-    </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <div>
+                <div>
+            @Html.DisplayFor(modelItem => item.Logo)
+        </div>
+        <div>
             @Html.DisplayFor(modelItem => item.FirmId)
-        </td>
-        <td>
+        </div>
+        <div>
             @Html.DisplayFor(modelItem => item.FirmName)
-        </td>
-        <td>
+        </div>
+        <div>
             @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
+        </div>
+        <div>
             @Html.DisplayFor(modelItem => item.NumberOfVacencies)
-        </td>
-        <td>
+        </div>
+        <div>
             @Html.DisplayFor(modelItem => item.IndustryField)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FirmId}) |
-            @Html.ActionLink("Details", "Details", new { id=item.FirmId  }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FirmId })
-        </td>
-    </tr>
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.FirmDescription)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.MapLink)
+        </div>
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = item.FirmId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.FirmId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.FirmId })
+        </div>
+    </div>
 }
-
-</table>

@@ -8,6 +8,7 @@ using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -49,15 +50,7 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Supervisor/Details/5
         public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Supervisor supervisor = db.Supervisors.Find(id);
-            if (supervisor == null)
-            {
-                return HttpNotFound();
-            }
+            Supervisor supervisor = db.Supervisors.Find(id);           
             var model = new SupervisorViewModel
             {
                 SupervisorId = supervisor.SupervisorId,
@@ -95,29 +88,32 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Supervisor/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Supervisor supervisor = db.Supervisors.Find(id);
+            SupervisorViewModel model = Mapper.Map<Supervisor, SupervisorViewModel>(supervisor);
+            return View(model);
         }
 
         // POST: Supervisor/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(SupervisorViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                Supervisor supervisor = Mapper.Map<SupervisorViewModel, Supervisor>(model);
+                db.Entry(supervisor).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
 
         // GET: Supervisor/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Supervisor supervisor = db.Supervisors.Find(id);
+            SupervisorViewModel model = Mapper.Map<Supervisor, SupervisorViewModel>(supervisor);
+            return View(model);
         }
 
         // POST: Supervisor/Delete/5
@@ -138,12 +134,5 @@ namespace InternshipManagementSystemWeb.Controllers
             }
             base.Dispose(disposing);
         }
-
-        ////GET: /InternshipCourse/ListSections/5
-        //public PartialViewResult ListSupervisorFullName(int id)
-        //{
-        //    var list = db.Supervisors.ToList().Select(e => new { e.SupervisorId, e.FullName });
-        //    ViewBag.SupervisorId = new SelectList(list, "Id", "FullName");
-        //}
     }
 }

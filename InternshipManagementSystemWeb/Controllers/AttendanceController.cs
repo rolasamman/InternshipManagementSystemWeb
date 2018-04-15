@@ -35,7 +35,7 @@ namespace InternshipManagementSystemWeb.Controllers
                     TimeOut = item.TimeOut,
                     Description = item.Description
                 });
-            }
+            } 
             return View(model);
         }
 

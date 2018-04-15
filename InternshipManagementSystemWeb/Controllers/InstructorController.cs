@@ -3,11 +3,13 @@
  *      Author:         Rola Samman
 */
 
+using AutoMapper;
 using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -84,7 +86,9 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: Instructor/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Instructor instructor = db.Instructors.Find(id);
+            InstructorViewModel model = Mapper.Map<Instructor, InstructorViewModel>(instructor);
+            return View(model);
         }
 
         // GET: Instructor/Create
@@ -95,62 +99,69 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // POST: Instructor/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(InstructorViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                Instructor instructor = Mapper.Map<InstructorViewModel, Instructor>(model);
+                db.Instructors.Add(instructor);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(model);
         }
 
         // GET: Instructor/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Instructor instructor = db.Instructors.Find(id);
+            InstructorViewModel model = Mapper.Map<Instructor, InstructorViewModel>(instructor);
+            return View(model);
         }
 
-        // POST: Instructor/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+    // POST: Instructor/Edit/5
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult Edit(InstructorViewModel model)
+    {
+        if (ModelState.IsValid)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Instructor instructor = Mapper.Map<InstructorViewModel, Instructor>(model);
+            db.Entry(instructor).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
+        return View(model);
+    }
 
-        // GET: Instructor/Delete/5
-        public ActionResult Delete(int id)
+    // GET: Instructor/Delete/5
+    public ActionResult Delete(int id)
         {
-            return View();
+            Instructor instructor = db.Instructors.Find(id);
+            InstructorViewModel model = Mapper.Map<Instructor, InstructorViewModel>(instructor);
+            return View(model);
         }
 
         // POST: Instructor/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Instructor instructor = db.Instructors.Find(id);
+            db.Instructors.Remove(instructor);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                return View();
+                db.Dispose();
             }
+            base.Dispose(disposing);
         }
     }
 }

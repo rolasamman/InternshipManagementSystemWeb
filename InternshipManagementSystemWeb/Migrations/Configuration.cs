@@ -19,11 +19,11 @@ namespace InternshipManagementSystemWeb.Migrations
         protected override void Seed(ApplicationDbContext context)
 
         {
-            //TODO Define roles to add to your app, keep the Admin role first
+            // Roles 
             string[] roles = { "Admin", "Instructor", "Student" };
 
 
-            //TODO Change admin user login information
+            // Admin user login information
 
             string adminEmail = "admin@dah.edu";
 
@@ -47,7 +47,7 @@ namespace InternshipManagementSystemWeb.Migrations
             var userStore = new CustomUserStore(context);
             var userManager = new ApplicationUserManager(userStore);
 
-            //TODO Change the type of the admin user
+            // Type of the admin user
 
             var admin = new ApplicationUser
             {
@@ -266,6 +266,7 @@ namespace InternshipManagementSystemWeb.Migrations
                         AnnouncementDate = new DateTime(2018,3,7),
                         Description = "Limited opportunity for all student to joing the challenge" }
                 };
+
             announcements.ForEach(c => context.Announcements.AddOrUpdate(m => m.Subject, c));
             context.SaveChanges();
 
@@ -277,23 +278,27 @@ namespace InternshipManagementSystemWeb.Migrations
                         TimeIn = new TimeSpan(8,30,0) ,
                         TimeOut = new TimeSpan(4,30,0),
                         Description = "Observing and learning about the work environment",
-                        StudentId = 1,
-                        FirmId = 1 },
+                        //StudentId = 1,
+                        //FirmId = 1 
+                    },
                     new Attendance {
                         AttendanceDate = new DateTime(2018,2,11),
                         TimeIn = new TimeSpan(9,0,0) ,
                         TimeOut = new TimeSpan(5,0,0),
                         Description = "Meeting with the employees and asking them questions",
-                        StudentId = 2,
-                        FirmId = 2 },
+                        //StudentId = 2,
+                        //FirmId = 2 
+                    },
                     new Attendance {
                         AttendanceDate = new DateTime(2018,2,20),
                         TimeIn = new TimeSpan(8,0,0) ,
                         TimeOut = new TimeSpan(4,0,0),
                         Description = "Reviewing assigned tasks with the supervisor",
-                        StudentId = 3,
-                        FirmId = 3 },
+                        //StudentId = 3,
+                        //FirmId = 3 
+                    },
                 };
+
             attendances.ForEach(c => context.Attendances.AddOrUpdate(m => m.AttendanceDate, c));
             context.SaveChanges();
 
@@ -306,7 +311,7 @@ namespace InternshipManagementSystemWeb.Migrations
                       Description = "Supervisor has not guid me through the company",
                       ComplainStatus = ComplainStatus.Submitted
                       },
-                       new Complain {
+                      new Complain {
                       Title = "No place to work",
                       CreationDate = new DateTime(2018,3,17),
                       Description = "Supervisor has not provide me with an office or desk or a place to work",
@@ -318,8 +323,8 @@ namespace InternshipManagementSystemWeb.Migrations
                       Description = "The office is crowded with people all the time",
                       ComplainStatus = ComplainStatus.Viewed
                       },
-
                 };
+
             complains.ForEach(c => context.Complains.AddOrUpdate(m => m.Title, c));
             context.SaveChanges();
 
@@ -330,8 +335,7 @@ namespace InternshipManagementSystemWeb.Migrations
                         FirmName = "Unilever",
                         FirmDescription = "Be part of the world’s most successful, purpose-led business. " +
                         "Work with brands that are well-loved around the world, that improve the lives " +
-                        "of our consumers and the communities around us. We promote innovation, big and small, " +
-                        "to make our business win and grow; and we believe in business as a force for good. ",
+                        "of our consumers and the communities around us.",
                         Address = "8770 King Abdulaziz Branch Rd, Ash Shati, Jeddah 23514-3261",
                         MapLink = "https://goo.gl/maps/XdUEEe8v4zS2",
                         NumberOfVacencies = 10,
@@ -354,10 +358,7 @@ namespace InternshipManagementSystemWeb.Migrations
                         FirmName = "Savola Group",
                         FirmDescription = "With 5.34 billion Saudi Riyals and over 30 thousand employees, " +
                         "Savola shined as the biggest investment holding group in the Middle East and North Africa, " +
-                        "specialized in foods and retail. Savola owns leading brands for foods like Afia Oils, " +
-                        "Al Rawabi Ghee,  Al Osra Sugar, Al Malikah Pasta and others. " +
-                        "In retail, Savola’s investment in Panda, Hyper-panda and Pandati is " +
-                        "an example for well - planned expansion and dependability through providing the consumers’ basic needs.",
+                        "specialized in foods and retail.",
                         Address = "Prince Faisal Bin Fahd, Ash Shati, Jeddah 23513",
                         MapLink ="https://goo.gl/maps/7FyRoS3NSLw",
                         NumberOfVacencies = 2,

@@ -20,7 +20,7 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Announcement
+        // GET: Announcement 
         public ActionResult Index() 
         {
             var announcements = db.Announcements.ToList();

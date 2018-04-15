@@ -1,8 +1,14 @@
-﻿using AutoMapper;
+﻿/*      
+ *      Description:    This class is a controller for visitOnSite from the VisitOnSite view model
+ *      Author:         Rola Samman
+*/
+
+using AutoMapper;
 using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -23,7 +29,6 @@ namespace InternshipManagementSystemWeb.Controllers
                 //model.Add(new VisitOnSiteViewModel
                 //{
                     
-
                 //});
             }
             return View(model);
@@ -32,7 +37,9 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: VisitOnSite/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            VisitOnSite visitOnSite = db.VisitOnSites.Find(id);
+            VisitOnSiteViewModel model = Mapper.Map<VisitOnSite, VisitOnSiteViewModel>(visitOnSite);
+            return View(model);
         }
 
         // GET: VisitOnSite/Create
@@ -59,45 +66,52 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: VisitOnSite/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            VisitOnSite visitOnSite = db.VisitOnSites.Find(id);
+            VisitOnSiteViewModel model = Mapper.Map<VisitOnSite, VisitOnSiteViewModel>(visitOnSite);
+            return View(model);
         }
 
         // POST: VisitOnSite/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(VisitOnSiteViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                VisitOnSite visitOnSite = Mapper.Map<VisitOnSiteViewModel, VisitOnSite>(model);
+                db.Entry(visitOnSite).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
 
         // GET: VisitOnSite/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            VisitOnSite visitOnSite = db.VisitOnSites.Find(id);
+            VisitOnSiteViewModel model = Mapper.Map<VisitOnSite, VisitOnSiteViewModel>(visitOnSite);
+            return View(model);
         }
 
         // POST: VisitOnSite/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            VisitOnSite visitOnSite = db.VisitOnSites.Find(id);
+            db.VisitOnSites.Remove(visitOnSite);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                return View();
+                db.Dispose();
             }
+            base.Dispose(disposing);
         }
     }
 }

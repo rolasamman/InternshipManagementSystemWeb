@@ -347,7 +347,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
-    <Content Include="Views\Firm\Create.cshtml" />
     <Content Include="Views\Supervisor\Create.cshtml" />
     <Content Include="Views\InternshipCourse\Index.cshtml" />
     <Content Include="Views\Announcement\Create.cshtml" />
@@ -361,9 +360,7 @@
     <Content Include="Views\Attendance\Index.cshtml" />
     <Content Include="Views\Section\Index.cshtml" />
     <Content Include="Views\Supervisor\Index.cshtml" />
-    <Content Include="Views\VisitOnSite\Create.cshtml" />
     <Content Include="Views\Supervisor\Details.cshtml" />
-    <Content Include="Views\Supervisor\Delete.cshtml" />
     <Content Include="Views\Firm\Details.cshtml" />
     <Content Include="Views\Announcement\Index.cshtml" />
     <Content Include="Views\Announcement\Details.cshtml" />
@@ -376,7 +373,6 @@
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Delete.cshtml" />
-    <Content Include="Views\Instructor\Index.cshtml" />
     <Content Include="Views\InternshipCourse\Details.cshtml" />
     <Content Include="Views\InternshipCourse\Create.cshtml" />
     <Content Include="Views\InternshipCourse\Edit.cshtml" />
@@ -385,6 +381,26 @@
     <Content Include="Views\Complain\Details.cshtml" />
     <Content Include="Views\Complain\Edit.cshtml" />
     <Content Include="Views\Complain\Delete.cshtml" />
+    <Content Include="Views\Firm\Create.cshtml" />
+    <Content Include="Views\Instructor\Details.cshtml" />
+    <Content Include="Views\Instructor\Create.cshtml" />
+    <Content Include="Views\Instructor\Edit.cshtml" />
+    <Content Include="Views\Instructor\Delete.cshtml" />
+    <Content Include="Views\Section\Details.cshtml" />
+    <Content Include="Views\Section\Create.cshtml" />
+    <Content Include="Views\Section\Edit.cshtml" />
+    <Content Include="Views\Section\Delete.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
+    <Content Include="Views\Supervisor\Edit.cshtml" />
+    <Content Include="Views\Supervisor\Delete.cshtml" />
+    <Content Include="Views\VisitOnSite\Details.cshtml" />
+    <Content Include="Views\VisitOnSite\Create.cshtml" />
+    <Content Include="Views\VisitOnSite\Edit.cshtml" />
+    <Content Include="Views\VisitOnSite\Delete.cshtml" />
+    <Content Include="Views\Instructor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
