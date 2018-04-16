@@ -37,7 +37,8 @@ namespace InternshipManagementSystemWeb.Controllers
                     IndustryField = item.IndustryField,
                     NumberOfVacencies = item.NumberOfVacencies,
                     FirmDescription = item.FirmDescription,
-                    MapLink = item.MapLink
+                    MapLink = item.MapLink,
+                    Logo = item.Logo,
                 });
             }
             return View(model);

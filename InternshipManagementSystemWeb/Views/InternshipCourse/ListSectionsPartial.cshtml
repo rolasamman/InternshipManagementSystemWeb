@@ -1,12 +1,8 @@
 ﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.SectionViewModel>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
 @if (Model.Count() <= 0)
 {
-    <p>There are no faculties in this department</p>
+    <p>There are no sections in this course</p>
 }
 else
 {
@@ -22,10 +18,7 @@ else
                 @Html.DisplayNameFor(model => model.Capacity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IntrenshipCourseId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InstructorId)
+                @Html.DisplayNameFor(model => model.Semester)
             </th>
             <th></th>
         </tr>
@@ -43,15 +36,12 @@ else
                     @Html.DisplayFor(modelItem => item.Capacity)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IntrenshipCourseId)
+                    @Html.DisplayFor(modelItem => item.Semester)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.InstructorId)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Edit", "Edit", "Section", new { id = item.SectionId }, null) |
+                    @Html.ActionLink("Details", "Details", "Section", new { id = item.SectionId }, null) |
+                    @Html.ActionLink("Delete", "Delete", "Section", new { id = item.SectionId }, null)
                 </td>
             </tr>
         }

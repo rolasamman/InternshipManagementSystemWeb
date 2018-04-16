@@ -47,9 +47,11 @@
             @Html.DisplayFor(modelItem => item.Credits)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.InternshipCourseId }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.InternshipCourseId }) |
             @Html.ActionLink("Details", "Details", new { id = item.InternshipCourseId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.InternshipCourseId })
+            @Html.ActionLink("Delete", "Delete", new { id = item.InternshipCourseId }) |
+            @Html.ActionLink("Sections", "ListSectionsPartial", new { id = item.InternshipCourseId }) |
+
         </td>
     </tr>
 }

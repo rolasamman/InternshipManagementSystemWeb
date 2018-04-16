@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Complains</h2>
 
 
 @using (Html.BeginForm())
@@ -12,16 +12,16 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ComplainViewModel</h4>
+        <h4>Edit Complain</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.ComplainId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ComplainId, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ComplainId, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -88,7 +88,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Complains", "Index")
 </div>
 
 @section Scripts {

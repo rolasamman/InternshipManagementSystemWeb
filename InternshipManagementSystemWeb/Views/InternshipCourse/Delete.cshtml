@@ -11,13 +11,13 @@
     @*<h4>InternshipCourseViewModel</h4>*@
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.InternshipCourseId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.InternshipCourseId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.CourseCode)
@@ -58,7 +58,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Back to Courses", "Index")
         </div>
     }
 </div>

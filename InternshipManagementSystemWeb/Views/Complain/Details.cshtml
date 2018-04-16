@@ -4,19 +4,19 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Complains</h2>
 
 <div>
-    <h4>ComplainViewModel</h4>
+    <h4>Complain Details</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.ComplainId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ComplainId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Title)
@@ -78,5 +78,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Complains", "Index")
 </p>

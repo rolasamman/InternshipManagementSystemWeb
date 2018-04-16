@@ -19,13 +19,13 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Password)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Password)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.ConfirmPassword)
@@ -114,7 +114,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Back to Employees", "Index")
         </div>
     }
 </div>

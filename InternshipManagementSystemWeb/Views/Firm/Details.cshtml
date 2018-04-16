@@ -4,19 +4,19 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Companies</h2>
 
 <div>
-    <h4>FirmViewModel</h4>
+    <h4>Company Details</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.FirmId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.FirmId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.FirmName)
@@ -27,11 +27,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.DisplayNameFor(model => model.FirmDescription)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Address)
+            @Html.DisplayFor(model => model.FirmDescription)
         </dd>
 
         <dt>
@@ -50,9 +50,33 @@
             @Html.DisplayFor(model => model.IndustryField)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MapLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MapLink)
+        </dd>
+
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Companies", "Index")
 </p>

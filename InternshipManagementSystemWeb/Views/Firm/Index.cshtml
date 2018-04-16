@@ -7,17 +7,14 @@
 <h2>Companies</h2>
 
 <p>
-    @Html.ActionLink("Add New Company", "Create")
+    @Html.ActionLink("Add a New Company", "Create")
 </p>
 
 @foreach (var item in Model) {
     <div>
-                <div>
-            @Html.DisplayFor(modelItem => item.Logo)
-        </div>
-        @*<div>
+        @*<td>
             @Html.DisplayFor(modelItem => item.FirmId)
-        </div>*@
+        </td>*@
         <div>
             @Html.DisplayFor(modelItem => item.FirmName)
         </div>
@@ -29,6 +26,9 @@
         </div>
         <div>
             @Html.DisplayFor(modelItem => item.IndustryField)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.Logo)
         </div>
         <div>
             @Html.DisplayFor(modelItem => item.FirmDescription)

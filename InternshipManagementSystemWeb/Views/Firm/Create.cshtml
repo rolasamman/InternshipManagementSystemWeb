@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Add New Company</h4>
+        <h4>Add a New Company</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @*<div class="form-group">
@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FirmName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FirmName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Name" } })
+                @Html.EditorFor(model => model.FirmName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Company's Name"} })
                 @Html.ValidationMessageFor(model => model.FirmName, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -58,17 +58,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.Logo, new { htmlAttributes = new { @class = "form-control",  } })*@
+                @Html.EditorFor(model => model.Logo, new { htmlAttributes = new { @class = "form-control", @placeholder = "Company's Logo" } })
                 @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
-                @Html.TextBox("Logo", "", new { type = "file" })
-
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.FirmDescription, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FirmDescription, new { htmlAttributes = new { @class = "form-control", @placeholder = "About the Company"} })
+                @Html.EditorFor(model => model.FirmDescription, new { htmlAttributes = new { @class = "form-control", @placeholder = "Brief Description About the Company"} })
                 @Html.ValidationMessageFor(model => model.FirmDescription, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -76,7 +74,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MapLink, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MapLink, new { htmlAttributes = new { @class = "form-control", @placeholder = "https://goo.gl/maps/yEWUcqP2KU42" } })
+                @Html.EditorFor(model => model.MapLink, new { htmlAttributes = new { @class = "form-control", @placeholder = "Link of the Company's Location on Maps"} })
                 @Html.ValidationMessageFor(model => model.MapLink, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -90,7 +88,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Companies", "Index")
 </div>
 
 @section Scripts {

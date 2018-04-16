@@ -181,6 +181,7 @@
     <Compile Include="Controllers\InternshipCriterionController.cs" />
     <Compile Include="Controllers\InternshipEvaluationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MeetingOnCampusController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SupervisorController.cs" />
@@ -370,9 +371,6 @@
     <Content Include="Views\InternshipCourse\Index.cshtml" />
     <Content Include="Views\Announcement\Create.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Firm\Index.cshtml" />
-    <Content Include="Views\Firm\Edit.cshtml" />
-    <Content Include="Views\Firm\Delete.cshtml" />
     <Content Include="Views\Complain\Create.cshtml" />
     <Content Include="Views\Complain\Index.cshtml" />
     <Content Include="Views\Attendance\Create.cshtml" />
@@ -380,7 +378,6 @@
     <Content Include="Views\Section\Index.cshtml" />
     <Content Include="Views\Supervisor\Index.cshtml" />
     <Content Include="Views\Supervisor\Details.cshtml" />
-    <Content Include="Views\Firm\Details.cshtml" />
     <Content Include="Views\Announcement\Index.cshtml" />
     <Content Include="Views\Announcement\Details.cshtml" />
     <Content Include="Views\Announcement\Edit.cshtml" />
@@ -400,7 +397,6 @@
     <Content Include="Views\Complain\Details.cshtml" />
     <Content Include="Views\Complain\Edit.cshtml" />
     <Content Include="Views\Complain\Delete.cshtml" />
-    <Content Include="Views\Firm\Create.cshtml" />
     <Content Include="Views\Instructor\Details.cshtml" />
     <Content Include="Views\Instructor\Create.cshtml" />
     <Content Include="Views\Instructor\Edit.cshtml" />
@@ -419,8 +415,6 @@
     <Content Include="Views\VisitOnSite\Create.cshtml" />
     <Content Include="Views\VisitOnSite\Edit.cshtml" />
     <Content Include="Views\VisitOnSite\Delete.cshtml" />
-    <Content Include="Views\Instructor\Index.cshtml" />
-    <Content Include="Views\Instructor\ListSectionsPartial.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -430,6 +424,13 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\InternshipCourse\ListSectionsPartial.cshtml" />
+    <Content Include="Views\Firm\Index.cshtml" />
+    <Content Include="Views\Firm\Details.cshtml" />
+    <Content Include="Views\Firm\Create.cshtml" />
+    <Content Include="Views\Firm\Edit.cshtml" />
+    <Content Include="Views\Firm\Delete.cshtml" />
+    <Content Include="Views\Instructor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -438,6 +439,7 @@
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\InternshipCriterion\" />
     <Folder Include="Views\InternshipEvaluation\" />
+    <Folder Include="Views\MeetingOnCampus\" />
     <Folder Include="Views\SupervisorCriterion\" />
     <Folder Include="Views\SupervisorEvaluation\" />
   </ItemGroup>
