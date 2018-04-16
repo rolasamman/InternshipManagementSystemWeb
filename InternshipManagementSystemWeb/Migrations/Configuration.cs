@@ -77,6 +77,7 @@ namespace InternshipManagementSystemWeb.Migrations
             var employees = new List<Employee>
                 {
                       new Employee {
+                          Id = 10,
                           UserName = "mismail",
                           EmployeeUniversityId = "2012",
                           FirstName = "Mervat",
@@ -85,7 +86,8 @@ namespace InternshipManagementSystemWeb.Migrations
                           Email = "mismail@dah.edu.sa",
                           Phone = "6000012",
                           Extension = "64",
-                          Mobile = "0543222210"
+                          Mobile = "0543222210",
+                          
                       },
                 };
 
@@ -108,6 +110,7 @@ namespace InternshipManagementSystemWeb.Migrations
                 {
                  new Instructor
                     {
+                     Id = 20,
                      UserName = "hsaied",
                      EmployeeUniversityId = "1234",
                      FirstName = "Huda",
@@ -121,6 +124,7 @@ namespace InternshipManagementSystemWeb.Migrations
                     },
                  new Instructor
                     {
+                     Id = 21,
                      UserName = "snasif",
                      EmployeeUniversityId = "2345",
                      FirstName = "Salma",
@@ -134,6 +138,7 @@ namespace InternshipManagementSystemWeb.Migrations
                     },
                  new Instructor
                     {
+                     Id = 22, 
                      UserName = "hhaitham",
                      EmployeeUniversityId = "5678",
                      FirstName = "Hanaa",
@@ -147,6 +152,7 @@ namespace InternshipManagementSystemWeb.Migrations
                     },
                  new Instructor
                     {
+                     Id = 23,
                      UserName = "salafan",
                      EmployeeUniversityId = "1223",
                      FirstName = "Samar",
@@ -160,6 +166,7 @@ namespace InternshipManagementSystemWeb.Migrations
                     },
                  new Instructor
                     {
+                     Id = 24,
                      UserName = "aalsamad",
                      EmployeeUniversityId = "4503",
                      FirstName = "Amal",
@@ -191,6 +198,7 @@ namespace InternshipManagementSystemWeb.Migrations
             var students = new List<Student>
                 {
                     new Student {
+                        Id = 50,
                         UserName = "amohammed",
                         FirstName = "Abeer",
                         LastName = "Mohammed",
@@ -201,6 +209,7 @@ namespace InternshipManagementSystemWeb.Migrations
                         Major = "Marketing",                     
                     },
                      new Student {
+                        Id = 51,
                         UserName = "hsameh",
                         FirstName = "Hind",
                         LastName = "Sameh",
@@ -211,6 +220,7 @@ namespace InternshipManagementSystemWeb.Migrations
                         Major = "Banking and Finance",
                     },
                      new Student {
+                        Id = 52,
                         UserName = "dsalama",
                         FirstName = "Doaa",
                         LastName = "Salamah",
@@ -221,6 +231,7 @@ namespace InternshipManagementSystemWeb.Migrations
                         Major = "Human Resources",
                     },
                      new Student {
+                         Id = 53,
                         UserName = "dzamil",
                         FirstName = "Dina",
                         LastName = "Zamil",
@@ -274,28 +285,31 @@ namespace InternshipManagementSystemWeb.Migrations
             var attendances = new List<Attendance>
                 {
                     new Attendance {
+                        AttendanceId = 1,
                         AttendanceDate = new DateTime(2018,2,3),
-                        TimeIn = new TimeSpan(8,30,0) ,
-                        TimeOut = new TimeSpan(4,30,0),
+                        TimeIn = new TimeSpan(8,30,0),
+                        TimeOut = new TimeSpan(16,30,0),
                         Description = "Observing and learning about the work environment",
-                        //StudentId = 1,
-                        //FirmId = 1 
+                        //StudentId = 50,
+                        //FirmId = 1
                     },
                     new Attendance {
+                        AttendanceId = 2,
                         AttendanceDate = new DateTime(2018,2,11),
-                        TimeIn = new TimeSpan(9,0,0) ,
-                        TimeOut = new TimeSpan(5,0,0),
+                        TimeIn = new TimeSpan(9,0,0),
+                        TimeOut = new TimeSpan(17,0,0),
                         Description = "Meeting with the employees and asking them questions",
-                        //StudentId = 2,
-                        //FirmId = 2 
+                        //StudentId = 51,
+                        //FirmId = 2
                     },
                     new Attendance {
+                        AttendanceId = 3,
                         AttendanceDate = new DateTime(2018,2,20),
                         TimeIn = new TimeSpan(8,0,0) ,
-                        TimeOut = new TimeSpan(4,0,0),
+                        TimeOut = new TimeSpan(16,0,0),
                         Description = "Reviewing assigned tasks with the supervisor",
-                        //StudentId = 3,
-                        //FirmId = 3 
+                        //StudentId = 52,
+                        //FirmId = 3
                     },
                 };
 
@@ -363,7 +377,18 @@ namespace InternshipManagementSystemWeb.Migrations
                         MapLink ="https://goo.gl/maps/7FyRoS3NSLw",
                         NumberOfVacencies = 2,
                         IndustryField = "Investment Management",
-                    }
+                    },
+                     new Firm {
+                        FirmName = "Milk Design Studio",
+                        FirmDescription = "Milk is a jeddah-based design studio with a global mindset, local assets. " +
+                        "We are focused on brining companies into new challenges to help setting them apart from competitors." +
+                        "Milk studio offers a complete repertoire of marketing communication services; branding, retail branding, " +
+                        "corporate identity design, naming, stationary, packaging, signage, brochures, posters and websites",
+                        Address = "6457 King Abdul Aziz Rd, Al Basatin District, Jeddah 23719",
+                        MapLink ="https://goo.gl/maps/b6ys37Jmvnv",
+                        NumberOfVacencies = 8,
+                        IndustryField = "Design",
+                    },
                 };
 
             firms.ForEach(c => context.Firms.AddOrUpdate(m => m.FirmName, c));
@@ -372,10 +397,27 @@ namespace InternshipManagementSystemWeb.Migrations
             // Add examples of internship courses
             var internshipCourses = new List<InternshipCourse>
                 {
-                    new InternshipCourse { CourseCode = "BBIS 4403", CourseName = "Internship: Business Information System",
-                        Description = "Internship course for BIS students.", Credits = 3},
-                    new InternshipCourse { CourseCode = "FINC", CourseName = "Internship: Banking and finance",
-                        Description = "Internship course for Banking and finance students.", Credits = 3,}
+                    new InternshipCourse {
+                        InternshipCourseId = 1,
+                        CourseCode = "BBIS 4403",
+                        CourseName = "Internship: Business Information System",
+                        Description = "Internship course for BIS students.",
+                        Credits = 3,
+                    },
+                    new InternshipCourse {
+                        InternshipCourseId = 2,
+                        CourseCode = "FINC 4303",
+                        CourseName = "Internship: Banking and finance",
+                        Description = "Internship course for Banking and finance students.",
+                        Credits = 3,
+                    },
+                    new InternshipCourse {
+                        InternshipCourseId = 3,
+                        CourseCode = "VLCD 3305",
+                        CourseName = "Internship: Visual Communication",
+                        Description = "Internship course for graphic and motion graphic students.",
+                        Credits = 3,
+                    }
                 };
 
             internshipCourses.ForEach(c => context.InternshipCourses.AddOrUpdate(m => m.CourseName, c));
@@ -384,10 +426,30 @@ namespace InternshipManagementSystemWeb.Migrations
             //Add examples of Sections
             var sections = new List<Section>
                 {
-                      new Section {Semester = Semester.SummerI, Year = 2018, Capacity = 20},
-                      new Section {Semester = Semester.Fall, Year = 2019, Capacity = 20},
-                      new Section {Semester = Semester.Fall, Year = 2019, Capacity = 15},
-                      new Section {Semester = Semester.Spring, Year = 2019, Capacity = 10}
+                      new Section {
+                          Semester = Semester.SummerI,
+                          Year = 2018,
+                          Capacity = 20,
+                          IntrenshipCourseId = 1,
+                      },
+                      new Section {
+                          Semester = Semester.Fall,
+                          Year = 2019,
+                          Capacity = 20,
+                          IntrenshipCourseId = 2,                          
+                      },
+                      new Section {
+                          Semester = Semester.Fall,
+                          Year = 2019,
+                          Capacity = 15,
+                          IntrenshipCourseId = 1,
+                      },
+                      new Section {
+                          Semester = Semester.Spring,
+                          Year = 2019,
+                          Capacity = 10,
+                          IntrenshipCourseId = 2,
+                      }
                 };
 
             sections.ForEach(c => context.Sections.AddOrUpdate(m => m.Semester, c));

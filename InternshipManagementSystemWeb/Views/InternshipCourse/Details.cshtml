@@ -52,6 +52,11 @@
 
     </dl>
 </div>
+
+    @Ajax.ActionLink("Sections", "ListSections", new { id = item.SectionId }, 
+        new AjaxOptions { UpdateTargetId = "SectionList", HttpMethod = "GET", InsertionMode = InsertionMode.Replace })
+<div id="SectionList"></div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")

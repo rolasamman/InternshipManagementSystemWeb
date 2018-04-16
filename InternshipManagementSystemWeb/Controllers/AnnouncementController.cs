@@ -16,12 +16,18 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    /// <summary>
+    /// Announcement controller manages announements 
+    /// This controller uses announcement model and announcement viewModel
+    /// </summary>
+
     public class AnnouncementController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // The index action allow displaying and listing the items that are in the announcement table/model
         // GET: Announcement 
+        //[Authorize]
         public ActionResult Index() 
         {
             var announcements = db.Announcements.ToList();
@@ -82,8 +88,8 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model); 
         }
 
-        // POST: Announcement/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for      
+        // The edit action allow updating existing data in the announcement table/model
+        // POST: Announcement/Edit/5     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(AnnouncementViewModel model)
@@ -98,6 +104,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The delete action is for deleting a selected item in the table/model
         // GET: Announcement/Delete/5
         public ActionResult Delete(int? id)
         {

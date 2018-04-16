@@ -16,6 +16,13 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    /// <summary>
+    /// Student controller manages students 
+    /// This controller uses student and studentViewModel classes
+    /// This controller uses AutoMapper
+    /// Students are application users
+    /// </summary>
+
     public class StudentController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

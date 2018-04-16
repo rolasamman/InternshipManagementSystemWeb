@@ -16,6 +16,11 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    /// <summary>
+    /// Complain controller manages complains 
+    /// This controller uses complain model and complain viewModel
+    /// </summary>
+
     public class ComplainController : Controller 
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -80,6 +85,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The edit action allow updating selected existing data in the complain table/model
         // POST: Complain/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -95,6 +101,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The delete action is for deleting a selected item in the table/model
         // GET: Complain/Delete/5
         public ActionResult Delete(int id)
         {

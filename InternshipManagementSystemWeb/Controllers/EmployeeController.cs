@@ -19,7 +19,8 @@ namespace InternshipManagementSystemWeb.Controllers
     /// <summary>
     /// Employee controller manages employees 
     /// This controller uses Employee and EmployeeViewModel classes
-    /// This controller users AutoMapper
+    /// This controller uses AutoMapper
+    /// Employees are application users
     /// </summary>
     
     public class EmployeeController : Controller
@@ -217,7 +218,7 @@ namespace InternshipManagementSystemWeb.Controllers
                 return View(model);
         }
 
-
+        // The edit action allow updating selected existing data in the employee table/model
         // POST: Employee/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -16,6 +16,11 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    /// <summary>
+    /// Announcement controller manages attendances 
+    /// This controller uses attendance model and attendance viewModel
+    /// </summary>
+
     public class AttendanceController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -79,6 +84,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The edit action allow updating existing data in the attendance table/model
         // POST: Attendance/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -94,7 +100,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
-
+        // The delete action is for deleting a selected item in the table/model
         // GET: Attendance/Delete/5
         public ActionResult Delete(int? id)
         {     
@@ -103,6 +109,7 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        // The delete action is for deleting a selected item in the table/model
         // POST: Attendance/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

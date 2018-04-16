@@ -166,5 +166,23 @@ namespace InternshipManagementSystemWeb.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //
+        public PartialViewResult ListSectionsPartial(int id)
+        {
+            var sections = db.Sections.Where(d => d.IntrenshipCourseId == id).ToList();
+            var model = new List<SectionViewModel>();
+            foreach (var item in sections)
+            {
+                model.Add(new SectionViewModel
+                {
+                    SectionId = item.SectionId,
+                    Year = item.Year,
+                    Capacity = item.Capacity,
+                    //Semester = item.Semester,
+                });
+            }
+            return PartialView(model);
+        }
     }
 }
