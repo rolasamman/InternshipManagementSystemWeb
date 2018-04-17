@@ -4,16 +4,16 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Courses</h2>
+<h2>Couses</h2>
 
 <p>
-    @Html.ActionLink("Add New Course", "Create")
+    @Html.ActionLink("Add a New Course", "Create")
 </p>
 <table class="table">
     <tr>
-        @*<th>
+        <th>
             @Html.DisplayNameFor(model => model.InternshipCourseId)
-        </th>*@
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.CourseCode)
         </th>
@@ -31,9 +31,9 @@
 
 @foreach (var item in Model) {
     <tr>
-        @*<td>
+        <td>
             @Html.DisplayFor(modelItem => item.InternshipCourseId)
-        </td>*@
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.CourseCode)
         </td>
@@ -49,9 +49,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.InternshipCourseId }) |
             @Html.ActionLink("Details", "Details", new { id = item.InternshipCourseId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.InternshipCourseId }) |
-            @Html.ActionLink("Sections", "ListSectionsPartial", new { id = item.InternshipCourseId }) |
-
+            @Html.ActionLink("Delete", "Delete", new { id = item.InternshipCourseId })
         </td>
     </tr>
 }

@@ -368,7 +368,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <Content Include="Views\Supervisor\Create.cshtml" />
-    <Content Include="Views\InternshipCourse\Index.cshtml" />
     <Content Include="Views\Announcement\Create.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Complain\Create.cshtml" />
@@ -431,6 +430,7 @@
     <Content Include="Views\Firm\Edit.cshtml" />
     <Content Include="Views\Firm\Delete.cshtml" />
     <Content Include="Views\Instructor\Index.cshtml" />
+    <Content Include="Views\InternshipCourse\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

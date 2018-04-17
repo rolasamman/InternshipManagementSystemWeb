@@ -54,6 +54,20 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
+        public PartialViewResult ListSupervisorsPartial(int id)
+        {
+            var supervisors = db.Supervisors.Where(d => d.FirmId == id).ToList();
+            var model = new List<SupervisorViewModel>();
+            foreach (var supervisor in supervisors)
+            {
+                model.Add(new SupervisorViewModel
+                {
+                    SupervisorId = supervisor.SupervisorId,
+
+                });
+            }
+        }
+
         // GET: Firm/Create
         public ActionResult Create()
         {

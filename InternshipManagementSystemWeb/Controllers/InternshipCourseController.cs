@@ -25,7 +25,6 @@ namespace InternshipManagementSystemWeb.Controllers
         public ActionResult Index()
         {
             var internshipCourses = db.InternshipCourses.ToList();
-
             var model = new List<InternshipCourseViewModel>();
             foreach (var item in internshipCourses)
             {

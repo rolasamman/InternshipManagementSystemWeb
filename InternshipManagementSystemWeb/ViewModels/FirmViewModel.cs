@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InternshipManagementSystemWeb.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -53,7 +54,10 @@ namespace InternshipManagementSystemWeb.ViewModels
         [Display(Name = "Map Link")]
         public string MapLink { get; set; }
 
-        public List<SupervisorViewModel> Supervisors { get; set; }
+        // List of supervisors in this firm
+        public List<Supervisor> Supervisors { get; set; }
+       
+       
 
     }
 }
