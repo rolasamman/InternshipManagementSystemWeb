@@ -11,6 +11,13 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.StudentUniversityId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentUniversityId)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.UserName)
         </dt>
 
@@ -26,7 +33,7 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Password)
         </dt>
 
@@ -40,15 +47,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.ConfirmPassword)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentUniversityId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StudentUniversityId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)

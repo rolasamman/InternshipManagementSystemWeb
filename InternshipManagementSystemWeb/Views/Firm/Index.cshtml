@@ -33,13 +33,17 @@
         <div>
             @Html.DisplayFor(modelItem => item.FirmDescription)
         </div>
-        <div>
-            @Html.DisplayFor(modelItem => item.MapLink)
-        </div>
+        
+        <div>         
+            <a href="@Url.Action("MapLink", "Firm")"> Location on Map </a>
+    </div>
+
         <div>
             @Html.ActionLink("Edit", "Edit", new { id = item.FirmId }) |
             @Html.ActionLink("Details", "Details", new { id = item.FirmId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.FirmId })
+            @Html.ActionLink("Delete", "Delete", new { id = item.FirmId }) |
+            @Html.ActionLink("Supervisors", "Details", "Supervisor", new { id = item.FirmId })
+
         </div>
     </div>
 }

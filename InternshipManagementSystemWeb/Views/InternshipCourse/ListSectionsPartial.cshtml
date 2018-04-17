@@ -1,49 +1,53 @@
 ﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.SectionViewModel>
-
-@if (Model.Count() <= 0)
-{
-    <p>There are no sections in this course</p>
+@{ 
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
-else
-{
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.SectionId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Capacity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Semester)
-            </th>
-            <th></th>
-        </tr>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IntrenshipCourseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstructorId)
+        </th>
+        <th></th>
+    </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SectionId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Capacity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Semester)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", "Section", new { id = item.SectionId }, null) |
-                    @Html.ActionLink("Details", "Details", "Section", new { id = item.SectionId }, null) |
-                    @Html.ActionLink("Delete", "Delete", "Section", new { id = item.SectionId }, null)
-                </td>
-            </tr>
-        }
-    </table>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IntrenshipCourseId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstructorId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.SectionId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.SectionId  }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.SectionId })
+        </td>
+    </tr>
 }
+
+</table>

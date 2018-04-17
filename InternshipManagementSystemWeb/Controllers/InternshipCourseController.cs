@@ -138,7 +138,7 @@ namespace InternshipManagementSystemWeb.Controllers
                     Capacity = section.Capacity
                 });
             }
-            return PartialView(model);
+            return PartialView(model); 
         }
     }
 }

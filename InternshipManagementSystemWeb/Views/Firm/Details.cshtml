@@ -73,10 +73,15 @@
         <dd>
             @Html.DisplayFor(model => model.MapLink)
         </dd>
-
+        <a href="@Url.Action("MapLink", "Firm")"> Location on Map </a>
     </dl>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to Companies", "Index")
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    @Html.ActionLink("Back to Companies", "Index") |
+
+    @* Replace with  List of supervisors in this firm *@
+    @Ajax.ActionLink("Supervisors", "ListSupervisorsPartial", new { id = Model.FirmId }, new AjaxOptions { UpdateTargetId = "SupervisorList", HttpMethod = "GET", InsertionMode = InsertionMode.Replace })
 </p>
+<div id="SupervisorList"></div>

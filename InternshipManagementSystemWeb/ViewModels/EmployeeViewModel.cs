@@ -4,6 +4,7 @@
 
 using InternshipManagementSystemWeb.Models;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternshipManagementSystemWeb.ViewModels
 {
@@ -49,6 +50,10 @@ namespace InternshipManagementSystemWeb.ViewModels
         [Required]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Name")]
+        public string FullName { get { return (FirstName + " " + LastName); } }
 
         [Required]
         [StringLength(10)]

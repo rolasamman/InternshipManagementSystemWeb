@@ -32,23 +32,28 @@ namespace InternshipManagementSystemWeb.Controllers
         public ActionResult Index()
         {
             {
-                var students = db.Students.ToList();
+                var users = db.Students.ToList();
                 var model = new List<StudentViewModel>();
 
-                foreach (var item in students)
+                foreach (var item in users)
                 {
-                    if (!(item is Student))
+                    model.Add(new StudentViewModel
                     {
-                        model.Add(new StudentViewModel
-                        {
-                            Id = item.Id,
-                            Email = item.Email,
-                            FirstName = item.FirstName,
-                            LastName = item.LastName,
-                        });
-                    }
+                        Id = item.Id,
+                        UserName = item.UserName,
+                        StudentUniversityId = item.StudentUniversityId,
+                        FirstName = item.FirstName,
+                        LastName = item.LastName,
+                        Email = item.Email,                        
+                        Mobile = item.Mobile,
+                        //Department=item.Department,
+                        Major =item.Major,
+                        Resume = item.Resume,
+                        InternshipAgreementForm = item.InternshipAgreementForm,
+                        RiskIdentificationForm = item.RiskIdentificationForm,
+                    });
                 }
-                return View(model);
+                return View(model);              
             }
         }
 

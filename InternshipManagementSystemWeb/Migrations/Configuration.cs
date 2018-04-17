@@ -194,69 +194,6 @@ namespace InternshipManagementSystemWeb.Migrations
                 }
             }
 
-            // Add examples of students
-            var students = new List<Student>
-                {
-                    new Student {
-                        Id = 50,
-                        UserName = "amohammed",
-                        FirstName = "Abeer",
-                        LastName = "Mohammed",
-                        StudentUniversityId = "1510987",
-                        Email = "amohaammed@dah.edu.sa",
-                        Mobile = "0555543444",
-                        Department = Department.BusinessAndLaw,
-                        Major = "Marketing",                     
-                    },
-                     new Student {
-                        Id = 51,
-                        UserName = "hsameh",
-                        FirstName = "Hind",
-                        LastName = "Sameh",
-                        StudentUniversityId = "1610098",
-                        Email = "hsameh@dah.edu.sa",
-                        Mobile = "0544432345",
-                        Department = Department.BusinessAndLaw,
-                        Major = "Banking and Finance",
-                    },
-                     new Student {
-                        Id = 52,
-                        UserName = "dsalama",
-                        FirstName = "Doaa",
-                        LastName = "Salamah",
-                        StudentUniversityId = "1710989",
-                        Email = "dsalama@dah.edu.sa",
-                        Mobile = "0541231111",
-                        Department = Department.BusinessAndLaw,
-                        Major = "Human Resources",
-                    },
-                     new Student {
-                         Id = 53,
-                        UserName = "dzamil",
-                        FirstName = "Dina",
-                        LastName = "Zamil",
-                        StudentUniversityId = "1610009",
-                        Email = "dzamil@dah.edu.sa",
-                        Mobile = "0556777789",
-                        Department = Department.DesignAndArchitecture,
-                        Major = "Interior Design",
-                    },              
-                };
-
-            foreach (var student in students)
-            {
-                if (userManager.FindByName(student.UserName) == null)
-                {
-                    userManager.Create(student, "std123");
-                }
-
-                var usertemp = userManager.FindByName(student.UserName);
-                if (!userManager.IsInRole(usertemp.Id, roles[2]))
-                {
-                    userManager.AddToRole(usertemp.Id, roles[2]);
-                }
-            }
-
             // Add examples of announceements
             var announcements = new List<Announcement>
                 {
@@ -427,24 +364,28 @@ namespace InternshipManagementSystemWeb.Migrations
             var sections = new List<Section>
                 {
                       new Section {
+                          SectionId = 1,
                           Semester = Semester.SummerI,
                           Year = 2018,
                           Capacity = 20,
                           IntrenshipCourseId = 1,
                       },
                       new Section {
+                          SectionId = 2,
                           Semester = Semester.Fall,
                           Year = 2019,
                           Capacity = 20,
                           IntrenshipCourseId = 2,                          
                       },
                       new Section {
+                          SectionId = 3,
                           Semester = Semester.Fall,
                           Year = 2019,
                           Capacity = 15,
                           IntrenshipCourseId = 1,
                       },
                       new Section {
+                          SectionId = 4,
                           Semester = Semester.Spring,
                           Year = 2019,
                           Capacity = 10,
@@ -454,6 +395,73 @@ namespace InternshipManagementSystemWeb.Migrations
 
             sections.ForEach(c => context.Sections.AddOrUpdate(m => m.Semester, c));
             context.SaveChanges();
+
+            // Add examples of students
+            var students = new List<Student>
+                {
+                    new Student {
+                        Id = 50,
+                        UserName = "amohammed",
+                        FirstName = "Abeer",
+                        LastName = "Mohammed",
+                        StudentUniversityId = "1510987",
+                        Email = "amohaammed@dah.edu.sa",
+                        Mobile = "0555543444",
+                        Department = Department.BusinessAndLaw,
+                        Major = "Marketing",
+                        SectionId = 1,
+                    },
+                     new Student {
+                        Id = 51,
+                        UserName = "hsameh",
+                        FirstName = "Hind",
+                        LastName = "Sameh",
+                        StudentUniversityId = "1610098",
+                        Email = "hsameh@dah.edu.sa",
+                        Mobile = "0544432345",
+                        Department = Department.BusinessAndLaw,
+                        Major = "Banking and Finance",
+                        SectionId = 2,
+                    },
+                     new Student {
+                        Id = 52,
+                        UserName = "dsalama",
+                        FirstName = "Doaa",
+                        LastName = "Salamah",
+                        StudentUniversityId = "1710989",
+                        Email = "dsalama@dah.edu.sa",
+                        Mobile = "0541231111",
+                        Department = Department.BusinessAndLaw,
+                        Major = "Human Resources",
+                        SectionId = 3,
+                    },
+                     new Student {
+                         Id = 53,
+                        UserName = "dzamil",
+                        FirstName = "Dina",
+                        LastName = "Zamil",
+                        StudentUniversityId = "1610009",
+                        Email = "dzamil@dah.edu.sa",
+                        Mobile = "0556777789",
+                        Department = Department.DesignAndArchitecture,
+                        Major = "Interior Design",
+                        SectionId = 4,
+                    },
+                };
+
+            foreach (var student in students)
+            {
+                if (userManager.FindByName(student.UserName) == null)
+                {
+                    userManager.Create(student, "std123");
+                }
+
+                var usertemp = userManager.FindByName(student.UserName);
+                if (!userManager.IsInRole(usertemp.Id, roles[2]))
+                {
+                    userManager.AddToRole(usertemp.Id, roles[2]);
+                }
+            }
 
             // Add examples of Supervisors
             var supervisors = new List<Supervisor>
@@ -465,7 +473,8 @@ namespace InternshipManagementSystemWeb.Migrations
                         Phone = "0126789009",
                         Mobile = "0566665678",
                         Department = "Human Resources",
-                        FirmId = 1},
+                        FirmId = 1
+                    },
                     new Supervisor {
                         FirstName = "Zainab",
                         LastName = "Bin Mahfoz",
@@ -473,7 +482,8 @@ namespace InternshipManagementSystemWeb.Migrations
                         Phone = "0126654321",
                         Mobile = "0554321234",
                         Department = "Human Resources",
-                        FirmId = 2},
+                        FirmId = 2
+                    },
                      new Supervisor {
                          FirstName = "Ahmad",
                          LastName = "Abdulrahman",
@@ -481,7 +491,8 @@ namespace InternshipManagementSystemWeb.Migrations
                         Phone = "01267890000",
                          Mobile = "0542222212",
                          Department = "Human Resources",
-                         FirmId = 3},
+                         FirmId = 3
+                     },
                 };
             supervisors.ForEach(c => context.Supervisors.AddOrUpdate(m => m.Email, c));
             context.SaveChanges();
@@ -508,5 +519,59 @@ namespace InternshipManagementSystemWeb.Migrations
             visitOnSites.ForEach(c => context.VisitOnSites.AddOrUpdate(m => m.VisitDate, c));
             context.SaveChanges();
         }
+
+        /*1
+         * The purpose of this rating is: To make the student aware of areas 
+         * where improvement is needed and to enable the coordinator to evaluate 
+         * the student for academic credit:
+            Personal Appearance
+            Attendance
+            Cooperation
+            Sincerity & Dependability
+            Interest & Attitude
+            Courtesy & Tact
+            Self-Confidence
+            Enthusiasm
+            Judgment 
+         *
+         * 2
+         * What traits of the trainee need improvement?
+            Speed & Amount of Work
+            Follow Directions
+            Getting Along with Other Employees
+            Work Without Supervision
+            Takes Suggestions
+            General Knowledge of Work Procedures
+            Accuracy of Work
+            Neatness of Work
+          * 
+          * Other?
+          * 
+          * 3
+          * What work habits or abilities of the trainee needs improvement?
+          * 
+          * 4
+          * In what respect the student shown improvement? 
+          * 
+          * 5
+          * Days absent from work:
+          * Reason:
+          * 
+          * 6
+          * Times late for work  
+          * Reasons:
+          * 
+          * 7
+          * How does this person compare with other employees added to your staff during this period? (Check one)
+                More Capable
+                About the Same
+                Less Capable
+          * 
+          * 8
+          * At what position level does this student show potential?
+          * 
+          * 9
+          * Confidential remarks and additional comments?
+          */
     }
 }

@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @*@Html.ActionLink("Log Attendance", "Create")*@
+    @Html.ActionLink("Log New Attendance", "Create")
 </p>
 <table class="table">
     <tr>
@@ -26,12 +26,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.StudentId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FirmId)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -52,14 +52,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.StudentId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirmId)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Log Attendance", "Create")
+ 
             @Html.ActionLink("Edit", "Edit", new { id = item.AttendanceId }) |
             @Html.ActionLink("Details", "Details", new { id = item.AttendanceId }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.AttendanceId })

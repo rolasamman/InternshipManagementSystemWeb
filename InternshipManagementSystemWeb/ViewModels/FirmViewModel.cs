@@ -17,6 +17,7 @@ namespace InternshipManagementSystemWeb.ViewModels
     {
         public FirmViewModel()
         {
+            Supervisors = new List<Supervisor>();
         }
 
         public int FirmId { get; set; }

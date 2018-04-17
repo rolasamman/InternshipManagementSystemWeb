@@ -27,10 +27,7 @@ namespace InternshipManagementSystemWeb.Controllers
             var model = new List<VisitOnSiteViewModel>();
             foreach (var item in visitOnSites)
             {
-                //model.Add(new VisitOnSiteViewModel
-                //{
-                    
-                //});
+                model.Add(new VisitOnSiteViewModel());
             }
             return View(model);
         }

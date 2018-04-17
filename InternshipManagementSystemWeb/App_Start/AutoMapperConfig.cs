@@ -19,6 +19,7 @@ namespace InternshipManagementSystemWeb.App_Start
                 cfg.CreateMap<Supervisor, SupervisorViewModel>().ReverseMap();
                 cfg.CreateMap<InternshipCourse, InternshipCourseViewModel>().ReverseMap();
                 cfg.CreateMap<Announcement, AnnouncementViewModel>().ReverseMap();
+                cfg.CreateMap<Attendance, AttendanceViewModel>().ReverseMap();
 
             });
         }

@@ -54,20 +54,6 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
-        public PartialViewResult ListSupervisorsPartial(int id)
-        {
-            var supervisors = db.Supervisors.Where(d => d.FirmId == id).ToList();
-            var model = new List<SupervisorViewModel>();
-            foreach (var supervisor in supervisors)
-            {
-                model.Add(new SupervisorViewModel
-                {
-                    SupervisorId = supervisor.SupervisorId,
-
-                });
-            }
-        }
-
         // GET: Firm/Create
         public ActionResult Create()
         {
@@ -141,6 +127,26 @@ namespace InternshipManagementSystemWeb.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        //GET: /Firm/ListSupervisors/5
+        public PartialViewResult ListSupervisorsPartial(int id)
+        {
+            var supervisors = db.Supervisors.Where(c => c.FirmId == id).ToList();
+            var model = new List<SupervisorViewModel>();
+            foreach (var supervisor in supervisors)
+            {
+                model.Add(new SupervisorViewModel
+                {
+                    FirstName = supervisor.FirstName,
+                    LastName = supervisor.LastName,
+                    Email = supervisor.Email,
+                    Phone = supervisor.Phone,
+                    Mobile = supervisor.Mobile,
+                    Department = supervisor.Department,
+                });
+            }
+            return PartialView(model); 
         }
     }
 }
