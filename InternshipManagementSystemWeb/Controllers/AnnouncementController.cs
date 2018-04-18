@@ -21,6 +21,7 @@ namespace InternshipManagementSystemWeb.Controllers
     /// This controller uses announcement model and announcement viewModel
     /// </summary>
 
+    [Authorize]
     public class AnnouncementController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

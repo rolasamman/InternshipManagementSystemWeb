@@ -15,7 +15,10 @@ namespace InternshipManagementSystemWeb.ViewModels
 
     public class VisitOnSiteViewModel
     {
-        
+        public VisitOnSiteViewModel()
+        {
+        }
+
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int VisitOnSiteId { get; set; }
 

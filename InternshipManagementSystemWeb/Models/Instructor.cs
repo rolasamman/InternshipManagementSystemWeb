@@ -18,7 +18,7 @@ namespace InternshipManagementSystemWeb.Models
     {
         public Instructor()
         {
-            MeetingOnCampus = new HashSet<MeetingOnCampu>();
+            MeetingOnCampus = new HashSet<MeetingOnCampus>();
             Sections = new HashSet<Section>();
             VisitOnSites = new HashSet<VisitOnSite>();
         }
@@ -28,7 +28,7 @@ namespace InternshipManagementSystemWeb.Models
 
         //public virtual Employee Employee { get; set; }
 
-        public virtual ICollection<MeetingOnCampu> MeetingOnCampus { get; set; }
+        public virtual ICollection<MeetingOnCampus> MeetingOnCampus { get; set; }
 
         public virtual ICollection<Section> Sections { get; set; }
 

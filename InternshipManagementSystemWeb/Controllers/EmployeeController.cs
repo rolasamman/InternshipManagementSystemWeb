@@ -22,7 +22,8 @@ namespace InternshipManagementSystemWeb.Controllers
     /// This controller uses AutoMapper
     /// Employees are application users
     /// </summary>
-    
+
+    [Authorize]
     public class EmployeeController : Controller
     {
         private ApplicationSignInManager _signInManager;

@@ -4,19 +4,19 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Site Visits</h2>
 
 <div>
-    <h4>VisitOnSiteViewModel</h4>
+    <h4>Site Visits Details</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.VisitOnSiteId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.VisitOnSiteId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.VisitDate)
@@ -50,7 +50,7 @@
             @Html.DisplayFor(model => model.EndTime)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.InstructorId)
         </dt>
 
@@ -64,7 +64,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.StudentId)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>

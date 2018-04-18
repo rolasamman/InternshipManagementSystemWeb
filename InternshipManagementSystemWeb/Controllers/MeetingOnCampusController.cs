@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    [Authorize]
     public class MeetingOnCampusController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -15,17 +16,17 @@ namespace InternshipManagementSystemWeb.Controllers
         // GET: MeetingOnCampus
         //public ActionResult Index()
         //{
-        //    //var meetingOnCampuses = db.MeetingOnCampuses.ToList();
+        //    var meetingOnCampuses = db.MeetingOnCampuses.ToList();
 
-        //    //var model = new List<MeetingOnCampusViewModel>();
-        //    //foreach (var item in meetingOnCampuses)
-        //    //{
-        //    //    model.Add(new MeetingOnCampusViewModel
-        //    //    {
-        //    //        MeetingOnCampusId = item. 
-        //    //    });
-        //    //}
-        //    //return View(model);
+        //    var model = new List<MeetingOnCampusViewModel>();
+        //    foreach (var item in meetingOnCampuses)
+        //    {
+        //        model.Add(new MeetingOnCampusViewModel
+        //        {
+        //            MeetingOnCampusId = item.
+        //        });
+        //    }
+        //    return View(model);
         //}
 
         // GET: MeetingOnCampus/Details/5

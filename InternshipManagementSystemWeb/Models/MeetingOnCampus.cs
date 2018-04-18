@@ -13,7 +13,7 @@ namespace InternshipManagementSystemWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class MeetingOnCampu
+    public partial class MeetingOnCampus
     {
         [Key]
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]

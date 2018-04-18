@@ -16,11 +16,13 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    /// <summary>
+    /// Instructor controller manage instructors using instructor and InstructorViewModel classes
+    /// </summary>
+
+    [Authorize]
     public class InstructorController : Controller
     {
-        /// <summary>
-        /// Instructor controller manage instructors using instructor and InstructorViewModel classes
-        /// </summary>
 
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

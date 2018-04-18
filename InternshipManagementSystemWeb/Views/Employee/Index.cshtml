@@ -47,9 +47,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Mobile)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Roles)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -91,9 +91,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Mobile)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Roles)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |

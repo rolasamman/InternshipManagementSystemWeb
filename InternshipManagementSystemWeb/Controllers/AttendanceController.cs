@@ -21,6 +21,7 @@ namespace InternshipManagementSystemWeb.Controllers
     /// This controller uses attendance model and attendance viewModel
     /// </summary>
 
+    [Authorize]
     public class AttendanceController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -205,7 +205,7 @@
     <Compile Include="Models\InternshipCriterion.cs" />
     <Compile Include="Models\InternshipEvaluation.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MeetingOnCampu.cs" />
+    <Compile Include="Models\MeetingOnCampus.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Supervisor.cs" />
@@ -426,6 +426,7 @@
     <Content Include="Views\InternshipCourse\Index.cshtml" />
     <Content Include="Views\Firm\ListSupervisorsPartial.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\VisitOnSite\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

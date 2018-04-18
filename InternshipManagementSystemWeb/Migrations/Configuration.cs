@@ -22,7 +22,6 @@ namespace InternshipManagementSystemWeb.Migrations
             // Roles 
             string[] roles = { "Admin", "Instructor", "Student" };
 
-
             // Admin user login information
 
             string adminEmail = "admin@dah.edu";
@@ -59,7 +58,6 @@ namespace InternshipManagementSystemWeb.Migrations
 
             // Create admin user
             if (userManager.FindByName(admin.UserName) == null)
-
             {
                 userManager.Create(admin, adminPassword);
             }
@@ -79,6 +77,7 @@ namespace InternshipManagementSystemWeb.Migrations
                       new Employee {
                           Id = 10,
                           UserName = "mismail",
+                          //PasswordHash = "m123123",
                           EmployeeUniversityId = "2012",
                           FirstName = "Mervat",
                           LastName = "Ismail",
@@ -91,11 +90,13 @@ namespace InternshipManagementSystemWeb.Migrations
                       },
                 };
 
+            string employeePassword = "dah2018";
+
             foreach (var employee in employees)
             {
                 if (userManager.FindByName(employee.UserName) == null)
                 {
-                    userManager.Create(employee, "admin123");
+                    userManager.Create(employee, employeePassword );
                 }
 
                 var usertemp = userManager.FindByName(admin.UserName);
@@ -112,6 +113,7 @@ namespace InternshipManagementSystemWeb.Migrations
                     {
                      Id = 20,
                      UserName = "hsaied",
+                     //PasswordHash = "h123123",
                      EmployeeUniversityId = "1234",
                      FirstName = "Huda",
                      LastName = "Saied",
@@ -184,7 +186,7 @@ namespace InternshipManagementSystemWeb.Migrations
             {
                 if (userManager.FindByName(instructor.UserName) == null)
                 {
-                    userManager.Create(instructor, "inst123");
+                    userManager.Create(instructor, employeePassword);
                 }
 
                 var usertemp = userManager.FindByName(instructor.UserName);
@@ -449,11 +451,14 @@ namespace InternshipManagementSystemWeb.Migrations
                     },
                 };
 
+            string studentPassword = "dahstudent2018";
+
             foreach (var student in students)
             {
+                // Create student user
                 if (userManager.FindByName(student.UserName) == null)
                 {
-                    userManager.Create(student, "std123");
+                    userManager.Create(student, studentPassword);
                 }
 
                 var usertemp = userManager.FindByName(student.UserName);

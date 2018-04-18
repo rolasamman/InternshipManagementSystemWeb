@@ -22,6 +22,7 @@ namespace InternshipManagementSystemWeb.Controllers
     /// This controller users AutoMapper
     /// </summary>
 
+    [Authorize]
     public class SupervisorController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

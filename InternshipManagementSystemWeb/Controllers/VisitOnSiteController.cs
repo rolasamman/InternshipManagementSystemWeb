@@ -15,6 +15,12 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    /// <summary>
+    /// VisitOnSite controller manages Visits On Site 
+    /// This controller uses VisitOnSite model and VisitOnSite viewModel
+    /// </summary>
+
+    [Authorize]
     public class VisitOnSiteController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -27,7 +33,14 @@ namespace InternshipManagementSystemWeb.Controllers
             var model = new List<VisitOnSiteViewModel>();
             foreach (var item in visitOnSites)
             {
-                model.Add(new VisitOnSiteViewModel());
+                model.Add(new VisitOnSiteViewModel
+                {
+                    VisitOnSiteId = item.VisitOnSiteId,
+                    VisitDate = item.VisitDate,
+                    StartTime= item.StartTime,
+                    EndTime = item.EndTime,
+                    Feedback = item.Feedback,
+                });
             }
             return View(model);
         }

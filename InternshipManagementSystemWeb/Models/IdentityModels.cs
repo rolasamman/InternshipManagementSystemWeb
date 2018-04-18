@@ -40,7 +40,7 @@ namespace InternshipManagementSystemWeb.Models
         public virtual DbSet<InternshipCourse> InternshipCourses { get; set; }
         public virtual DbSet<InternshipCriterion> InternshipCriterions { get; set; }
         public virtual DbSet<InternshipEvaluation> InternshipEvaluations { get; set; }
-        public virtual DbSet<MeetingOnCampu> MeetingOnCampus { get; set; }
+        public virtual DbSet<MeetingOnCampus> MeetingOnCampus { get; set; }
         public virtual DbSet<Section> Sections { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Supervisor> Supervisors { get; set; }

@@ -16,6 +16,7 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    [Authorize]
     public class InternshipCourseController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

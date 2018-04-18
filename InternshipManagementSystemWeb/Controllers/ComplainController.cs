@@ -21,6 +21,7 @@ namespace InternshipManagementSystemWeb.Controllers
     /// This controller uses complain model and complain viewModel
     /// </summary>
 
+    [Authorize]
     public class ComplainController : Controller 
     {
         private ApplicationDbContext db = new ApplicationDbContext();

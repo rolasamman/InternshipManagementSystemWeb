@@ -23,6 +23,7 @@ namespace InternshipManagementSystemWeb.Controllers
     /// Students are application users
     /// </summary>
 
+    [Authorize]
     public class StudentController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

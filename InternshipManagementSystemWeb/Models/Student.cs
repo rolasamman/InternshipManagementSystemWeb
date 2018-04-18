@@ -20,7 +20,7 @@ namespace InternshipManagementSystemWeb.Models
             Attendances = new HashSet<Attendance>();
             Complains = new HashSet<Complain>();
             InternshipEvaluations = new HashSet<InternshipEvaluation>();
-            MeetingOnCampus = new HashSet<MeetingOnCampu>();
+            MeetingOnCampus = new HashSet<MeetingOnCampus>();
             SupervisorEvaluations = new HashSet<SupervisorEvaluation>();
             VisitOnSites = new HashSet<VisitOnSite>();
         }
@@ -91,7 +91,7 @@ namespace InternshipManagementSystemWeb.Models
 
         public virtual ICollection<InternshipEvaluation> InternshipEvaluations { get; set; }
 
-        public virtual ICollection<MeetingOnCampu> MeetingOnCampus { get; set; }
+        public virtual ICollection<MeetingOnCampus> MeetingOnCampus { get; set; }
 
         public virtual Section Section { get; set; }
 

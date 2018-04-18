@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    [Authorize]
     public class InternshipCriterionController : Controller
     {
         // The index action allow displaying and listing the items that are in the internshipCriterion table/model

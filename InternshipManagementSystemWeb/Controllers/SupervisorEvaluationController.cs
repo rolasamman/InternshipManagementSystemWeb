@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    [Authorize]
     public class SupervisorEvaluationController : Controller
     {
 
