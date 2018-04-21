@@ -1,6 +1,10 @@
-﻿/*     
- *     Description:    This class is a controller for announcemtn from the announcement view model
- *      Author:        Rola Samman
+﻿/*    
+ *      Description:    This is an Internship Management System for a university. 
+ *                      The project handles internship matters of the internship department of the university. 
+ *                      The aim of the project is to make communications between users most efficient and effective. 
+ *                      It also provides users with necessary data and records needed information.
+ *      
+ *      Author:         Rola Samman
 */
 
 using AutoMapper;
@@ -28,7 +32,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The index action allow displaying and listing the items that are in the announcement table/model
         // GET: Announcement 
-        //[Authorize]
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Index() 
         {
             var announcements = db.Announcements.ToList();
@@ -49,13 +53,13 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The details action allow displaying the details of a selected item by Id in the announcement table/model 
         // GET: Announcement/Details/5
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Details(int? id)
         {
             Announcement announcement = db.Announcements.Find(id);
             AnnouncementViewModel model = Mapper.Map<Announcement, AnnouncementViewModel>(announcement);
             return View(model);
         }
-
 
         // GET: Announcement/Create
         public ActionResult Create()
@@ -65,6 +69,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The create action allows adding a new item to the announcement table/model
         // POST: Announcement/Create
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(AnnouncementViewModel model)
@@ -90,7 +95,8 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // The edit action allow updating existing data in the announcement table/model
-        // POST: Announcement/Edit/5     
+        // POST: Announcement/Edit/5   
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(AnnouncementViewModel model)
@@ -107,6 +113,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The delete action is for deleting a selected item in the table/model
         // GET: Announcement/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             Announcement announcement = db.Announcements.Find(id);

@@ -1,5 +1,9 @@
 ﻿/*    
- *      Description:    This class is a controller for attendance from the attendance view model
+ *      Description:    This is an Internship Management System for a university. 
+ *                      The project handles internship matters of the internship department of the university. 
+ *                      The aim of the project is to make communications between users most efficient and effective. 
+ *                      It also provides users with necessary data and records needed information.
+ *      
  *      Author:         Rola Samman
 */
 
@@ -21,13 +25,13 @@ namespace InternshipManagementSystemWeb.Controllers
     /// This controller uses attendance model and attendance viewModel
     /// </summary>
 
-    [Authorize]
     public class AttendanceController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // The index action allow displaying and listing the items that are in the attendance table/model
         // GET: Attendance
+        [Authorize (Roles = "Admin, Instructor, Student")]
         public ActionResult Index()
         {
             var attendances = db.Attendances.ToList();
@@ -48,6 +52,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The details action allow displaying the details of a selected item by Id in the attendance table/model 
         // GET: Attendance/Details/5
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Details(int? id)
         {
             Attendance attendance = db.Attendances.Find(id);
@@ -63,6 +68,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The create action allows adding a new item to the attendance table/model
         // POST: Attendance/Create
+        [Authorize (Roles = "Student")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(AttendanceViewModel model)
@@ -87,6 +93,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The edit action allow updating existing data in the attendance table/model
         // POST: Attendance/Edit/5
+        [Authorize (Roles = "Student")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(AttendanceViewModel model)
@@ -103,6 +110,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The delete action is for deleting a selected item in the table/model
         // GET: Attendance/Delete/5
+        [Authorize (Roles = "Student")]
         public ActionResult Delete(int? id)
         {     
             Attendance attendance = db.Attendances.Find(id);
