@@ -74,25 +74,26 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.ApprovedAttendance, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.ApprovedAttendance, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model. ApprovedAttendance, "", new { @class = "text-danger" })
+                   @Html.TextBox("ApprovedAttendance", "", new { type = "file" })
                 </div>
             </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Log" class="btn btn-default" />
             </div>
         </div>
-         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="button" value="Cancel" class="btn btn-danger" />
-            </div>
-        </div>
+         @*<div class="form-group">
+             <div class="col-md-offset-2 col-md-10">
+                 <input type="button" value="Cancel" class="btn btn-danger" />
+              
+             </div>
+        </div>*@
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Attendance", "Index")
 </div>
 
 @section Scripts {

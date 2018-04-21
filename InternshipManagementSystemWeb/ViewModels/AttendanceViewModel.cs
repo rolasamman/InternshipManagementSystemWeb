@@ -58,6 +58,7 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         public virtual Student Student { get; set; }
 
+        [Display(Name = "Approved Attendance")]
         [StringLength(200)]
         public string ApprovedAttendance { get; set; }
 

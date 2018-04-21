@@ -62,6 +62,8 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         [StringLength(200)]
         [Display(Name = "Map Link")]
+        //[UIHint("OpenInNewWindow")]
+        [DataType(DataType.Url)]
         public string MapLink { get; set; }
 
         // List of supervisors in this firm

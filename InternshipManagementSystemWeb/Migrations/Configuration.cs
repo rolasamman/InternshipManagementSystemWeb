@@ -99,6 +99,10 @@ namespace InternshipManagementSystemWeb.Migrations
                       },
                 };
 
+            // Employees user login information
+            // Employees are all working individual in the university 
+            // Employees can be admin or instructor 
+
             string employeePassword = "dah2018";
 
             foreach (var employee in employees)
@@ -190,6 +194,8 @@ namespace InternshipManagementSystemWeb.Migrations
                      Department = Department.BusinessAndLaw
                      }
                 };
+
+            // Instructors user employee login password. 
 
             foreach (var instructor in instructors)
             {

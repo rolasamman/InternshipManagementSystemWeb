@@ -18,6 +18,8 @@ namespace InternshipManagementSystemWeb.Models
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int AttendanceId { get; set; }
 
+        //[DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "date")]
         public DateTime AttendanceDate { get; set; }
 

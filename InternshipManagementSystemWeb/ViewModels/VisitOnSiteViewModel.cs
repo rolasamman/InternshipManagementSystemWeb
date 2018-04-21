@@ -32,8 +32,8 @@ namespace InternshipManagementSystemWeb.ViewModels
         public int VisitOnSiteId { get; set; }
 
         //[Column(TypeName = "date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date of visit")]
         public DateTime VisitDate { get; set; }
 

@@ -10,13 +10,13 @@
     @*<h4>Details</h4>*@
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.AttendanceId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.AttendanceId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.AttendanceDate)
@@ -50,7 +50,7 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.StudentId)
         </dt>
 
@@ -64,7 +64,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.FirmId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.ApprovedAttendance)
@@ -78,5 +78,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Attendance", "Index")
 </p>

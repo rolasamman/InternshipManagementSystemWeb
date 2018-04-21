@@ -30,8 +30,9 @@ namespace InternshipManagementSystemWeb.ViewModels
         }
 
         public int MeetingOnCampusId { get; set; }
-
-        //[Column(TypeName = "date")]
+        //[DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date")]
         public DateTime MeetingDate { get; set; }
 
         public TimeSpan StartTime { get; set; }
