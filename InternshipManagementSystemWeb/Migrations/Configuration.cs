@@ -593,5 +593,41 @@ namespace InternshipManagementSystemWeb.Migrations
           * 9
           * Confidential remarks and additional comments?
           */
-    }
+
+
+/*
+ * 1
+ * Identify the three most important goals that you had set for improving your skills when entering the intern program.(3)
+ * 
+ * 2
+ * List the activities that allowed you to accomplish your goals.
+ * 
+ * 3
+ * Identify the specific types of experiences you encountered that will enhance your employability in your chosen field.
+ * 
+ * 4
+ * Give examples of how your supervisor provided educational leadership, which helped you to grow in your professional development.
+ *
+ * 5
+ * List the three most positive benefits you derived from the internship experience. (3)
+ * 
+ * 6
+ * List the negative aspects of your internship experience (if any)
+ * 
+ * 7
+ * Would you recommend this internship site to another student?
+ * Yes
+ * No
+ * If no, why not?
+ * 
+ * 8
+ * My internship experience was: (please check one)
+ * Extremely Valuable
+ * Very Valuable
+ * Valuable
+ * Of Some Value
+ * Of No Value
+ */
+
+}
 }

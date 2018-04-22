@@ -94,6 +94,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         public HttpPostedFileBase ResumeFile { get; set; }
 
         // The outline file path as string (used to display the path)
+        [Display(Name = "Resume")]
         public string Resume { get; set; }
 
         // The outline file as object (used to upload a file)
@@ -101,6 +102,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         public HttpPostedFileBase InternshipAgreement { get; set; }
 
         // The outline file path as string (used to display the path)
+        [Display(Name = "Internship Agreement Form")]
         public string InternshipAgreementForm { get; set; }
 
         // The outline file as object (used to upload a file)
@@ -108,6 +110,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         public HttpPostedFileBase RiskIdentification { get; set; }
 
         // The outline file path as string (used to display the path)
+        [Display(Name = "Risk Identification Form")]
         public string RiskIdentificationForm { get; set; }
     }
 }

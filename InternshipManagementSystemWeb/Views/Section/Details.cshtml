@@ -4,19 +4,19 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Section</h2>
+<h2>Sections</h2>
 
 <div>
     <h4>Section Details</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.SectionId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.SectionId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Year)
@@ -34,7 +34,7 @@
             @Html.DisplayFor(model => model.Capacity)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.IntrenshipCourseId)
         </dt>
 
@@ -48,7 +48,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.InstructorId)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>

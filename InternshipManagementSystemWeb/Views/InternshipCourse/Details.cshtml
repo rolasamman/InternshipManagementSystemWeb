@@ -55,5 +55,11 @@
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to Courses", "Index")
+    @Html.ActionLink("Back to Courses", "Index") |
+
+    @* Replace with  List of supervisors in this firm *@
+    @Ajax.ActionLink("Sections", "ListSectionsPartial", new { id = Model.InternshipCourseId }, 
+    new AjaxOptions { UpdateTargetId = "SectionList", HttpMethod = "GET", InsertionMode = InsertionMode.Replace })
+
 </p>
+<div id="SectionList"></div>

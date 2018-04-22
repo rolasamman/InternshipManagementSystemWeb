@@ -23,7 +23,6 @@ namespace InternshipManagementSystemWeb.Controllers
     /// <summary>
     /// Supervisor controller manages supervisors 
     /// This controller uses supervisor and supervisorViewModel classes
-    /// This controller users AutoMapper
     /// </summary>
 
     [Authorize]
