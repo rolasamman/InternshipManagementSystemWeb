@@ -29,10 +29,10 @@ namespace InternshipManagementSystemWeb.ViewModels
         }
 
         public int SupervisorCriterionId { get; set; }
-
+         
         [Required]
         [StringLength(100)]
-        public string Name { get; set; }
+        public string Question { get; set; }
 
         [Required]
         [StringLength(50)]

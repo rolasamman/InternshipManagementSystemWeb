@@ -23,7 +23,7 @@ namespace InternshipManagementSystemWeb.Models
 
         [Required]
         [StringLength(100)]
-        public string Name { get; set; }
+        public string Question { get; set; }
 
         [Required]
         [StringLength(50)]

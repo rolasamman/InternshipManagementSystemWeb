@@ -7,6 +7,7 @@
  *      Author:         Rola Samman
 */
 
+using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,10 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         // The index action allow displaying and listing the items that are in the internshipCriterion table/model
         // GET: InternshipCriterion
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
+            
+        //}
 
         // The details action allow displaying the details of a selected item by Id in the internshipCriterion table/model 
         // GET: InternshipCriterion/Details/5

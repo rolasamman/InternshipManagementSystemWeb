@@ -226,7 +226,9 @@
     <Compile Include="ViewModels\InternshipEvaluationViewModel.cs" />
     <Compile Include="ViewModels\MeetingOnCampusViewModel.cs" />
     <Compile Include="ViewModels\SectionViewModel.cs" />
+    <Compile Include="ViewModels\StudentAnswerViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
+    <Compile Include="ViewModels\SupervisorAnswerViewModel.cs" />
     <Compile Include="ViewModels\SupervisorCriterionViewModel.cs" />
     <Compile Include="ViewModels\SupervisorEvaluationViewModel.cs" />
     <Compile Include="ViewModels\SupervisorViewModel.cs" />

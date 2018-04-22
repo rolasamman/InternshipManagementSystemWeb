@@ -7,6 +7,7 @@
  *      Author:         Rola Samman
 */
 
+using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,50 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The index action allow displaying and listing the items that are in the supervisorEvaluation table/model
         // GET: SupervisorEvaluation
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
+        //    // Create the list of possible answers for questions
+        //    // Each questions may have a different number of answers
+        //    // In this case all questions have 5 possible answers
+        //    var possibleAnswers = new List<SupervisorAnswerViewModel>
+        //    {
+        //        new SupervisorAnswerViewModel { Id = 1, Text= "Definitely Excptional"},
+        //        new SupervisorAnswerViewModel { Id = 2, Text= "Abouve Average"},
+        //        new SupervisorAnswerViewModel { Id = 3, Text= "Average"},
+        //        new SupervisorAnswerViewModel { Id = 4, Text= "Below Average"},
+        //        new SupervisorAnswerViewModel { Id = 5, Text= "Poor"},
+        //    };
+
+        //    // Get the questions from the database
+        //    // This is a data sample
+        //    var questions = new List<SupervisorCriterionViewModel>
+        //    {
+        //        // Rdio button input
+        //        new SupervisorCriterionViewModel
+        //        {
+        //            SupervisorCriterionId = 1,
+        //            Question = "Question 1",
+        //            QuestionInputType = QuestionInputType.RadioButton,
+        //            PossibleAnswers = possibleAnswers,
+        //        },
+
+        //        // Textbox input
+        //        new SupervisorCriterionViewModel
+        //        {
+        //            SupervisorCriterionId = 2,
+        //            Question = "Question 2",
+        //            QuestionInputType = QuestionInputType.TextBox,
+        //        },
+
+        //        // Text Area input
+        //        new SupervisorCriterionViewModel
+        //        {
+        //            SupervisorCriterionId = 3,
+        //            Question = "Question 3",
+        //            QuestionInputType = QuestionInputType.TextArea,
+        //        }
+        //    };
+        //}
 
         // The details action allow displaying the details of a selected item by Id in the supervisorEvaluation table/model 
         // GET: SupervisorEvaluation/Details/5

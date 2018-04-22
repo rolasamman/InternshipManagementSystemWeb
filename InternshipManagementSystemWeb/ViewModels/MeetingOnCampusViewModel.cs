@@ -4,7 +4,7 @@
  *                      The aim of the project is to make communications between users most efficient and effective. 
  *                      It also provides users with necessary data and records needed information.
  *      
- *      Author:         Rola Samman
+ *      Author:         Rola Samman 
 */
 
 using InternshipManagementSystemWeb.Models;
@@ -30,6 +30,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         }
 
         public int MeetingOnCampusId { get; set; }
+
         //[DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date")]

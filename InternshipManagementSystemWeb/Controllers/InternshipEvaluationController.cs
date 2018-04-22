@@ -7,6 +7,7 @@
  *      Author:         Rola Samman
 */
 
+using InternshipManagementSystemWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,47 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         // The index action allow displaying and listing the items that are in the internsihpEvaluation table/model
         // GET: InternshipEvaluation
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
+        //    // Create the list of possible answers for questions
+        //    // Each questions may have a different number of answers
+        //    // In this case all questions have 3 possible answers
+        //    var possibleAnswers = new List<StudentAnswerViewModel>
+        //    {
+        //        new StudentAnswerViewModel { Id = 1, Text= "Fair"},
+        //        new StudentAnswerViewModel { Id = 2, Text= "Average"},
+        //        new StudentAnswerViewModel { Id = 3, Text= "Good"},
+        //    };
+
+        //    // Get the questions from the database
+        //    // This is a data sample
+        //    var questions = new List<InternshipCriterionViewModel>
+        //    {
+        //        // Rdio button input
+        //        new InternshipCriterionViewModel
+        //        {
+        //            Id = 1,
+        //            Text = "Question 1",
+        //            QuestionInputType = QuestionInputType.RadioButton,
+        //            PossibleAnswers = possibleAnswers,
+        //        },
+
+        //        // Textbox input
+        //        new InternshipCriterionViewModel
+        //        {
+        //            Id = 2,
+        //            Text = "Question 2",
+        //            QuestionInputType = QuestionInputType.TextBox,
+        //        },
+
+        //        // Text Area input
+        //        new InternshipCriterionViewModel
+        //        {
+        //            Id = 3,
+        //            Text = "Question 3",
+        //            QuestionInputType = QuestionInputType.TextArea,
+        //        }
+        //}
 
         // The details action allow displaying the details of a selected item by Id in the internshipEvaluation table/model 
         // GET: InternshipEvaluation/Details/5

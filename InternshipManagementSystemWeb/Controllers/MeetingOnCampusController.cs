@@ -7,6 +7,7 @@
  *      Author:         Rola Samman
 */
 
+using AutoMapper;
 using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
 using System;
@@ -23,29 +24,35 @@ namespace InternshipManagementSystemWeb.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: MeetingOnCampus
+        //[Authorize(Roles = "Admin, Instructor, Student")]
         //public ActionResult Index()
         //{
-        //    var meetingOnCampuses = db.MeetingOnCampuses.ToList();
-
+        //    var eetingOnCampus = db.MeetingOnCampuse.ToList();
         //    var model = new List<MeetingOnCampusViewModel>();
-        //    foreach (var item in meetingOnCampuses)
+        //    foreach (var item in meetingOnCampus)
         //    {
         //        model.Add(new MeetingOnCampusViewModel
         //        {
-        //            MeetingOnCampusId = item.
+        //            AttendanceId = item.AttendanceId,
+        //            AttendanceDate = item.AttendanceDate,
+        //            TimeIn = item.TimeIn,
+        //            TimeOut = item.TimeOut,
+        //            Description = item.Description
         //        });
         //    }
         //    return View(model);
         //}
 
         // GET: MeetingOnCampus/Details/5
-        public ActionResult Details(int id)
+        [Authorize(Roles = "Admin, Instructor, Student")]
+        public ActionResult Details(int? id)
         {
-            return View();
+            MeetingOnCampus meetingOnCampus = db.MeetingOnCampus.Find(id);
+            MeetingOnCampusViewModel model = Mapper.Map<MeetingOnCampus, MeetingOnCampusViewModel>(meetingOnCampus);
+            return View(model);
         }
-
-        // GET: MeetingOnCampus/Create
-        public ActionResult Create()
+            // GET: MeetingOnCampus/Create
+            public ActionResult Create()
         {
             return View();
         }
