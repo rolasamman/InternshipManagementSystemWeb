@@ -24,7 +24,9 @@ textarea {
 }
 
 .navbar-inverse {
-    background-color: #fff !important;
+    background-color: #7A0300 !important;
+    opacity: .8;
+    width: 90%;
 }
 
 html {
@@ -50,7 +52,7 @@ body {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.9;
-    color: #383838;
+    color: #343434;
     text-align: left;
     background-color: #fff;
 }
@@ -91,6 +93,15 @@ address {
     line-height: inherit;
 }
 
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
+/* Containers */
 
-
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}

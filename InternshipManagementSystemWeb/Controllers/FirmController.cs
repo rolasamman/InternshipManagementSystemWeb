@@ -27,6 +27,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The index action allow displaying and listing the items that are in the firm table/model
         // GET: Firm
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Index()
         {
             var firms = db.Firms.ToList();     
@@ -52,6 +53,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The details action allow displaying the details of a selected item by Id in the firm table/model 
         // GET: Firm/Details/5
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Details(int? id)
         {
             Firm firm = db.Firms.Find(id);
@@ -60,6 +62,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Firm/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -67,6 +70,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The create action allows adding a new item to the firm table/model
         // POST: Firm/Create
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(FirmViewModel model)
@@ -82,6 +86,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Firm/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             Firm firm = db.Firms.Find(id);          
@@ -91,6 +96,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // POST: Firm/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(FirmViewModel model)
@@ -107,6 +113,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
 
         // GET: Firm/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             Firm firm = db.Firms.Find(id);

@@ -66,6 +66,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The index action allow displaying and listing the users that are in the instructor table/model
         // GET: Instructor
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var users = db.Instructors.ToList();
@@ -92,6 +93,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The details action allow displaying the details of a selected user by Id in the instructor table/model 
         // GET: Instructor/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int id)
         {
             Instructor instructor = db.Instructors.Find(id);
@@ -100,6 +102,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Instructor/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -107,6 +110,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The create action allows adding a new user to the instructor table/model
         // POST: Instructor/Create
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(InstructorViewModel model)
@@ -123,6 +127,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Instructor/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
             Instructor instructor = db.Instructors.Find(id);
@@ -130,28 +135,30 @@ namespace InternshipManagementSystemWeb.Controllers
             return View(model);
         }
 
-    // POST: Instructor/Edit/5
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public ActionResult Edit(InstructorViewModel model)
-    {
-        if (ModelState.IsValid)
+        // POST: Instructor/Edit/5
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(InstructorViewModel model)
         {
-            Instructor instructor = Mapper.Map<InstructorViewModel, Instructor>(model);
-            db.Entry(instructor).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-        return View(model);
-    }
-
-    // GET: Instructor/Delete/5
-    public ActionResult Delete(int id)
-        {
-            Instructor instructor = db.Instructors.Find(id);
-            InstructorViewModel model = Mapper.Map<Instructor, InstructorViewModel>(instructor);
+            if (ModelState.IsValid)
+            {
+                Instructor instructor = Mapper.Map<InstructorViewModel, Instructor>(model);
+                db.Entry(instructor).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View(model);
         }
+
+        // GET: Instructor/Delete/5
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete(int id)
+            {
+                Instructor instructor = db.Instructors.Find(id);
+                InstructorViewModel model = Mapper.Map<Instructor, InstructorViewModel>(instructor);
+                return View(model);
+            }
 
         // POST: Instructor/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -173,7 +180,7 @@ namespace InternshipManagementSystemWeb.Controllers
             base.Dispose(disposing);
         }
 
-        //
+        //GET: /Instructors/ListSections/5
         public PartialViewResult ListSectionsPartial(int id)
         {
             var sections = db.Sections.Where(d => d.IntrenshipCourseId == id).ToList();

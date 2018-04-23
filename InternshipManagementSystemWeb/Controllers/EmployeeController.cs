@@ -71,6 +71,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The index action allow displaying and listing the users that are in the employee table/model
         // GET: Employee
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var users = db.Employees.ToList();
@@ -100,6 +101,7 @@ namespace InternshipManagementSystemWeb.Controllers
         // The details action allow displaying the details of a selected user by Id in the employee table/model 
         // GET: Employee/Details/5
         // The is parameter changed from int to int? to accept nulls
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id != null)
@@ -136,6 +138,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
 
         // GET: Employee/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             // Example of usage of a checkbox list. See the /Views/Employee/Create.cshtml view
@@ -145,6 +148,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The create action allows adding a new user to the employee table/model
         // POST: Employee/Create
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(EmployeeViewModel model, params string[] roles)
@@ -208,6 +212,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Employee/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
                 var userId = id ?? default(int);
@@ -226,6 +231,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The edit action allow updating selected existing data in the employee table/model
         // POST: Employee/Edit/5
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int? id, EmployeeViewModel model, params string[] roles)
@@ -281,6 +287,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Employee/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
            
@@ -293,6 +300,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: Employee/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]

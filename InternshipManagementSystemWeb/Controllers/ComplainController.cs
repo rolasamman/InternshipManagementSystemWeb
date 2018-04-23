@@ -32,6 +32,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The index action allow displaying and listing the items that are in the complain table/model
         // GET: Complain
+        [Authorize(Roles = "Admin, Student")]
         public ActionResult Index()
         {
             var complains = db.Complains.ToList();
@@ -52,6 +53,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The details action allow displaying the details of a selected item by Id in the complain table/model 
         // GET: Complain/Details/5
+        [Authorize(Roles = "Admin, Student")]
         public ActionResult Details(int? id)
         {
             Complain complain = db.Complains.Find(id);
@@ -67,6 +69,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The create action allows adding a new item to the complain table/model
         // POST: Complain/Create
+        [Authorize(Roles = "Student")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ComplainViewModel model)
@@ -92,6 +95,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The edit action allow updating selected existing data in the complain table/model
         // POST: Complain/Edit/5
+        [Authorize(Roles = "Student")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(ComplainViewModel model)
@@ -108,6 +112,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The delete action is for deleting a selected item in the table/model
         // GET: Complain/Delete/5
+        [Authorize(Roles = "Student")]
         public ActionResult Delete(int id)
         {
             Complain complain = db.Complains.Find(id);
@@ -133,5 +138,21 @@ namespace InternshipManagementSystemWeb.Controllers
             }
             base.Dispose(disposing);
         }
+
+        // POST: Complain/Reply
+        //[Authorize(Roles = "Admin, Student")]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        public PartialViewResult ReplyPartial(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                Complain reply = Mapper.Map<ComplainViewModel, Complain>();
+                reply.ReplyDate = DateTime.Now;
+                db.Complains.Add(reply);
+                db.SaveChanges();
+            }
+            return PartialView(model);
+}
     }
 }
