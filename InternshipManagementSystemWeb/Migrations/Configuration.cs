@@ -538,96 +538,168 @@ namespace InternshipManagementSystemWeb.Migrations
                 };
             visitOnSites.ForEach(c => context.VisitOnSites.AddOrUpdate(m => m.VisitDate, c));
             context.SaveChanges();
+
+            // Add Questions in the Supervisor Criterion
+            var supervisorCriterions = new List<SupervisorCriterion>
+            {
+                    new SupervisorCriterion {
+                        SupervisorCriterionId = 1,
+                        Question = "Personal Appearance",
+                    },
+                     new SupervisorCriterion {
+                        SupervisorCriterionId = 2,
+                        Question = "Attendance",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 3,
+                        Question = "Cooperation",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 4,
+                        Question = "Sincerity & Dependability",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 5,
+                        Question = "Interest & Attitude",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 6,
+                        Question = "Courtesy & Tact",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 7,
+                        Question = "Self-Confidence",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 8,
+                        Question = "Enthusiasm",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 9,
+                        Question = "Judgment",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 10,
+                        Question = "What traits of the trainee need improvement?",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 11,
+                        Question = "Speed & Amount of Work",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 12,
+                        Question = "Follow Directions",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 13,
+                        Question = "Getting Along with Other Employees",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 14,
+                        Question = "Work Without Supervision",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 15,
+                        Question = "Takes Suggestions",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 16,
+                        Question = "General Knowledge of Work Procedures",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 17,
+                        Question = "Accuracy of Work",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 18,
+                        Question = "Neatness of Work",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 19,
+                        Question = "Other?",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 20,
+                        Question = "What work habits or abilities of the trainee needs improvement?",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 21,
+                        Question = "In what respect the student shown improvement?",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 22,
+                        Question = "Days absent from work:",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 23,
+                        Question = "Reason:",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 24,
+                        Question = "Times late for work:",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 25,
+                        Question = "Reason:",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 26,
+                        Question = "How does this person compare with other employees added to your staff during this period? (Check one)",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 27,
+                        Question = "At what position level does this student show potential?",
+                    },
+                      new SupervisorCriterion {
+                        SupervisorCriterionId = 28,
+                        Question = "Confidential remarks and additional comments?",
+                    },
+            };
+
+            supervisorCriterions.ForEach(c => context.SupervisorCriterions.AddOrUpdate(m => m.Question, c));
+            context.SaveChanges();
+
+            // Add Questions in the Internship Criterion
+            var internshipCriterions = new List<InternshipCriterion>
+            {
+                    new InternshipCriterion {
+                        InternshipCriterionId = 1,
+                        Question = "Identify the three most important goals that you had set for improving your skills when entering the intern program. (3)",
+                    },
+                    new InternshipCriterion {
+                        InternshipCriterionId = 2,
+                        Question = "List the activities that allowed you to accomplish your goals.",
+                    },
+                    new InternshipCriterion {
+                        InternshipCriterionId = 3,
+                        Question = "Identify the specific types of experiences you encountered that will enhance your employability in your chosen field.",
+                    },
+                    new InternshipCriterion {
+                        InternshipCriterionId = 4,
+                        Question = "Give examples of how your supervisor provided educational leadership, which helped you to grow in your professional development.",
+                    },
+                    new InternshipCriterion {
+                        InternshipCriterionId = 5,
+                        Question = "List the three most positive benefits you derived from the internship experience. (3)",
+                    },
+                    new InternshipCriterion {
+                        InternshipCriterionId = 6,
+                        Question = "List the negative aspects of your internship experience (if any)",
+                    },
+                    new InternshipCriterion {
+                        InternshipCriterionId = 7,
+                        Question = "Would you recommend this internship site to another student?",
+                    },
+                    new InternshipCriterion {
+                        InternshipCriterionId = 8,
+                        Question = "My internship experience was: (please check one)",
+                    },
+
+            };
+
+            internshipCriterions.ForEach(c => context.InternshipCriterions.AddOrUpdate(m => m.Question, c));
+            context.SaveChanges();
+
         }
-
-        /*1
-         * The purpose of this rating is: To make the student aware of areas 
-         * where improvement is needed and to enable the coordinator to evaluate 
-         * the student for academic credit:
-            Personal Appearance
-            Attendance
-            Cooperation
-            Sincerity & Dependability
-            Interest & Attitude
-            Courtesy & Tact
-            Self-Confidence
-            Enthusiasm
-            Judgment 
-         *
-         * 2
-         * What traits of the trainee need improvement?
-            Speed & Amount of Work
-            Follow Directions
-            Getting Along with Other Employees
-            Work Without Supervision
-            Takes Suggestions
-            General Knowledge of Work Procedures
-            Accuracy of Work
-            Neatness of Work
-          * 
-          * Other?
-          * 
-          * 3
-          * What work habits or abilities of the trainee needs improvement?
-          * 
-          * 4
-          * In what respect the student shown improvement? 
-          * 
-          * 5
-          * Days absent from work:
-          * Reason:
-          * 
-          * 6
-          * Times late for work  
-          * Reasons:
-          * 
-          * 7
-          * How does this person compare with other employees added to your staff during this period? (Check one)
-                More Capable
-                About the Same
-                Less Capable
-          * 
-          * 8
-          * At what position level does this student show potential?
-          * 
-          * 9
-          * Confidential remarks and additional comments?
-          */
-
-
-/*
- * 1
- * Identify the three most important goals that you had set for improving your skills when entering the intern program.(3)
- * 
- * 2
- * List the activities that allowed you to accomplish your goals.
- * 
- * 3
- * Identify the specific types of experiences you encountered that will enhance your employability in your chosen field.
- * 
- * 4
- * Give examples of how your supervisor provided educational leadership, which helped you to grow in your professional development.
- *
- * 5
- * List the three most positive benefits you derived from the internship experience. (3)
- * 
- * 6
- * List the negative aspects of your internship experience (if any)
- * 
- * 7
- * Would you recommend this internship site to another student?
- * Yes
- * No
- * If no, why not?
- * 
- * 8
- * My internship experience was: (please check one)
- * Extremely Valuable
- * Very Valuable
- * Valuable
- * Of Some Value
- * Of No Value
- */
-
-}
+    }
 }

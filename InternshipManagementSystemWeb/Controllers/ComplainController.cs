@@ -62,6 +62,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Complain/Create
+        [Authorize(Roles = "Student")]
         public ActionResult Create()
         {
             return View();
@@ -86,6 +87,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Complain/Edit/5
+        [Authorize(Roles = "Student")]
         public ActionResult Edit(int? id)
         {
             Complain complain = db.Complains.Find(id);
@@ -140,19 +142,19 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: Complain/Reply
-        //[Authorize(Roles = "Admin, Student")]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        public PartialViewResult ReplyPartial(int id)
-        {
-            if (ModelState.IsValid)
-            {
-                Complain reply = Mapper.Map<ComplainViewModel, Complain>();
-                reply.ReplyDate = DateTime.Now;
-                db.Complains.Add(reply);
-                db.SaveChanges();
-            }
-            return PartialView(model);
-}
+//        [Authorize(Roles = "Admin, Student")]
+//        [HttpPost]
+//        [ValidateAntiForgeryToken]
+//        public PartialViewResult ReplyPartial(int id)
+//        {
+//            if (ModelState.IsValid)
+//            {
+//                Complain reply = Mapper.Map<ComplainViewModel, Complain>();
+//                reply.ReplyDate = DateTime.Now;
+//                db.Complains.Add(reply);
+//                db.SaveChanges();
+//            }
+//            return PartialView(model);
+//}
     }
 }

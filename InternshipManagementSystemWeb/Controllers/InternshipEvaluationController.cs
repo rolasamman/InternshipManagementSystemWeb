@@ -32,6 +32,11 @@ namespace InternshipManagementSystemWeb.Controllers
         //        new StudentAnswerViewModel { Id = 2, Text= "Average"},
         //        new StudentAnswerViewModel { Id = 3, Text= "Good"},
         //    };
+     //   Extremely Valuable
+     //* Very Valuable
+     //* Valuable
+     //* Of Some Value
+     //* Of No Value
 
         //    // Get the questions from the database
         //    // This is a data sample

@@ -71,21 +71,23 @@ namespace InternshipManagementSystemWeb.Controllers
         {
             var users = db.Instructors.ToList();
             var model = new List<InstructorViewModel>();
-            foreach (var user in users)
+
+            foreach (var item in users)
             {
                 model.Add(new InstructorViewModel
                 {
-                    Id = user.Id,
-                    UserName = user.UserName,
-                    EmployeeUniversityId = user.EmployeeUniversityId,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Email = user.Email,
-                    Office = user.Office,
-                    Phone = user.Phone,
-                    Extension = user.Extension,
-                    Mobile = user.Mobile,
-                    //Department = user.Department
+                    Id = item.Id,
+                    UserName = item.UserName,
+                    EmployeeUniversityId = item.EmployeeUniversityId,
+                    FirstName = item.FirstName,
+                    LastName = item.LastName,
+                    Email = item.Email,
+                    Office = item.Office,
+                    Phone = item.Phone,
+                    Extension = item.Extension,
+                    Mobile = item.Mobile,
+                    //Department = item.Department
+                    //Roles = item.Roles,
                 });
             }
             return View(model);

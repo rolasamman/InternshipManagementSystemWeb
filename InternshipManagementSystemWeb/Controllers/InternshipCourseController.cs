@@ -27,6 +27,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The index action allow displaying and listing the items that are in the internshipCourse table/model
         // GET: InternshipCourse
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Index()
         {
             var internshipCourses = db.InternshipCourses.ToList();
@@ -48,6 +49,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The details action allow displaying the details of a selected item by Id in the internshipCourse table/model 
         // GET: InternshipCourse/Details/5
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Details(int? id)
         {
             InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
@@ -56,6 +58,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: InternshipCourse/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -63,6 +66,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The create action allows adding a new item to the internshipCourse table/model
         // POST: InternshipCourse/Create
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(InternshipCourseViewModel model)
@@ -78,6 +82,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: InternshipCourse/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
@@ -86,6 +91,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: InternshipCourse/Edit/5
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(InternshipCourseViewModel model)
@@ -101,6 +107,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: InternshipCourse/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             InternshipCourse internshipCourse = db.InternshipCourses.Find(id);
@@ -109,6 +116,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: InternshipCourse/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

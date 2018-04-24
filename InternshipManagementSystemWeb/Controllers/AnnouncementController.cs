@@ -62,6 +62,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Announcement/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -87,6 +88,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Announcement/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             Announcement announcement = db.Announcements.Find(id);

@@ -105,3 +105,10 @@ address {
     margin-left: auto;
     margin-right: auto;
 }
+
+@media print {
+    body {
+        color: #000;
+        background: #fff;
+    }
+}

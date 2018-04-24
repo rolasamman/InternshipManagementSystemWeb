@@ -61,6 +61,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Attendance/Create
+        [Authorize(Roles = "Student")]
         public ActionResult Create()
         {
             return View();
@@ -84,6 +85,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Attendance/Edit/5
+        [Authorize(Roles = "Student")]
         public ActionResult Edit(int? id)
         {
             Attendance attendance = db.Attendances.Find(id);

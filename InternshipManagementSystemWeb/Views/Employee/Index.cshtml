@@ -15,20 +15,20 @@
             @Html.DisplayNameFor(model => model.Email)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ConfirmPassword)
-        </th>*@
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfirmPassword)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.UserName)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>*@
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.FullName)
         </th>
@@ -48,58 +48,79 @@
             @Html.DisplayNameFor(model => model.Mobile)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.Roles)
-        </th>*@
+                @Html.DisplayNameFor(model => model.Roles)
+            </th>*@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConfirmPassword)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmployeeUniversityId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Office)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Extension)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mobile)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Roles)
-        </td>*@
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ConfirmPassword)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeUniversityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Office)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Extension)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Roles)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
+
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
+
+    <script type="text/javascript">
+      $(document).ready( function () {
+          $('#employeesTable').DataTable();
+      } );
+    </script>
+}
+
+@section styles
+{
+    <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
+}

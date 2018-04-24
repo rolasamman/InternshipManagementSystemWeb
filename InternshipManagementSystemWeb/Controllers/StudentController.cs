@@ -34,6 +34,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The index action allow displaying and listing the users that are in the student table/model
         // GET: Student
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Index()
         {
             {
@@ -64,6 +65,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The details action allow displaying the details of a selected user by Id in the student table/model 
         // GET: Student/Details/5
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Details(int? id)
         {
             Student student = db.Students.Find(id);
@@ -72,6 +74,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Student/Create
+        [Authorize(Roles = "Admin, Student")]
         public ActionResult Create()
         {
             return View();
@@ -79,6 +82,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The create action allows adding a new user to the student table/model
         // POST: Student/Create
+        [Authorize(Roles = "Admin, Student")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(StudentViewModel model)
@@ -94,6 +98,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: Student/Edit/5
+        [Authorize(Roles = "Admin, Student")]
         public ActionResult Edit(int? id)
         {
             Student student = db.Students.Find(id);
@@ -102,6 +107,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: Student/Edit/5
+        [Authorize(Roles = "Admin, Student")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(StudentViewModel model)
@@ -117,6 +123,7 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: Student/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
