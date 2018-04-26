@@ -11,8 +11,8 @@ Each user will be have different authorization.
 ### Development Tools
 
 Visual Studio Community Edition 2017 (version 15.6.2)
-SQl Server LocalDb - (version 13)
-ASP.NET MVC Framework - (version 5.2.3)
+SQl Server LocalDb (version 13)
+ASP.NET MVC Framework (version 5.2.3)
 
 ### Contributing: 
 
