@@ -25,23 +25,19 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // GET: MeetingOnCampus
         //[Authorize(Roles = "Admin, Instructor, Student")]
-        //public ActionResult Index()
-        //{
-        //    var eetingOnCampus = db.MeetingOnCampuse.ToList();
-        //    var model = new List<MeetingOnCampusViewModel>();
-        //    foreach (var item in meetingOnCampus)
-        //    {
-        //        model.Add(new MeetingOnCampusViewModel
-        //        {
-        //            AttendanceId = item.AttendanceId,
-        //            AttendanceDate = item.AttendanceDate,
-        //            TimeIn = item.TimeIn,
-        //            TimeOut = item.TimeOut,
-        //            Description = item.Description
-        //        });
-        //    }
-        //    return View(model);
-        //}
+        public ActionResult Index()
+        {
+            var meetingOnCampus = db.MeetingOnCampus.ToList();
+            var model = new List<MeetingOnCampusViewModel>();
+            foreach (var item in meetingOnCampus)
+            {
+                model.Add(new MeetingOnCampusViewModel
+                {
+                     
+                });
+            }
+            return View(model);
+        }
 
         // GET: MeetingOnCampus/Details/5
         [Authorize(Roles = "Admin, Instructor, Student")]

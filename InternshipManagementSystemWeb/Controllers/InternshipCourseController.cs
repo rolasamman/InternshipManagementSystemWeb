@@ -41,7 +41,7 @@ namespace InternshipManagementSystemWeb.Controllers
                     CourseName = item.CourseName,
                     Description = item.Description,
                     Credits = item.Credits,
-
+                        
                 });
             }
             return View(model);

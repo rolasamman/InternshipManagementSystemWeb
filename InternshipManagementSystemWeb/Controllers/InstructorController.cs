@@ -32,6 +32,11 @@ namespace InternshipManagementSystemWeb.Controllers
         private ApplicationUserManager _userManager;
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        public InstructorController()
+        {
+
+        }
+
         public InstructorController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
@@ -62,7 +67,7 @@ namespace InternshipManagementSystemWeb.Controllers
             }
         }
 
-        public object UserManeger { get; private set; }
+        //public object UserManeger { get; private set; }
 
         // The index action allow displaying and listing the users that are in the instructor table/model
         // GET: Instructor
@@ -72,20 +77,20 @@ namespace InternshipManagementSystemWeb.Controllers
             var users = db.Instructors.ToList();
             var model = new List<InstructorViewModel>();
 
-            foreach (var item in users)
+            foreach (var user in users)
             {
                 model.Add(new InstructorViewModel
                 {
-                    Id = item.Id,
-                    UserName = item.UserName,
-                    EmployeeUniversityId = item.EmployeeUniversityId,
-                    FirstName = item.FirstName,
-                    LastName = item.LastName,
-                    Email = item.Email,
-                    Office = item.Office,
-                    Phone = item.Phone,
-                    Extension = item.Extension,
-                    Mobile = item.Mobile,
+                    Id = user.Id,
+                    UserName = user.UserName,
+                    EmployeeUniversityId = user.EmployeeUniversityId,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    Office = user.Office,
+                    Phone = user.Phone,
+                    Extension = user.Extension,
+                    Mobile = user.Mobile,
                     //Department = item.Department
                     //Roles = item.Roles,
                 });

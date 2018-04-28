@@ -70,10 +70,10 @@ namespace InternshipManagementSystemWeb.Models
         public string Resume { get; set; } 
 
         [StringLength(200)]
-        public string InternshipAgreementForm { get; set; }
+        public string InternshipAgreement { get; set; }
 
         [StringLength(200)]
-        public string RiskIdentificationForm { get; set; }
+        public string RiskIdentification { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? StartDate { get; set; }

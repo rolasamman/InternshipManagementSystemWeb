@@ -15,17 +15,20 @@
             @Html.DisplayNameFor(model => model.SectionId)
         </th>*@
         <th>
+            @Html.DisplayNameFor(model => model.SectionNumber)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Year)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Capacity)
-        @*</th>
-        <th>
-            @Html.DisplayNameFor(model => model.IntrenshipCourseId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InstructorId)
-        </th>*@
+            @*</th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntrenshipCourseId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstructorId)
+            </th>*@
         <th></th>
     </tr>
 
@@ -34,6 +37,9 @@
         @*<td>
             @Html.DisplayFor(modelItem => item.SectionId)
         </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionNumber)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Year)
         </td>

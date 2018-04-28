@@ -99,18 +99,18 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         // The outline file as object (used to upload a file)
         [Display(Name = "Internship Agreement Form")]
-        public HttpPostedFileBase InternshipAgreement { get; set; }
+        public HttpPostedFileBase InternshipAgreementUpload { get; set; }
 
         // The outline file path as string (used to display the path)
         [Display(Name = "Internship Agreement Form")]
-        public string InternshipAgreementForm { get; set; }
+        public string InternshipAgreement { get; set; }
 
         // The outline file as object (used to upload a file)
         [Display(Name = "Risk Identification Form")]
-        public HttpPostedFileBase RiskIdentification { get; set; }
+        public HttpPostedFileBase RiskIdentificationUpload { get; set; }
 
         // The outline file path as string (used to display the path)
         [Display(Name = "Risk Identification Form")]
-        public string RiskIdentificationForm { get; set; }
+        public string RiskIdentification { get; set; }
     }
 }

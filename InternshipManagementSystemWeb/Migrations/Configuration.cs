@@ -81,43 +81,23 @@ namespace InternshipManagementSystemWeb.Migrations
             }
 
             //Add example of admin employees
-            var employees = new List<Employee>
-                {
-                      new Employee {
-                          Id = 10,
-                          UserName = "mismail",
-                          //PasswordHash = "m123123",
-                          EmployeeUniversityId = "2012",
-                          FirstName = "Mervat",
-                          LastName = "Ismail",
-                          Office = "370",
-                          Email = "mismail@dah.edu.sa",
-                          Phone = "6000012",
-                          Extension = "64",
-                          Mobile = "0543222210",
+            //var employees = new List<Employee>
+            //    {
+            //          new Employee {
+            //              Id = 10,
+            //              UserName = "mismail",
+            //              //PasswordHash = "m123123",
+            //              EmployeeUniversityId = "2012",
+            //              FirstName = "Mervat",
+            //              LastName = "Ismail",
+            //              Office = "370",
+            //              Email = "mismail@dah.edu.sa",
+            //              Phone = "6000012",
+            //              Extension = "64",
+            //              Mobile = "0543222210",
                           
-                      },
-                };
-
-            // Employees user login information
-            // Employees are all working individual in the university 
-            // Employees can be admin or instructor 
-
-            string employeePassword = "dah2018";
-
-            foreach (var employee in employees)
-            {
-                if (userManager.FindByName(employee.UserName) == null)
-                {
-                    userManager.Create(employee, employeePassword );
-                }
-
-                var usertemp = userManager.FindByName(admin.UserName);
-                if (!userManager.IsInRole(usertemp.Id, roles[0]))
-                {
-                    userManager.AddToRole(usertemp.Id, roles[0]);
-                }
-            }
+            //          },
+            //    };
 
             // Add examples of Instructors
             var instructors = new List<Instructor>
@@ -195,13 +175,15 @@ namespace InternshipManagementSystemWeb.Migrations
                      }
                 };
 
+            string instructorPassword = "dah123";
+
             // Instructors user employee login password. 
 
             foreach (var instructor in instructors)
             {
                 if (userManager.FindByName(instructor.UserName) == null)
                 {
-                    userManager.Create(instructor, employeePassword);
+                    userManager.Create(instructor, instructorPassword);
                 }
 
                 var usertemp = userManager.FindByName(instructor.UserName);
@@ -233,41 +215,6 @@ namespace InternshipManagementSystemWeb.Migrations
                 };
 
             announcements.ForEach(c => context.Announcements.AddOrUpdate(m => m.Subject, c));
-            context.SaveChanges();
-
-            // Add examples of attendances
-            var attendances = new List<Attendance>
-                {
-                    new Attendance {
-                        AttendanceId = 1,
-                        AttendanceDate = new DateTime(2018,2,3),
-                        TimeIn = new TimeSpan(8,30,0),
-                        TimeOut = new TimeSpan(16,30,0),
-                        Description = "Observing and learning about the work environment",
-                        //StudentId = 50,
-                        //FirmId = 1
-                    },
-                    new Attendance {
-                        AttendanceId = 2,
-                        AttendanceDate = new DateTime(2018,2,11),
-                        TimeIn = new TimeSpan(9,0,0),
-                        TimeOut = new TimeSpan(17,0,0),
-                        Description = "Meeting with the employees and asking them questions",
-                        //StudentId = 51,
-                        //FirmId = 2
-                    },
-                    new Attendance {
-                        AttendanceId = 3,
-                        AttendanceDate = new DateTime(2018,2,20),
-                        TimeIn = new TimeSpan(8,0,0) ,
-                        TimeOut = new TimeSpan(16,0,0),
-                        Description = "Reviewing assigned tasks with the supervisor",
-                        //StudentId = 52,
-                        //FirmId = 3
-                    },
-                };
-
-            attendances.ForEach(c => context.Attendances.AddOrUpdate(m => m.AttendanceDate, c));
             context.SaveChanges();
 
             //Add examples of complains
@@ -382,6 +329,7 @@ namespace InternshipManagementSystemWeb.Migrations
                 {
                       new Section {
                           SectionId = 1,
+                          SectionNumber = "1",
                           Semester = Semester.SummerI,
                           Year = 2018,
                           Capacity = 20,
@@ -389,6 +337,7 @@ namespace InternshipManagementSystemWeb.Migrations
                       },
                       new Section {
                           SectionId = 2,
+                          SectionNumber = "1",
                           Semester = Semester.Fall,
                           Year = 2019,
                           Capacity = 20,
@@ -396,6 +345,7 @@ namespace InternshipManagementSystemWeb.Migrations
                       },
                       new Section {
                           SectionId = 3,
+                          SectionNumber = "2",
                           Semester = Semester.Fall,
                           Year = 2019,
                           Capacity = 15,
@@ -403,6 +353,7 @@ namespace InternshipManagementSystemWeb.Migrations
                       },
                       new Section {
                           SectionId = 4,
+                          SectionNumber = "2",
                           Semester = Semester.Spring,
                           Year = 2019,
                           Capacity = 10,
@@ -453,7 +404,7 @@ namespace InternshipManagementSystemWeb.Migrations
                         SectionId = 3,
                     },
                      new Student {
-                         Id = 53,
+                        Id = 53,
                         UserName = "dzamil",
                         FirstName = "Dina",
                         LastName = "Zamil",
@@ -462,11 +413,11 @@ namespace InternshipManagementSystemWeb.Migrations
                         Mobile = "0556777789",
                         Department = Department.DesignAndArchitecture,
                         Major = "Interior Design",
-                        SectionId = 4,
+                        SectionId = 4,                        
                     },
                 };
 
-            string studentPassword = "dahstudent2018";
+            string studentPassword = "dahstudent123";
 
             foreach (var student in students)
             {
@@ -482,6 +433,50 @@ namespace InternshipManagementSystemWeb.Migrations
                     userManager.AddToRole(usertemp.Id, roles[2]);
                 }
             }
+
+            // Add examples of attendances
+            var attendances = new List<Attendance>
+                {
+                    new Attendance {
+                        AttendanceId = 1,
+                        AttendanceDate = new DateTime(2018,2,3),
+                        TimeIn = new TimeSpan(8,30,0),
+                        TimeOut = new TimeSpan(16,30,0),
+                        Description = "Observing and learning about the work environment",
+                        //StudentId = 50,
+                        //FirmId = 1
+                    },
+                    new Attendance {
+                        AttendanceId = 2,
+                        AttendanceDate = new DateTime(2018,2,4),
+                        TimeIn = new TimeSpan(9,0,0),
+                        TimeOut = new TimeSpan(17,0,0),
+                        Description = "Meeting with the employees and asking them questions",
+                        //StudentId = 50,
+                        //FirmId = 2
+                    },
+                    new Attendance {
+                        AttendanceId = 3,
+                        AttendanceDate = new DateTime(2018,2,20),
+                        TimeIn = new TimeSpan(8,0,0) ,
+                        TimeOut = new TimeSpan(16,0,0),
+                        Description = "Reviewing assigned tasks with the supervisor",
+                        //StudentId = 51,
+                        //FirmId = 3
+                    },
+                    new Attendance {
+                        AttendanceId = 4,
+                        AttendanceDate = new DateTime(2018,2,21),
+                        TimeIn = new TimeSpan(8,0,0) ,
+                        TimeOut = new TimeSpan(16,0,0),
+                        Description = "Discuss next week tasks",
+                        //StudentId = 52,
+                        //FirmId = 3
+                    },
+                };
+
+            attendances.ForEach(c => context.Attendances.AddOrUpdate(m => m.AttendanceDate, c));
+            context.SaveChanges();
 
             // Add examples of Supervisors
             var supervisors = new List<Supervisor>
@@ -540,165 +535,165 @@ namespace InternshipManagementSystemWeb.Migrations
             context.SaveChanges();
 
             // Add Questions in the Supervisor Criterion
-            var supervisorCriterions = new List<SupervisorCriterion>
-            {
-                    new SupervisorCriterion {
-                        SupervisorCriterionId = 1,
-                        Question = "Personal Appearance",
-                    },
-                     new SupervisorCriterion {
-                        SupervisorCriterionId = 2,
-                        Question = "Attendance",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 3,
-                        Question = "Cooperation",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 4,
-                        Question = "Sincerity & Dependability",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 5,
-                        Question = "Interest & Attitude",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 6,
-                        Question = "Courtesy & Tact",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 7,
-                        Question = "Self-Confidence",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 8,
-                        Question = "Enthusiasm",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 9,
-                        Question = "Judgment",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 10,
-                        Question = "What traits of the trainee need improvement?",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 11,
-                        Question = "Speed & Amount of Work",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 12,
-                        Question = "Follow Directions",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 13,
-                        Question = "Getting Along with Other Employees",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 14,
-                        Question = "Work Without Supervision",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 15,
-                        Question = "Takes Suggestions",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 16,
-                        Question = "General Knowledge of Work Procedures",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 17,
-                        Question = "Accuracy of Work",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 18,
-                        Question = "Neatness of Work",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 19,
-                        Question = "Other?",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 20,
-                        Question = "What work habits or abilities of the trainee needs improvement?",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 21,
-                        Question = "In what respect the student shown improvement?",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 22,
-                        Question = "Days absent from work:",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 23,
-                        Question = "Reason:",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 24,
-                        Question = "Times late for work:",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 25,
-                        Question = "Reason:",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 26,
-                        Question = "How does this person compare with other employees added to your staff during this period? (Check one)",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 27,
-                        Question = "At what position level does this student show potential?",
-                    },
-                      new SupervisorCriterion {
-                        SupervisorCriterionId = 28,
-                        Question = "Confidential remarks and additional comments?",
-                    },
-            };
+            //var supervisorCriterions = new List<SupervisorCriterion>
+            //{
+            //        new SupervisorCriterion {
+            //            SupervisorCriterionId = 1,
+            //            Question = "Personal Appearance",
+            //        },
+            //         new SupervisorCriterion {
+            //            SupervisorCriterionId = 2,
+            //            Question = "Attendance",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 3,
+            //            Question = "Cooperation",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 4,
+            //            Question = "Sincerity & Dependability",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 5,
+            //            Question = "Interest & Attitude",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 6,
+            //            Question = "Courtesy & Tact",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 7,
+            //            Question = "Self-Confidence",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 8,
+            //            Question = "Enthusiasm",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 9,
+            //            Question = "Judgment",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 10,
+            //            Question = "What traits of the trainee need improvement?",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 11,
+            //            Question = "Speed & Amount of Work",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 12,
+            //            Question = "Follow Directions",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 13,
+            //            Question = "Getting Along with Other Employees",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 14,
+            //            Question = "Work Without Supervision",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 15,
+            //            Question = "Takes Suggestions",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 16,
+            //            Question = "General Knowledge of Work Procedures",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 17,
+            //            Question = "Accuracy of Work",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 18,
+            //            Question = "Neatness of Work",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 19,
+            //            Question = "Other?",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 20,
+            //            Question = "What work habits or abilities of the trainee needs improvement?",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 21,
+            //            Question = "In what respect the student shown improvement?",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 22,
+            //            Question = "Days absent from work:",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 23,
+            //            Question = "Reason:",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 24,
+            //            Question = "Times late for work:",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 25,
+            //            Question = "Reason:",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 26,
+            //            Question = "How does this person compare with other employees added to your staff during this period? (Check one)",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 27,
+            //            Question = "At what position level does this student show potential?",
+            //        },
+            //          new SupervisorCriterion {
+            //            SupervisorCriterionId = 28,
+            //            Question = "Confidential remarks and additional comments?",
+            //        },
+            //};
 
-            supervisorCriterions.ForEach(c => context.SupervisorCriterions.AddOrUpdate(m => m.Question, c));
-            context.SaveChanges();
+            //supervisorCriterions.ForEach(c => context.SupervisorCriterions.AddOrUpdate(m => m.Question, c));
+            //context.SaveChanges();
 
-            // Add Questions in the Internship Criterion
-            var internshipCriterions = new List<InternshipCriterion>
-            {
-                    new InternshipCriterion {
-                        InternshipCriterionId = 1,
-                        Question = "Identify the three most important goals that you had set for improving your skills when entering the intern program. (3)",
-                    },
-                    new InternshipCriterion {
-                        InternshipCriterionId = 2,
-                        Question = "List the activities that allowed you to accomplish your goals.",
-                    },
-                    new InternshipCriterion {
-                        InternshipCriterionId = 3,
-                        Question = "Identify the specific types of experiences you encountered that will enhance your employability in your chosen field.",
-                    },
-                    new InternshipCriterion {
-                        InternshipCriterionId = 4,
-                        Question = "Give examples of how your supervisor provided educational leadership, which helped you to grow in your professional development.",
-                    },
-                    new InternshipCriterion {
-                        InternshipCriterionId = 5,
-                        Question = "List the three most positive benefits you derived from the internship experience. (3)",
-                    },
-                    new InternshipCriterion {
-                        InternshipCriterionId = 6,
-                        Question = "List the negative aspects of your internship experience (if any)",
-                    },
-                    new InternshipCriterion {
-                        InternshipCriterionId = 7,
-                        Question = "Would you recommend this internship site to another student?",
-                    },
-                    new InternshipCriterion {
-                        InternshipCriterionId = 8,
-                        Question = "My internship experience was: (please check one)",
-                    },
+            //// Add Questions in the Internship Criterion
+            //var internshipCriterions = new List<InternshipCriterion>
+            //{
+            //        new InternshipCriterion {
+            //            InternshipCriterionId = 1,
+            //            Question = "Identify the three most important goals that you had set for improving your skills when entering the intern program. (3)",
+            //        },
+            //        new InternshipCriterion {
+            //            InternshipCriterionId = 2,
+            //            Question = "List the activities that allowed you to accomplish your goals.",
+            //        },
+            //        new InternshipCriterion {
+            //            InternshipCriterionId = 3,
+            //            Question = "Identify the specific types of experiences you encountered that will enhance your employability in your chosen field.",
+            //        },
+            //        new InternshipCriterion {
+            //            InternshipCriterionId = 4,
+            //            Question = "Give examples of how your supervisor provided educational leadership, which helped you to grow in your professional development.",
+            //        },
+            //        new InternshipCriterion {
+            //            InternshipCriterionId = 5,
+            //            Question = "List the three most positive benefits you derived from the internship experience. (3)",
+            //        },
+            //        new InternshipCriterion {
+            //            InternshipCriterionId = 6,
+            //            Question = "List the negative aspects of your internship experience (if any)",
+            //        },
+            //        new InternshipCriterion {
+            //            InternshipCriterionId = 7,
+            //            Question = "Would you recommend this internship site to another student?",
+            //        },
+            //        new InternshipCriterion {
+            //            InternshipCriterionId = 8,
+            //            Question = "My internship experience was: (please check one)",
+            //        },
 
-            };
+            //};
 
-            internshipCriterions.ForEach(c => context.InternshipCriterions.AddOrUpdate(m => m.Question, c));
-            context.SaveChanges();
+            //internshipCriterions.ForEach(c => context.InternshipCriterions.AddOrUpdate(m => m.Question, c));
+            //context.SaveChanges();
 
         }
     }

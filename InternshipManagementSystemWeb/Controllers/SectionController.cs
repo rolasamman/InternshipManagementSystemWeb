@@ -39,7 +39,8 @@ namespace InternshipManagementSystemWeb.Controllers
                     SectionId = item.SectionId,
                     //Semester = item.Semester,
                     Year = item.Year,
-                    Capacity = item.Capacity
+                    Capacity = item.Capacity,
+                    SectionNumber = item.SectionNumber,
                 });
             }
             return View(model);

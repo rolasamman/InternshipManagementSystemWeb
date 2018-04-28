@@ -180,6 +180,7 @@
     <Compile Include="Controllers\InternshipCourseController.cs" />
     <Compile Include="Controllers\InternshipCriterionController.cs" />
     <Compile Include="Controllers\InternshipEvaluationController.cs" />
+    <Compile Include="Controllers\InternshipFormController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeetingOnCampusController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="Models\InternshipCourse.cs" />
     <Compile Include="Models\InternshipCriterion.cs" />
     <Compile Include="Models\InternshipEvaluation.cs" />
+    <Compile Include="Models\InternshipForm.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeetingOnCampus.cs" />
     <Compile Include="Models\Section.cs" />
@@ -224,6 +226,7 @@
     <Compile Include="ViewModels\InternshipCourseViewModel.cs" />
     <Compile Include="ViewModels\InternshipCriterionViewModel.cs" />
     <Compile Include="ViewModels\InternshipEvaluationViewModel.cs" />
+    <Compile Include="ViewModels\InternshipFormViewModel.cs" />
     <Compile Include="ViewModels\MeetingOnCampusViewModel.cs" />
     <Compile Include="ViewModels\SectionViewModel.cs" />
     <Compile Include="ViewModels\StudentAnswerViewModel.cs" />
@@ -604,7 +607,6 @@
     <Content Include="Views\Complain\Create.cshtml" />
     <Content Include="Views\Complain\Index.cshtml" />
     <Content Include="Views\Attendance\Create.cshtml" />
-    <Content Include="Views\Attendance\Index.cshtml" />
     <Content Include="Views\Section\Index.cshtml" />
     <Content Include="Views\Supervisor\Index.cshtml" />
     <Content Include="Views\Supervisor\Details.cshtml" />
@@ -665,6 +667,11 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\VisitOnSite\Index.cshtml" />
     <Content Include="Views\Instructor\Index.cshtml" />
+    <Content Include="Views\Attendance\Index.cshtml" />
+    <Content Include="Views\InternshipCourse\ManageInternshipForms.cshtml" />
+    <Content Include="Views\InternshipForm\Create.cshtml" />
+    <Content Include="Views\InternshipForm\Index.cshtml" />
+    <Content Include="Views\InternshipForm\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

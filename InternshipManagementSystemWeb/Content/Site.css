@@ -24,9 +24,9 @@ textarea {
 }
 
 .navbar-inverse {
-    background-color: #7A0300 !important;
+    /*background-color: #7A0300 !important;*/
     opacity: .8;
-    width: 90%;
+    font-family: sans-serif;
 }
 
 html {

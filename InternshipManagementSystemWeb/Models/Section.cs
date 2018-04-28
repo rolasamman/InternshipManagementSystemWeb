@@ -24,6 +24,8 @@ namespace InternshipManagementSystemWeb.Models
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SectionId { get; set; }
 
+        public string SectionNumber { get; set; }
+
         //public int Semester { get; set; }
         //Create a name for the type (Semester). Also put a name for the attribute (Semester).
         public Semester Semester { get; set; }

@@ -142,19 +142,19 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // POST: Complain/Reply
-//        [Authorize(Roles = "Admin, Student")]
-//        [HttpPost]
-//        [ValidateAntiForgeryToken]
-//        public PartialViewResult ReplyPartial(int id)
-//        {
-//            if (ModelState.IsValid)
-//            {
-//                Complain reply = Mapper.Map<ComplainViewModel, Complain>();
-//                reply.ReplyDate = DateTime.Now;
-//                db.Complains.Add(reply);
-//                db.SaveChanges();
-//            }
-//            return PartialView(model);
-//}
+        //[Authorize(Roles = "Admin, Student")]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public PartialViewResult ReplyPartial(int id)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Complain reply = Mapper.Map<ComplainViewModel, Complain>();
+        //        reply.ReplyDate = DateTime.Now;
+        //        db.Complains.Add(reply);
+        //        db.SaveChanges();
+        //    }
+        //    return PartialView(model);
+        //}
     }
 }

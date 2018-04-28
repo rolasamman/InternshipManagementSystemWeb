@@ -55,8 +55,8 @@ namespace InternshipManagementSystemWeb.Controllers
                         //Department=item.Department,
                         Major =item.Major,
                         Resume = item.Resume,
-                        InternshipAgreementForm = item.InternshipAgreementForm,
-                        RiskIdentificationForm = item.RiskIdentificationForm,
+                        InternshipAgreement = item.InternshipAgreement,
+                        RiskIdentification = item.RiskIdentification,
                     });
                 }
                 return View(model);              

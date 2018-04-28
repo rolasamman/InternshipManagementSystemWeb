@@ -32,6 +32,7 @@ namespace InternshipManagementSystemWeb.App_Start
                 cfg.CreateMap<InternshipCourse, InternshipCourseViewModel>().ReverseMap();
                 cfg.CreateMap<InternshipCriterion, InternshipCriterionViewModel>().ReverseMap();
                 cfg.CreateMap<InternshipEvaluation, InternshipEvaluationViewModel>().ReverseMap();
+                cfg.CreateMap<InternshipForm, InternshipFormViewModel>().ReverseMap();
                 cfg.CreateMap<MeetingOnCampus, MeetingOnCampusViewModel>().ReverseMap();
                 cfg.CreateMap<Section, SectionViewModel>().ReverseMap();
                 cfg.CreateMap<Student, StudentViewModel>().ReverseMap();

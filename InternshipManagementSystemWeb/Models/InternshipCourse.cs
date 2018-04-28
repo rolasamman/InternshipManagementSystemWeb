@@ -39,5 +39,6 @@ namespace InternshipManagementSystemWeb.Models
         public int Credits { get; set; }
 
         public virtual ICollection<Section> Sections { get; set; }
+
     }
 }

@@ -1,0 +1,34 @@
+﻿@model InternshipManagementSystemWeb.ViewModels.InternshipFormViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InternshipFormViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dd>
+            @Html.DisplayFor(model => model.InternshipAgreementFormUpload)
+            <a href="@Url.Content(Model.InternshipAgreementForm)">Internship Agreement Form </a>
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.RiskIdentificationFormUpload)
+            <a href="@Url.Content(Model.InternshipAgreementForm)">Risk Identification Form </a>
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternshipBookletUpload)
+            <a href="@Url.Content(Model.InternshipBooklet)">Internship Booklet </a>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

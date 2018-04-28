@@ -51,5 +51,6 @@ namespace InternshipManagementSystemWeb.ViewModels
         //public virtual ICollection<Section> Sections { get; set; }
         // List of sections in this course
         public List<Section> Sections { get; set; }
+
     }
 }

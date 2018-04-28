@@ -10,6 +10,7 @@
 using AutoMapper;
 using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -31,11 +32,13 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The index action allow displaying and listing the items that are in the attendance table/model
         // GET: Attendance
-        [Authorize (Roles = "Admin, Instructor, Student")]
+        [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Index()
-        {
-            var attendances = db.Attendances.ToList();
+        {   
+            var loginId = User.Identity.GetUserId<int>();
+            var attendances = db.Attendances.Where(x => x.StudentId == loginId).ToList();
             var model = new List<AttendanceViewModel>();
+
             foreach (var item in attendances)
             {
                 model.Add(new AttendanceViewModel
@@ -46,7 +49,7 @@ namespace InternshipManagementSystemWeb.Controllers
                     TimeOut = item.TimeOut,
                     Description = item.Description
                 });
-            } 
+            }
             return View(model);
         }
 
@@ -69,7 +72,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The create action allows adding a new item to the attendance table/model
         // POST: Attendance/Create
-        [Authorize (Roles = "Student")]
+        [Authorize(Roles = "Student")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(AttendanceViewModel model)
@@ -95,7 +98,7 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The edit action allow updating existing data in the attendance table/model
         // POST: Attendance/Edit/5
-        [Authorize (Roles = "Student")]
+        [Authorize(Roles = "Student")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(AttendanceViewModel model)
@@ -112,9 +115,9 @@ namespace InternshipManagementSystemWeb.Controllers
 
         // The delete action is for deleting a selected item in the table/model
         // GET: Attendance/Delete/5
-        [Authorize (Roles = "Student")]
+        [Authorize(Roles = "Student")]
         public ActionResult Delete(int? id)
-        {     
+        {
             Attendance attendance = db.Attendances.Find(id);
             AttendanceViewModel model = Mapper.Map<AttendanceViewModel>(attendance);
             return View(model);

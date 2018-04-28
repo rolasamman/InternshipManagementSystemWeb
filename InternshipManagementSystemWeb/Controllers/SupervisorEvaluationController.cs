@@ -65,6 +65,7 @@ namespace InternshipManagementSystemWeb.Controllers
         //            QuestionInputType = QuestionInputType.TextArea,
         //        }
         //    };
+        //    return View();
         //}
 
         // The details action allow displaying the details of a selected item by Id in the supervisorEvaluation table/model 

@@ -40,6 +40,7 @@ namespace InternshipManagementSystemWeb.Models
         public virtual DbSet<InternshipCourse> InternshipCourses { get; set; }
         public virtual DbSet<InternshipCriterion> InternshipCriterions { get; set; }
         public virtual DbSet<InternshipEvaluation> InternshipEvaluations { get; set; }
+        public virtual DbSet<InternshipForm> InternshipForms { get; set; }
         public virtual DbSet<MeetingOnCampus> MeetingOnCampus { get; set; }
         public virtual DbSet<Section> Sections { get; set; }
         public virtual DbSet<Student> Students { get; set; }
@@ -51,14 +52,6 @@ namespace InternshipManagementSystemWeb.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            //modelBuilder.Entity<Employee>()
-            //    .HasOptional(e => e.Admin)
-            //    .WithRequired(e => e.Employee);
-
-            //modelBuilder.Entity<Employee>()
-            //    .HasOptional(e => e.Instructor)
-            //    .WithRequired(e => e.Employee);
 
             modelBuilder.Entity<InternshipCourse>()
                 .HasMany(e => e.Sections)
@@ -75,9 +68,6 @@ namespace InternshipManagementSystemWeb.Models
                 .WithRequired(e => e.SupervisorEvaluation)
                 .WillCascadeOnDelete(false);
         }
-
-        //public System.Data.Entity.DbSet<InternshipManagementSystemWeb.ViewModels.StudentViewModel> StudentViewModels { get; set; }
-
     }
 
     public class CustomUserRole : IdentityUserRole<int> { }
