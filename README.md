@@ -18,7 +18,7 @@ ASP.NET MVC Framework (version 5.2.3)
 
 ### License: 
 
-### Login Instructions
+## Login Instructions
 There are three main system users:
 1. Admin
 2. Instructor
