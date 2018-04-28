@@ -76,7 +76,7 @@ namespace InternshipManagementSystemWeb.Controllers
                 InternshipForm internshipForm = Mapper.Map<InternshipFormViewModel, InternshipForm>(model);      
                 db.InternshipForms.Add(internshipForm);
                 db.SaveChanges();
-                return RedirectToAction("Details");
+                return RedirectToAction("Index");
             }
 
             return View(model);
