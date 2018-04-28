@@ -17,3 +17,26 @@ ASP.NET MVC Framework (version 5.2.3)
 ### Contributing: 
 
 ### License: 
+
+###Login Instructions
+There are three main system users:
+1. Admin
+2. Instructor
+3. Student 
+
+#### Login information for the admin:
+
+Username: admin
+Password: admin123
+
+#### Login information for the Instructor:
+
+Username: hsaied
+Password: dah123
+
+#### Login information for the admin:
+
+Username: amohammed
+Password: dahstudent123
+
+
