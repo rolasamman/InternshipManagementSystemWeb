@@ -24,18 +24,18 @@ There are three main system users:
 
 #### Login information for the admin:
 
-Username: admin
-Password: admin123
+* Username: admin
+* Password: admin123
 
 #### Login information for the Instructor:
 
-Username (example): hsaied
-Password: dah123
+* Username (example): hsaied
+* Password: dah123
 
 #### Login information for the admin:
 
-Username: rsamman
-Password: dahstudent123
+* Username: rsamman
+* Password: dahstudent123
 
 ## Development Tools
 
