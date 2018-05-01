@@ -20,14 +20,11 @@ The application is constructed using ASP.NET MVC 5.
 4. Update the database in your studio 
 5. The login instructions can be found below
 
-Three main users will be able to use the system: the internship manager, the instructors, and the students.
-Each user will be have different authorization.
-
 ### Login instructions and access control
-There are three main system users:
-1. Admin
-2. Instructor
-3. Student 
+Each user will be have different authorization. Three main users will be able to use the system: 
+1. The internship manager (admin)
+2. The instructors 
+3. The students
 
 #### Login information for the admin:
 
