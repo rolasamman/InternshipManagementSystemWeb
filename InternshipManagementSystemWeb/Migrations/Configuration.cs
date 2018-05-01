@@ -173,6 +173,7 @@ namespace InternshipManagementSystemWeb.Migrations
                      Mobile = "0500054321",
                      Department = Department.BusinessAndLaw
                      }
+
                 };
 
             string instructorPassword = "dah123";
@@ -413,7 +414,19 @@ namespace InternshipManagementSystemWeb.Migrations
                         Mobile = "0556777789",
                         Department = Department.DesignAndArchitecture,
                         Major = "Interior Design",
-                        SectionId = 4,                        
+                        SectionId = 1,                        
+                    },
+                     new Student {
+                        Id = 54,
+                        UserName = "rsamman",
+                        FirstName = "Rola",
+                        LastName = "Samman",
+                        StudentUniversityId = "1310000",
+                        Email = "rsamman@dah.edu.sa",
+                        Mobile = "0568868888",
+                        Department = Department.BusinessAndLaw,
+                        Major = "Management Information System",
+                        SectionId = 1,
                     },
                 };
 

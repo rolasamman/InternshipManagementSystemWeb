@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Add a New Employee", "Create")
 </p>
-<table id="employeesTable" class="display" width="100%" cellspacing="0">
+<table id="employeesTable" class="table table-hover" cellspacing="0">
     <thead>
         <tr>
         <th>
@@ -27,9 +27,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Office)
         </th>
-        <td>
+        <th>
             @Html.DisplayNameFor(model => model.Phone)
-        </td>
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Extension)
         </th>
@@ -88,10 +88,18 @@
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#employeesTable').DataTable();
+
+        //$(document).ready(function () {
+        //    $('#employeesTable').DataTable();
+        //});
+
+        $('#employeesTable').dataTable({
+            "columnDefs": [
+                { "orderable": false, "targets": 3 }
+            ]
         });
     </script> 
+
 }
 
 @section styles
@@ -100,3 +108,4 @@
     <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
     <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
 }
+

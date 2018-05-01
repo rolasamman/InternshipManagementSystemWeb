@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Internship Management System</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/themes/base/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -17,36 +17,42 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+
                 </button>
                 @Html.ActionLink("Internship Management System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
                     @*<li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                      <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                     @if (ViewContext.HttpContext.User.IsInRole("Student") || ViewContext.HttpContext.User.IsInRole("DepartmentHead"))
-    {
-                <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
-                <li>@Html.ActionLink("Student Profile", "Details", "Student")</li>
-                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                <li>@Html.ActionLink("Internship", "Index", "InternshipCourse")</li>
-}
+                     {
+                        <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                        @*<li>@Html.ActionLink("Student Profile", "Details", "Student")</li>*@
+                        <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                        <li>@Html.ActionLink("Complain", "Index", "Complain")</li>
+                        <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
+                     }
 
                     @if (ViewContext.HttpContext.User.IsInRole("Instructor"))
-    {
-                <li>@Html.ActionLink("Profile", "Details", "Employee")</li>
-                <li>@Html.ActionLink("Sections", "Index", "Section")</li>
-                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                <li>@Html.ActionLink("Internship", "Index", "InternshipCourse")</li>
-}
+                     {
+                        <li>@Html.ActionLink("Profile", "Details", "Employee")</li>
+                        <li>@Html.ActionLink("Sections", "Index", "Section")</li>
+                        <li>@Html.ActionLink("Meeting", "Index", "Firm")</li>
+                        <li>@Html.ActionLink("Internship", "Index", "InternshipCourse")</li>
+                     }
 
-                    @if (ViewContext.HttpContext.User.IsInRole("HRAssociate"))
-    {
-                <li>@Html.ActionLink("Competency", "Index", "Competency")</li>
-}
+                    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                     {
+                         <li>@Html.ActionLink("Announcement", "Index", "Announcement")</li>
+                         <li>@Html.ActionLink("Complain", "Index", "Complain")</li>
+                         <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                         <li>@Html.ActionLink("Employees", "Index", "Employee")</li>
+                         <li>@Html.ActionLink("Students", "Index", "Student")</li>
+                         <li>@Html.ActionLink("Forms", "Index", "InternshipForm")</li>
+                     }
 
 
 
@@ -59,7 +65,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Dar Al-Hekma University</p>
+            <p>&copy; @DateTime.Now.Year Dar Al-Hekma University | @Html.ActionLink("Contact Internship Department", "Contact") | @Html.ActionLink("Privace Policy", "Contact") | @Html.ActionLink("Help", "Contact")</p>
         </footer>
     </div>
 
