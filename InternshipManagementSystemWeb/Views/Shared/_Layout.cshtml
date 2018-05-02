@@ -9,6 +9,19 @@
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
 
+    <style>
+        li {
+        display: block; 
+        text-align: center;      
+}
+        li a.active {
+        background-color: #FEDA9D;
+}
+        li a:hover:not(.active) {
+        background-color: #FEDA9D;
+}
+
+    </style>
 </head>
 <body>
 
@@ -31,35 +44,52 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
-                    @*<li>@Html.ActionLink("About", "About", "Home")</li>
-                      <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                    @if (ViewContext.HttpContext.User.IsInRole("Student") || ViewContext.HttpContext.User.IsInRole("DepartmentHead"))
-                     {
-                        <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
-                        @*<li>@Html.ActionLink("Student Profile", "Details", "Student")</li>*@
-                        <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                        <li>@Html.ActionLink("Complain", "Index", "Complain")</li>
+                    @if (ViewContext.HttpContext.User.IsInRole("Student"))
+    {
+                <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student Internship <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
-                     }
+                        <li>@Html.ActionLink("Complains", "Index", "Complain")</li>
+                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+                    </ul>
+                </li>
+}
 
                     @if (ViewContext.HttpContext.User.IsInRole("Instructor"))
-                     {
-                        <li>@Html.ActionLink("Profile", "Details", "Employee")</li>
+    {
+                <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Internship Course<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Sections", "Index", "Section")</li>
-                        <li>@Html.ActionLink("Meeting", "Index", "Firm")</li>
-                        <li>@Html.ActionLink("Internship", "Index", "InternshipCourse")</li>
-                     }
+                        <li>@Html.ActionLink("Student Meeting", "Index", "MeetingOnCampus")</li>
+                        <li>@Html.ActionLink("Site Visits", "Index", "VisitOnSite")</li>
+                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+
+                    </ul>
+                </li>
+}
 
                     @if (ViewContext.HttpContext.User.IsInRole("Admin"))
-                     {
-                         <li>@Html.ActionLink("Announcement", "Index", "Announcement")</li>
-                         <li>@Html.ActionLink("Complain", "Index", "Complain")</li>
-                         <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                         @*<li>@Html.ActionLink("Employees", "Index", "Employee")</li>
-                         <li>@Html.ActionLink("Students", "Index", "Student")</li>
-                         <li>@Html.ActionLink("Forms", "Index", "InternshipForm")</li>*@
-                     }
+    {
+                <li>@Html.ActionLink("Announcement", "Index", "Announcement")</li>
+                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                <li>@Html.ActionLink("Student Complains", "Index", "Complain")</li>
 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Internship<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Internship Sections", "Index", "InternshipCourse")</li>
+                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+                        <li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>
+                        <li>@Html.ActionLink("Students", "Index", "Student")</li>
+                    </ul>
+                </li>
+}
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

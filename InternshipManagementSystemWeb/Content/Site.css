@@ -42,13 +42,9 @@ legend.legend-border {
     border-bottom-width: 3px;
     border-bottom-style: solid;
     font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 1.8rem;
+    font-size: 17px;
     font-weight: 400;
     /* font-variant: small-caps;*/
-}
-
-.navbar-brand {
-    color: #FEDA9D;
 }
 
 /*  #FEDA9D
