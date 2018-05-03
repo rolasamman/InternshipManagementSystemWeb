@@ -41,8 +41,6 @@ Each user will be have different authorization. Three main users will be able to
 * Username: rsamman
 * Password: dahstudent123
 
-## Contributing: 
-
 ## License: 
 
 
