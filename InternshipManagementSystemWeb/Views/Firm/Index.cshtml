@@ -6,11 +6,18 @@
 
 <h2>Companies</h2>
 
-<p>
-    @Html.ActionLink("Add a New Company", "Create")
-</p>
+<div class="form-group">
+    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+    {
+        <span>
+            <input type="button" value="Add New Company" onclick="location.href='@Url.Action("Create", "Firm")';" class="btn btn-default" />
+        </span>
+    }
+</div>
 
-@foreach (var item in Model) {
+@foreach (var item in Model) 
+    {<fieldset class="fieldset-border" >
+
     <div>
         @*<td>
             @Html.DisplayFor(modelItem => item.FirmId)
@@ -18,11 +25,11 @@
         <div>
             @Html.DisplayFor(modelItem => item.FirmName)
         </div>
-        <div>
+        @*<div>
             @Html.DisplayFor(modelItem => item.Address)
-        </div>
+        </div>*@
         <div>
-            @Html.DisplayFor(modelItem => item.NumberOfVacencies)
+            <p> Vacancies: @Html.DisplayFor(modelItem => item.NumberOfVacencies)  </p>
         </div>
         <div>
             @Html.DisplayFor(modelItem => item.IndustryField)
@@ -36,14 +43,30 @@
         
         <div>         
     </div>
+          <div class="form-group">
+                 @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                 {
+                <span>
+                    <input type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
+                    <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
+                    <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
+                </span>
+                 }
 
-        <div>
-            @Html.ActionLink("Edit", "Edit", new { id = item.FirmId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.FirmId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.FirmId }) 
-            @*@Html.ActionLink("Supervisors", "ListSupervisorsPartialPage", new { id = item.FirmId })*@
+                 @if (ViewContext.HttpContext.User.IsInRole("Student"))
+                 {
+                <span>
+                    <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
+                </span>
+                 }
 
-
-        </div>
+                  @if (ViewContext.HttpContext.User.IsInRole("Instructor"))
+                 {
+                <span>
+                    <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
+                </span>
+                 }
+            </div>
     </div>
-}
+    </fieldset>
+    }

@@ -30,7 +30,11 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // The index action allow displaying and listing the items that are in the announcement table/model
+        /// <summary>
+        /// The index action allow displaying and listing the items that are in the announcement table/model
+        /// </summary>
+        /// <returns></returns>
+
         // GET: Announcement 
         [Authorize(Roles = "Admin, Instructor, Student")]
         public ActionResult Index() 

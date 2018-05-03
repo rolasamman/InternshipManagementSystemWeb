@@ -10,6 +10,7 @@
 using AutoMapper;
 using InternshipManagementSystemWeb.Models;
 using InternshipManagementSystemWeb.ViewModels;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -29,11 +30,15 @@ namespace InternshipManagementSystemWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // The index action allow displaying and listing the items that are in the visitOnSite table/model
+        /// <summary>
+        /// The index action allow displaying and listing the items that are in the visitOnSite table/model 
+        /// </summary>
+        /// <returns></returns>
         // GET: VisitOnSite
         public ActionResult Index()
         {
-            var visitOnSites = db.VisitOnSites.ToList();
+            var loginId = User.Identity.GetUserId<int>();
+            var visitOnSites = db.VisitOnSites.Where(x => x.InstructorId == loginId).ToList();
             var model = new List<VisitOnSiteViewModel>();
             foreach (var item in visitOnSites)
             {

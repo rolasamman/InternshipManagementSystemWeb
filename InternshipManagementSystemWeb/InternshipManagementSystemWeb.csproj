@@ -667,13 +667,13 @@
     <Content Include="Views\InternshipCourse\Index.cshtml" />
     <Content Include="Views\Firm\ListSupervisorsPartial.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\VisitOnSite\Index.cshtml" />
     <Content Include="Views\Instructor\Index.cshtml" />
     <Content Include="Views\Attendance\Index.cshtml" />
     <Content Include="Views\InternshipCourse\ManageInternshipForms.cshtml" />
     <Content Include="Views\InternshipForm\Create.cshtml" />
     <Content Include="Views\InternshipForm\Index.cshtml" />
     <Content Include="Views\InternshipForm\Details.cshtml" />
+    <Content Include="Views\VisitOnSite\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,69 +1,99 @@
 ﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.VisitOnSiteViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Site Visits";
 }
 
 <h2>Site Visits</h2>
 
-<p>
-    @Html.ActionLink("Log a New Site Visit", "Create")
-</p>
-<table class="table">
-    <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.VisitOnSiteId)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.VisitDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Feedback)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndTime)
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.InstructorId)
-        </th>*@
-        @*<th>
-            @Html.DisplayNameFor(model => model.StudentId)
-        </th>*@
-        <th></th>
-    </tr>
+<div class="form-group">
+        <span>
+            <input type="button" value="Log New Site Visit" onclick="location.href='@Url.Action("Create", "VisitOnSite")';" class="btn btn-default" />
+        </span>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.VisitOnSiteId)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.VisitDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Feedback)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndTime)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.InstructorId)
-        </td>*@
-        @*<td>
-            @Html.DisplayFor(modelItem => item.StudentId)
-        </td>*@
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.VisitOnSiteId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.VisitOnSiteId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.VisitOnSiteId })
-        </td>
-    </tr>
-}
 
-</table>
+        <table id="visitsTable" class="table table-hover" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VisitDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Feedback)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StartTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndTime)
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.InstructorId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StudentId)
+                        </th>*@
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VisitDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Feedback)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndTime)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.InstructorId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StudentId)
+                            </td>*@
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.VisitOnSiteId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.VisitOnSiteId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.VisitOnSiteId })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @section scripts
+{
+            <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
+            <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
+            <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
+
+            <script type="text/javascript">
+
+                $(document).ready(function () {
+                    $('#visitsTable').DataTable();
+                });
+
+                $('#visitsTable').dataTable({
+                    "columnDefs": [
+                        { "orderable": false, "targets": 3 }
+                    ]
+                });
+            </script>
+
+        }
+
+        @section styles
+{
+            @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />*@
+            <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
+            <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
+        }
+

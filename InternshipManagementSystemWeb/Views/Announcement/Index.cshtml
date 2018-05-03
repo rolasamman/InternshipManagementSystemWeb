@@ -5,15 +5,23 @@
 }
 
 <h2>Announcements</h2>
-<p>
-    @Html.ActionLink("Create New Announcement", "Create")
-</p>
 
-@foreach (var item in Model) {
+<div class="form-group">
+    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+    {
+        <span>
+            <input type="button" value="Post New Announcement" onclick="location.href='@Url.Action("Create", "Announcement")';" class="btn btn-default" />
+        </span>
+    }
+</div>
+
+    @foreach (var item in Model)
+    {<fieldset class="fieldset-border" >
     <div>
         @*<div>
-            @Html.DisplayFor(modelItem => item.AnnouncementId)
-        </div>*@
+                @Html.DisplayFor(modelItem => item.AnnouncementId)
+            </div>*@
+
         <div>
             @Html.DisplayFor(modelItem => item.Subject)
         </div>
@@ -23,10 +31,30 @@
         <div>
             @Html.DisplayFor(modelItem => item.Description)
         </div>
-        <div>
-            @Html.ActionLink("Edit", "Edit", new { id = item.AnnouncementId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.AnnouncementId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.AnnouncementId })
+            <div class="form-group">
+                 @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                 {
+                <span>
+                    <input type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Announcement", new { id = item.AnnouncementId })';" class="btn btn-default" />
+                    <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Announcement", new { id = item.AnnouncementId })';" class="btn btn-default" />
+                    <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Announcement", new { id = item.AnnouncementId })';" class="btn btn-default" />
+                </span>
+                 }
+
+                 @if (ViewContext.HttpContext.User.IsInRole("Student"))
+                 {
+                <span>
+                    <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Announcement", new { id = item.AnnouncementId })';" class="btn btn-default" />
+                </span>
+                 }
+
+                  @if (ViewContext.HttpContext.User.IsInRole("Instructor"))
+                 {
+                <span>
+                    <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Announcement", new { id = item.AnnouncementId })';" class="btn btn-default" />
+                </span>
+                 }
+            </div>
         </div>
-    </div>
-}
+</fieldset>
+     }

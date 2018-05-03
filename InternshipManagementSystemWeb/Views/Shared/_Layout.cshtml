@@ -8,23 +8,8 @@
     @Styles.Render("~/Content/themes/base/css")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
-
-    <style>
-        li {
-        display: block; 
-        text-align: center;      
-}
-        li a.active {
-        background-color: #FEDA9D;
-}
-        li a:hover:not(.active) {
-        background-color: #FEDA9D;
-}
-
-    </style>
 </head>
-<body>
-
+<body id="mainPage" data-spy="scroll" data-target=".navbar" data-offset="50">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -34,7 +19,7 @@
 
                 <p class="navbar-brand" href="#">
                     <a href="@Url.Action("Index","Home")">
-                        <img src="~/Content/themes/base/images/imagec4f21d.PNG" height="60" width="60" class="img-responsive center-block" alt=""/>
+                        <img src="~/Content/themes/base/images/imagec4f21d.PNG" height="60" width="60" class="img-responsive center-block" alt="" />
                     </a>
                 </p>
 
@@ -43,53 +28,51 @@
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-
                     @if (ViewContext.HttpContext.User.IsInRole("Student"))
-    {
-                <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
-                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student Internship <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
-                        <li>@Html.ActionLink("Complains", "Index", "Complain")</li>
-                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
-                    </ul>
-                </li>
-}
+                    {
+                        <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                        <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student Internship <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
+                                <li>@Html.ActionLink("Complains", "Index", "Complain")</li>
+                                <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+                            </ul>
+                        </li>
+                    }
 
                     @if (ViewContext.HttpContext.User.IsInRole("Instructor"))
-    {
-                <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
-                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Internship Course<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Sections", "Index", "Section")</li>
-                        <li>@Html.ActionLink("Student Meeting", "Index", "MeetingOnCampus")</li>
-                        <li>@Html.ActionLink("Site Visits", "Index", "VisitOnSite")</li>
-                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+                    {
+                        <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                        <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Internship Course<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Sections", "Index", "Section")</li>
+                                <li>@Html.ActionLink("Student Meeting", "Index", "MeetingOnCampus")</li>
+                                <li>@Html.ActionLink("Site Visits", "Index", "VisitOnSite")</li>
+                                <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
 
-                    </ul>
-                </li>
-}
-
+                            </ul>
+                        </li>
+                    }
                     @if (ViewContext.HttpContext.User.IsInRole("Admin"))
-    {
-                <li>@Html.ActionLink("Announcement", "Index", "Announcement")</li>
-                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                <li>@Html.ActionLink("Student Complains", "Index", "Complain")</li>
+                    {
+                        <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                        <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                        <li>@Html.ActionLink("Student Complains", "Index", "Complain")</li>
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Internship<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Internship Sections", "Index", "InternshipCourse")</li>
-                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
-                        <li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>
-                        <li>@Html.ActionLink("Students", "Index", "Student")</li>
-                    </ul>
-                </li>
-}
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Internship<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Internship Sections", "Index", "InternshipCourse")</li>
+                                <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+                                <li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>
+                                <li>@Html.ActionLink("Students", "Index", "Student")</li>
+                            </ul>
+                        </li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -98,8 +81,11 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer> 
             <p>&copy; @DateTime.Now.Year Internship Management System | @Html.ActionLink("Contact Internship Department", "Contact") | @Html.ActionLink("Dar Al-Hekma University Website", "http://www.dah.edu.sa/") | @Html.ActionLink("Student Information System", "https://web.dah.edu.sa:82/sis/") | @Html.ActionLink("Help", "Contact")</p>
+            @*<a class="up-arrow" href="#mainPage" data-toggle="tooltip" title="Back to Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>*@
         </footer>
     </div>
 
@@ -109,3 +95,35 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+
+            $(document).ready(function () {
+                // Add smooth scrolling to all links in navbar + footer link
+                $(".navbar a, footer a[href='#mainPage']").on('click', function (event) {
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 900, function () {
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+            }
+        }
+    </script>
+    }*@

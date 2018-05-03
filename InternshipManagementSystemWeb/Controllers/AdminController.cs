@@ -15,16 +15,15 @@ using System.Web.Mvc;
 
 namespace InternshipManagementSystemWeb.Controllers
 {
+    /// <summary>
+    /// Admin controller manages admins 
+    /// This controller uses admin and adminViewModel classes
+    /// This controller uses AutoMapper
+    /// Admins are application users
+    /// </summary>
     [Authorize (Roles = "Admin")]
     public class AdminController : Controller
     {
-        /// <summary>
-        /// Admin controller manages admins 
-        /// This controller uses admin and adminViewModel classes
-        /// This controller uses AutoMapper
-        /// Admins are application users
-        /// </summary>
-
         // GET: Admin
         public ActionResult Index()
         {

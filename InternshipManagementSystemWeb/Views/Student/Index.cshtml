@@ -9,8 +9,7 @@
 <p>
     @Html.ActionLink("Add a New Student", "Create")
 </p>
-<table id="studentsTable" class="display" width="100%" cellspacing="0">
-
+<table id="studentsTable" class="table table-hover" cellspacing="0">
     <thead>
         <tr>
             <th>
@@ -119,14 +118,14 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#employeesTable').DataTable();
+            $('#studentsTable').DataTable();
         });
     </script>
 }
 
 @section styles
 {
-    <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />*@
     <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
     <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
 }

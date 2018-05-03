@@ -75,12 +75,17 @@
         </dd>
     </dl>
 </div>
+        <p>
+            <strong>Employers Information:  </strong>
+            @* Replace with  List of supervisors in this firm *@
+            @Ajax.ActionLink("Supervisors", "ListSupervisorsPartial", new { id = Model.FirmId }, new AjaxOptions { UpdateTargetId = "SupervisorList", HttpMethod = "GET", InsertionMode = InsertionMode.Replace })
+        </p>
 
-<p>
-    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
-    @Html.ActionLink("Back to Companies", "Index") |
-
-    @* Replace with  List of supervisors in this firm *@
-    @Ajax.ActionLink("Supervisors", "ListSupervisorsPartial", new { id = Model.FirmId }, new AjaxOptions { UpdateTargetId = "SupervisorList", HttpMethod = "GET", InsertionMode = InsertionMode.Replace })
-</p>
 <div id="SupervisorList"></div>
+
+
+    <div>
+        <span>
+            <input type="button" value="Back to Companies" onclick="location.href='@Url.Action("Index", "Firm")';" class="btn btn-default" />
+        </span>
+    </div>
