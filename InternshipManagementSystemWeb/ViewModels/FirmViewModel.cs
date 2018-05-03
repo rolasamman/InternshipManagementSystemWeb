@@ -61,7 +61,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         public string FirmDescription { get; set; }
 
         [StringLength(200)]
-        [Display(Name = "Map Link")]
+        [Display(Name = "Location Map Link")]
         //[UIHint("OpenInNewWindow")]
         [DataType(DataType.Url)]
         public string MapLink { get; set; }

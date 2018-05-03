@@ -15,8 +15,8 @@
     }
 </div>
 
-    @foreach (var item in Model)
-    {<fieldset class="fieldset-border" >
+    @foreach (var item in Model){
+    <fieldset class="fieldset-border" >
     <div>
         @*<div>
                 @Html.DisplayFor(modelItem => item.AnnouncementId)
@@ -31,7 +31,9 @@
         <div>
             @Html.DisplayFor(modelItem => item.Description)
         </div>
-            <div class="form-group">
+           
+     </div>
+     <div class="form-group">
                  @if (ViewContext.HttpContext.User.IsInRole("Admin"))
                  {
                 <span>
@@ -55,6 +57,5 @@
                 </span>
                  }
             </div>
-        </div>
 </fieldset>
      }

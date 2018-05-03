@@ -1,16 +1,22 @@
 ﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.ComplainViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Complains";
 }
 
 <h2>Complains</h2>
 
-<p>
-    @Html.ActionLink("Submit New Complain", "Create")
-</p>
+<div class="form-group">
+    @if (ViewContext.HttpContext.User.IsInRole("Student"))
+    {
+        <span>
+            <input type="button" value="Submit New Complain" onclick="location.href='@Url.Action("Create", "Complain")';" class="btn btn-default" />
+        </span>
+    }
+</div>
 
 @foreach (var item in Model) {
+    <fieldset class="fieldset-border" >
     <div>
         @*<td>
             @Html.DisplayFor(modelItem => item.ComplainId)
@@ -18,9 +24,7 @@
         <div>
             @Html.DisplayFor(modelItem => item.Title)
         </div>
-        <div>
-            @Html.DisplayFor(modelItem => item.Description)
-        </div>
+
         <div>
             @Html.DisplayFor(modelItem => item.CreationDate)
         </div>
@@ -36,10 +40,24 @@
         <td>
             @Html.DisplayFor(modelItem => item.StudentId)
         </td>*@
-        <div>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ComplainId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ComplainId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ComplainId })
+
+         <div class="form-group">
+                 @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                 {
+                <span>
+                    <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Complain", new { id = item.ComplainId })';" class="btn btn-default" />
+                </span>
+                 }
+
+                 @if (ViewContext.HttpContext.User.IsInRole("Student"))
+                 {
+                <span>
+                     <input type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Complain", new { id = item.ComplainId })';" class="btn btn-default" />
+                     <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Complain", new { id = item.ComplainId })';" class="btn btn-default" />
+                     <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Complain", new { id = item.ComplainId })';" class="btn btn-default" />
+                </span>
+                 }
+            </div>
         </div>
-    </div>
+</fieldset>
 }

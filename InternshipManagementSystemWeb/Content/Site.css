@@ -68,7 +68,19 @@ textarea {
 .btn-default:hover, .btn-default:focus {
     border: 1px solid #7A0300;
     background-color: #fff;
-    
+    color: #7A0300
+}
+
+.btn-danger {
+    border: 1px solid #7A0300;
+    background-color: #7A0300;
+    color: white
+}
+
+.btn-danger:hover  {
+    border: 1px solid #7A0300;
+    background-color: white;
+    color: #7A0300
 }
 
 fieldset.fieldset-border {

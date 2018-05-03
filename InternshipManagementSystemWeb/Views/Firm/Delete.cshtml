@@ -12,12 +12,12 @@
     <hr />
     <dl class="dl-horizontal">
         @*<dt>
-            @Html.DisplayNameFor(model => model.FirmId)
-        </dt>
+                @Html.DisplayNameFor(model => model.FirmId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirmId)
-        </dd>*@
+            <dd>
+                @Html.DisplayFor(model => model.FirmId)
+            </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.FirmName)
@@ -77,12 +77,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to Companies", "Index")
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <input type="button" value="Cancel" onclick="location.href='@Url.Action("Index", "Firm")';" class="btn btn-default" />
         </div>
-    }
+     }
 </div>

@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.InternshipCourseViewModel>
 
 @{
+    /**/
+
     ViewBag.Title = "Index";
 }
 
@@ -9,50 +11,80 @@
 <p>
     @Html.ActionLink("Add a New Course", "Create")
 </p>
-<table class="table">
-    <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.InternshipCourseId)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.CourseCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Credits)
-        </th>
-        <th></th>
-    </tr>
+<table id="coursesTable" class="table table-hover" cellspacing="0">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.InternshipCourseId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CourseCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Credits)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
 
-@foreach (var item in Model) {
-    <tr>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.InternshipCourseId)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Credits)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.InternshipCourseId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.InternshipCourseId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.InternshipCourseId }) | 
-            @Html.ActionLink("Sections", "ListSectionsPartial", new { id = item.InternshipCourseId })
-        </td>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.InternshipCourseId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Credits)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.InternshipCourseId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.InternshipCourseId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.InternshipCourseId }) |
+                    @Html.ActionLink("Sections", "ListSectionsPartial", new { id = item.InternshipCourseId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
+
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+            $('#coursesTable').DataTable();
+        });
+    </script>*@
+
+    <script type="text/javascript">
+        $('#coursesTable').DataTable({
+            "columnDefs": [
+                { "orderable": false, "targets": [2,3] }]
+        });
+    </script>
 }
 
-</table>
+@section styles
+{
+    @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />*@
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
+}

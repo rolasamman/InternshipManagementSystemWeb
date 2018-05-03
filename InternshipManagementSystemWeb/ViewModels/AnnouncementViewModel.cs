@@ -36,6 +36,7 @@ namespace InternshipManagementSystemWeb.ViewModels
         [Display(Name = "Title")]
         public string Subject { get; set; }
 
+        [Display(Name = "Post Date")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? AnnouncementDate { get; set; }
 

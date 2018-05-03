@@ -39,12 +39,14 @@ namespace InternshipManagementSystemWeb.ViewModels
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
+        [Display(Name = "Creation Date")]
         public DateTime? CreationDate { get; set; }
 
         //public int Status { get; set; }
-
+        [Display(Name = "Complain Status")]
         public ComplainStatus ComplainStatus { get; set; }
 
+        [Display(Name = "Reply Date")]
         public DateTime? ReplyDate { get; set; }
 
         [StringLength(900)]

@@ -7,7 +7,7 @@
 <h2>Complains</h2>
 
 <div>
-    <h4>Complain Details</h4>
+ @*   <h4>Complain Details</h4>*@
     <hr />
     <dl class="dl-horizontal">
         @*<dt>
@@ -58,7 +58,7 @@
             @Html.DisplayFor(model => model.Feedback)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.AdminId)
         </dt>
 
@@ -72,11 +72,12 @@
 
         <dd>
             @Html.DisplayFor(model => model.StudentId)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to Complains", "Index")
-</p>
+
+<div>
+    <input type="button" value="Back" onclick="location.href='@Url.Action("Index", "Complain")';" class="btn btn-default" />
+
+</div>

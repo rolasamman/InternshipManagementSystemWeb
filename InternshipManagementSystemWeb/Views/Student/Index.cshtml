@@ -117,8 +117,9 @@
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#studentsTable').DataTable();
+        $('#studentsTable').DataTable({
+            "columnDefs": [
+                { "orderable": false, "targets": 5 }]
         });
     </script>
 }
