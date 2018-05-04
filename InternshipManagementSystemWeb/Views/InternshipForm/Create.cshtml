@@ -1,28 +1,24 @@
 ﻿@model InternshipManagementSystemWeb.ViewModels.InternshipFormViewModel
-
 @{
     ViewBag.Title = "Create";
 }
-
 <h2>Create</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "InternshipForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>InternshipFormViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @*<div class="form-group">
-            @Html.LabelFor(model => model.InternshipFormId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.InternshipFormId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.InternshipFormId, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
+                @Html.LabelFor(model => model.InternshipFormId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.InternshipFormId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.InternshipFormId, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -30,20 +26,18 @@
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
-
         @*<div class="form-group">
-            @Html.LabelFor(model => model.FormPath, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.FormPath, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FormPath, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FormPath, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormUpload, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FormPath, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FormPath, "", new { @class = "text-danger" })
+                @Html.TextBox("FormUpload", "", new { type = "file" })
             </div>
-        </div>*@
-
-         <div class="form-group">
-         @Html.LabelFor(model => model.FormUpload, htmlAttributes: new { @class = "control-label col-md-2" })
-           <div class="col-md-10">
-               @Html.TextBox("FormUpload", "", new { type = "file" })
-           </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -52,11 +46,9 @@
         </div>
     </div>
 }
-
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

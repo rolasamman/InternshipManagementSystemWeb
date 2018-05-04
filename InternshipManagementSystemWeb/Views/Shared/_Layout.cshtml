@@ -27,7 +27,7 @@
                    
                             <div class="navbar-brand" href="#" data-toggle="tooltip" title="Home Page">
                                 <a href="@Url.Action("Index","Home")" >
-                                    <img src="~/Content/themes/base/images/imagec4f21d.PNG" height="50" width="50" class="img-responsive" alt="" />
+                                    <img src="~/Content/themes/base/images/imagec4f21d.PNG" height="50" width="50" class="img-responsive" alt="" style="margin-top: -34%;" />
                                 </a>
                             </div>
                             @Html.ActionLink("Internship Management System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
@@ -74,7 +74,7 @@
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Internship<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li>@Html.ActionLink("Internship Sections", "Index", "InternshipCourse")</li>
-                                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+                                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForm")</li>
                                         <li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>
                                         <li>@Html.ActionLink("Students", "Index", "Student")</li>
                                     </ul>

@@ -26,7 +26,9 @@ namespace InternshipManagementSystemWeb.Controllers
             {
                 model.Add(new InternshipFormViewModel
                 {
-
+                    InternshipFormId = item.InternshipFormId,
+                    Name = item.Name,
+                    FormPath = item.FormPath
                 });
             }
             return View(model);
@@ -71,14 +73,8 @@ namespace InternshipManagementSystemWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Create the course from the model
-                var internshipForm = new InternshipForm
-                {
-                    InternshipFormId = model.InternshipFormId,
-                    Name = model.Name,
-                    FormPath = model.FormPath,
-                };
 
+                var internshipForm = new InternshipForm();
                 //TODO Remove invalid characters from the filename such as white spaces
                 // check if the uplaoded file is empty (do not upload empty files)
                 if (model.FormUpload != null && model.FormUpload.ContentLength > 0)
@@ -103,6 +99,7 @@ namespace InternshipManagementSystemWeb.Controllers
                     // Set the application folder where to save the uploaded file
                     string appFolder = "~/Content/Uploads/";
 
+
                     // Generate a random string to add to the file name
                     // This is to avoid the files with the same names
                     var rand = Guid.NewGuid().ToString();
@@ -115,7 +112,13 @@ namespace InternshipManagementSystemWeb.Controllers
 
                     //// Add the path to the course object
                     //internshipForm.FormPath = appFolder + rand + "-" + filename;
-
+                    // Create the course from the model
+                    internshipForm = new InternshipForm
+                    {
+                        InternshipFormId = model.InternshipFormId,
+                        Name = model.Name,
+                        FormPath = appFolder + rand + "-" + model.FormUpload.FileName,
+                    };
                 }
                 else
                 {
@@ -135,8 +138,8 @@ namespace InternshipManagementSystemWeb.Controllers
             }
         }
 
-            // GET: InternshipForm/Edit/5
-            public ActionResult Edit(int id)
+        // GET: InternshipForm/Edit/5
+        public ActionResult Edit(int id)
         {
             return View();
         }

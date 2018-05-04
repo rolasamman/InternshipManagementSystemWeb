@@ -26,7 +26,7 @@ namespace InternshipManagementSystemWeb.Controllers
     /// </summary>
 
     [Authorize]
-    public class ComplainController : Controller 
+    public class ComplainController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -41,11 +41,11 @@ namespace InternshipManagementSystemWeb.Controllers
             {
                 model.Add(new ComplainViewModel
                 {
-                   ComplainId = item.ComplainId,
-                   Title = item.Title,
-                   Description = item.Description,
-                   //CreationDate = item.CreationDate,
-                   //ComplainStatus = item.ComplainStatus
+                    ComplainId = item.ComplainId,
+                    Title = item.Title,
+                    Description = item.Description,
+                    //CreationDate = item.CreationDate,
+                    //ComplainStatus = item.ComplainStatus
                 });
             }
             return View(model);
@@ -58,7 +58,7 @@ namespace InternshipManagementSystemWeb.Controllers
         {
             Complain complain = db.Complains.Find(id);
             ComplainViewModel model = Mapper.Map<Complain, ComplainViewModel>(complain);
-            return View(model); 
+            return View(model);
         }
 
         // GET: Complain/Create
@@ -84,6 +84,20 @@ namespace InternshipManagementSystemWeb.Controllers
                 return RedirectToAction("Index");
             }
             return View(model);
+        }
+
+        // The create action allows adding a new item to the complain table/model
+        // POST: Complain/Create
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public ActionResult SendFeedback(ComplainViewModel model)
+        {
+            Complain complain = db.Complains.Find(model.ComplainId);
+            complain.ReplyDate = DateTime.Now;
+            complain.Feedback = model.Feedback;
+            db.SaveChanges();
+            //db.Entry(complain).State = EntityState.Modified; 
+            return RedirectToAction("Index");
         }
 
         // GET: Complain/Edit/5

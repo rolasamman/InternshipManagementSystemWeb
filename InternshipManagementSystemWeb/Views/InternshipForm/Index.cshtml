@@ -14,13 +14,13 @@
 <table class="table id=" formsTable"">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.InternshipAgreementForm)
+            @Html.DisplayNameFor(model => model.InternshipFormId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RiskIdentificationForm)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.InternshipBooklet)
+            @Html.DisplayNameFor(model => model.FormPath)
         </th>
         <th></th>
     </tr>
@@ -29,18 +29,20 @@
     {
 <tr>
     <td>
-        @Html.DisplayFor(modelItem => item.InternshipAgreementForm)
+        @Html.DisplayFor(modelItem => item.InternshipFormId)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.RiskIdentificationForm)
+        @Html.DisplayFor(modelItem => item.Name)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.InternshipBooklet)
+        @Html.DisplayFor(modelItem => item.FormPath)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        @Html.ActionLink("Edit", "Edit", new { id = item.InternshipFormId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.InternshipFormId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.InternshipFormId }) |
+        @Html.DisplayFor(modelItem => item.FormUpload)
+        <a href="@Url.Content(item.FormPath)">Download</a>
     </td>
 </tr>
 }

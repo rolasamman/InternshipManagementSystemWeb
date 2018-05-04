@@ -1,83 +1,80 @@
 ﻿@model InternshipManagementSystemWeb.ViewModels.ComplainViewModel
-
 @{
     ViewBag.Title = "Details";
 }
-
 <h2>Complains</h2>
-
 <div>
- @*   <h4>Complain Details</h4>*@
+    @*   <h4>Complain Details</h4>*@
     <hr />
     <dl class="dl-horizontal">
         @*<dt>
-            @Html.DisplayNameFor(model => model.ComplainId)
-        </dt>
+                @Html.DisplayNameFor(model => model.ComplainId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ComplainId)
-        </dd>*@
-
+            <dd>
+                @Html.DisplayFor(model => model.ComplainId)
+            </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Title)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Description)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Description)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.CreationDate)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.CreationDate)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.ReplyDate)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.ReplyDate)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Feedback)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Feedback)
-        </dd>
-
+        @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+        {
+            using (Html.BeginForm("SendFeedback", "Complain"))
+            {
+                <dd>
+                    @Html.TextBoxFor(model => model.Feedback, new {@class = "form-control col-md-3" }) <input type="submit" value="Submit" class="btn btn-default" />
+                    @Html.HiddenFor(model => model.ComplainId)
+                </dd>
+            }
+        }
+        else
+        {
+            <dd>
+                @Html.DisplayFor(model => model.Feedback)
+            </dd>
+        }
         @*<dt>
-            @Html.DisplayNameFor(model => model.AdminId)
-        </dt>
+                @Html.DisplayNameFor(model => model.AdminId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AdminId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.AdminId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.StudentId)
-        </dd>*@
+            <dd>
+                @Html.DisplayFor(model => model.StudentId)
+            </dd>*@
 
     </dl>
 </div>
-
 <div>
     <input type="button" value="Back" onclick="location.href='@Url.Action("Index", "Complain")';" class="btn btn-default" />
-
 </div>
