@@ -6,9 +6,15 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="form-group">
+    @if (ViewContext.HttpContext.User.IsInRole("Student"))
+    {
+        <span>
+            <input type="button" value="Log New Attendance" onclick="location.href='@Url.Action("Create", "Attendance")';" class="btn btn-default" />
+        </span>
+    }
+</div>
+
 <table class="table">
     <tr>
         <th>
