@@ -31,7 +31,7 @@ textarea {
 */
 
 /* Navbar */
-.navbar {
+.navbar-default {
     background-color: #ffffff /*!important*/;
     opacity: .9;
     border-bottom-color: #FEDA9D;
@@ -40,6 +40,9 @@ textarea {
     font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 17px;
     font-weight: 400;
+    list-style-type: none;
+    margin: 2px;
+    padding: 2px;
     /* font-variant: small-caps;*/
 }
 
@@ -83,7 +86,7 @@ textarea {
     color: #7A0300
 }
 
-fieldset.fieldset-border {
+/*fieldset.fieldset-border {
     border: 1px solid #e5e5e5;
     padding: 1em 1em 1em 1em;
     margin: 0 0 1.5em 0;
@@ -103,7 +106,7 @@ legend {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 23px;
     text-align: center;
-}
+}*/
 
 
 

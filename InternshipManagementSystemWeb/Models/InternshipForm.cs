@@ -11,13 +11,11 @@ namespace InternshipManagementSystemWeb.Models
     {
         public int InternshipFormId { get; set; }
 
-        [StringLength(200)]
-        public string InternshipAgreementForm { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Name { get; set; }
 
         [StringLength(200)]
-        public string RiskIdentificationForm { get; set; }
-
-        [StringLength(200)]
-        public string InternshipBooklet { get; set; }
+        public string FormPath { get; set; }
     }
 }

@@ -84,7 +84,6 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="form-actions no-color">
+    <input type="button" value="Back to Companies" onclick="location.href='@Url.Action("Index", "Firm")';" class="btn btn-default" />
+</div>

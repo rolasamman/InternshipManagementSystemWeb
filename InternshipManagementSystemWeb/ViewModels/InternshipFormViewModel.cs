@@ -14,38 +14,16 @@ namespace InternshipManagementSystemWeb.ViewModels
 
         public int InternshipFormId { get; set; }
 
-        //[StringLength(200)]
-        //public string InternshipAgreementForm { get; set; }
+        [Required] 
+        [StringLength(100)]
+        public string Name { get; set; }
 
-        //[StringLength(200)]
-        //public string RiskIdentificationForm { get; set; }
+        [StringLength(200)]
+        [Display(Name = "Form Path")]
+        public string FormPath { get; set; }
 
-        //[StringLength(200)]
-        //public string InternshipBooklet { get; set; }
-
-
-        // The outline file as object (used to upload a file)
-        [Display(Name = "Internship  Agreement Form")]
-        public HttpPostedFileBase InternshipAgreementFormUpload { get; set; }
-
-        // The outline file path as string (used to display the path)
-        [Display(Name = "Internship  Agreement Form")]
-        public string InternshipAgreementForm { get; set; }
-
-        // The outline file as object (used to upload a file)
-        [Display(Name = "Risk Identification Form")]
-        public HttpPostedFileBase RiskIdentificationFormUpload { get; set; }
-
-        // The outline file path as string (used to display the path)
-        [Display(Name = "Risk Identification Form")]
-        public string RiskIdentificationForm { get; set; }
-
-        // The outline file as object (used to upload a file)
-        [Display(Name = "Internship Booklet")]
-        public HttpPostedFileBase InternshipBookletUpload { get; set; }
-
-        // The outline file path as string (used to display the path)
-        [Display(Name = "Internship Booklet")]
-        public string InternshipBooklet { get; set; }
+        // Used to upload a file
+        [Display(Name = "Form Upload")]
+        public HttpPostedFileBase FormUpload { get; set; }
     }
 }

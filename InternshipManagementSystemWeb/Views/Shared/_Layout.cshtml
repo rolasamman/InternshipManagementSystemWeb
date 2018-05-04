@@ -10,89 +10,96 @@
     @RenderSection("styles", required: false)
 </head>
 <body id="mainPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+
+    @*<nav class="navbar navbar-default">
+        <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                </button>
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>*@
 
-                <p class="navbar-brand" href="#">
-                    <a href="@Url.Action("Index","Home")">
-                        <img src="~/Content/themes/base/images/imagec4f21d.PNG" height="60" width="60" class="img-responsive center-block" alt="" />
-                    </a>
-                </p>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                        </button>
 
-                @Html.ActionLink("Internship Management System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                   
+                            <div class="navbar-brand" href="#" data-toggle="tooltip" title="Home Page">
+                                <a href="@Url.Action("Index","Home")" >
+                                    <img src="~/Content/themes/base/images/imagec4f21d.PNG" height="50" width="50" class="img-responsive" alt="" />
+                                </a>
+                            </div>
+                            @Html.ActionLink("Internship Management System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            @if (ViewContext.HttpContext.User.IsInRole("Student"))
+                            {
+                                <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student Internship <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
+                                        <li>@Html.ActionLink("Complains", "Index", "Complain")</li>
+                                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+                                    </ul>
+                                </li>
+                            }
+
+                            @if (ViewContext.HttpContext.User.IsInRole("Instructor"))
+                            {
+                                <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Internship Course<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>@Html.ActionLink("Sections", "Index", "Section")</li>
+                                        <li>@Html.ActionLink("Student Meeting", "Index", "MeetingOnCampus")</li>
+                                        <li>@Html.ActionLink("Site Visits", "Index", "VisitOnSite")</li>
+                                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+
+                                    </ul>
+                                </li>
+                            }
+                            @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
+                                <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
+                                <li>@Html.ActionLink("Student Complains", "Index", "Complain")</li>
+
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Internship<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>@Html.ActionLink("Internship Sections", "Index", "InternshipCourse")</li>
+                                        <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
+                                        <li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>
+                                        <li>@Html.ActionLink("Students", "Index", "Student")</li>
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </nav>
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer class="text-center">
+                    <p>&copy; @DateTime.Now.Year Internship Management System | @Html.ActionLink("Contact Internship Department", "Contact") | @Html.ActionLink("Dar Al-Hekma University Website", "http://www.dah.edu.sa/") | @Html.ActionLink("Student Information System", "https://web.dah.edu.sa:82/sis/") | @Html.ActionLink("Help", "Contact")</p>
+                    @*<a class="up-arrow" href="#mainPage" data-toggle="tooltip" title="Back to Top">
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </a>*@
+                </footer>
             </div>
 
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @if (ViewContext.HttpContext.User.IsInRole("Student"))
-                    {
-                        <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
-                        <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student Internship <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
-                                <li>@Html.ActionLink("Complains", "Index", "Complain")</li>
-                                <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
-                            </ul>
-                        </li>
-                    }
-
-                    @if (ViewContext.HttpContext.User.IsInRole("Instructor"))
-                    {
-                        <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
-                        <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Internship Course<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Sections", "Index", "Section")</li>
-                                <li>@Html.ActionLink("Student Meeting", "Index", "MeetingOnCampus")</li>
-                                <li>@Html.ActionLink("Site Visits", "Index", "VisitOnSite")</li>
-                                <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
-
-                            </ul>
-                        </li>
-                    }
-                    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
-                    {
-                        <li>@Html.ActionLink("Announcements", "Index", "Announcement")</li>
-                        <li>@Html.ActionLink("Companies", "Index", "Firm")</li>
-                        <li>@Html.ActionLink("Student Complains", "Index", "Complain")</li>
-
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Internship<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Internship Sections", "Index", "InternshipCourse")</li>
-                                <li>@Html.ActionLink("Internship Forms", "Index", "InternshipForms")</li>
-                                <li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>
-                                <li>@Html.ActionLink("Students", "Index", "Student")</li>
-                            </ul>
-                        </li>
-                    }
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer  class="text-center"> 
-            <p>&copy; @DateTime.Now.Year Internship Management System | @Html.ActionLink("Contact Internship Department", "Contact") | @Html.ActionLink("Dar Al-Hekma University Website", "http://www.dah.edu.sa/") | @Html.ActionLink("Student Information System", "https://web.dah.edu.sa:82/sis/") | @Html.ActionLink("Help", "Contact")</p>
-            @*<a class="up-arrow" href="#mainPage" data-toggle="tooltip" title="Back to Top">
-                <span class="glyphicon glyphicon-chevron-up"></span>
-            </a>*@
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/jqueryui")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
 </body>
 </html>
 

@@ -10,20 +10,29 @@
     <h4>InternshipFormViewModel</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InternshipFormId)
+        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.InternshipAgreementFormUpload)
-            <a href="@Url.Content(Model.InternshipAgreementForm)">Internship Agreement Form </a>
+            @Html.DisplayFor(model => model.InternshipFormId)
         </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.RiskIdentificationFormUpload)
-            <a href="@Url.Content(Model.InternshipAgreementForm)">Risk Identification Form </a>
-        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.InternshipBookletUpload)
-            <a href="@Url.Content(Model.InternshipBooklet)">Internship Booklet </a>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormUpload)
+            <a href="@Url.Content(Model.FormPath)">Course Outline</a>
         </dd>
 
     </dl>

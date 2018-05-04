@@ -32,8 +32,8 @@
             <p> Vacancies: @Html.DisplayFor(modelItem => item.NumberOfVacencies)  </p>
         </div>
         <div>
-            @Html.DisplayFor(modelItem => item.IndustryField)
-        </div>
+            <p> Industry Field: @Html.DisplayFor(modelItem => item.IndustryField) </p>
+</div>
         <div>
             @Html.DisplayFor(modelItem => item.Logo)
         </div>
@@ -46,17 +46,19 @@
           <div class="form-group">
                  @if (ViewContext.HttpContext.User.IsInRole("Admin"))
                  {
-                <span>
-                    <input type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
-                    <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
-                    <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
-                </span>
+              <span>
+                  <input type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
+                  <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
+                  <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
+                  <input type="button" value="Supervisors" onclick="location.href='@Url.Action("Details", "Supervisor", new { id = item.FirmId })';" class="btn btn-default" />
+              </span>
                  }
 
                  @if (ViewContext.HttpContext.User.IsInRole("Student"))
                  {
                 <span>
                     <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "Firm", new { id = item.FirmId })';" class="btn btn-default" />
+                    <input type="button" value="Supervisors" onclick="location.href='@Url.Action("Details", "Supervisor", new { id = item.FirmId })';" class="btn btn-default" />
                 </span>
                  }
 

@@ -1,45 +1,69 @@
 ﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.InternshipFormViewModel>
 
-    @{
-    ViewBag.Title = "Index";
-    }
+@{
+                /**/
 
-    <h2>Index</h2>
+                ViewBag.Title = "Index";
+}
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.InternshipAgreementForm)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RiskIdentificationForm)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InternshipBooklet)
-            </th>
-            <th></th>
-        </tr>
+<h2>Index</h2>
 
-        @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.InternshipAgreementForm)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RiskIdentificationForm)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InternshipBooklet)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-        }
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table id=" formsTable"">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InternshipAgreementForm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskIdentificationForm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InternshipBooklet)
+        </th>
+        <th></th>
+    </tr>
 
-    </table>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.InternshipAgreementForm)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RiskIdentificationForm)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InternshipBooklet)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+    </td>
+</tr>
+}
+
+</table>
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
+
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $('#formsTable').DataTable({
+
+                    "scrollY": "80px",
+                    "scrollCollapse": true,
+                    "paging": false,
+
+                    "columnDefs": [
+                        { "orderable": false, "targets": -1 }
+                    ]
+                });
+            });
+    </script>
+}

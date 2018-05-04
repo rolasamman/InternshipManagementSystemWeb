@@ -1,57 +1,93 @@
 ﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.SectionViewModel>
 @{
-    Layout = null;
+    ViewBag.Title = Layout;
 }
 
 <h2>Sections</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SectionNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Capacity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IntrenshipCourseId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InstructorId)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+<div class="form-group">
+    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SectionNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntrenshipCourseId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InstructorId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.SectionId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.SectionId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SectionId })
-            </td>
-        </tr>
+        <span>
+            <input type="button" value="Add New Section" onclick="location.href='@Url.Action("Create", "Section")';" class="btn btn-default" />
+        </span>
     }
+</div>
 
+<table id="sectionsTable" class="table table-hover" cellspacing="0">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.IntrenshipCourseId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstructorId)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SectionNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.IntrenshipCourseId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InstructorId)
+                </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SectionId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SectionId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SectionId })
+                </td>
+            </tr>
+        }
+
+    </tbody>
 </table>
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
+
+    @*<script type="text/javascript">
+            $(document).ready(function () {
+                $('#coursesTable').DataTable();
+            });
+        </script>*@
+
+    <script type="text/javascript">
+        $('#sectionsTable').DataTable({
+            "columnDefs": [
+                { "orderable": false, "targets": [2,3] }]
+        });
+    </script>
+}
+
+@section styles
+{
+    @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />*@
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
+}
