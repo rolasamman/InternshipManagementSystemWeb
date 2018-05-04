@@ -161,25 +161,32 @@ namespace InternshipManagementSystemWeb.Controllers
         }
 
         // GET: InternshipForm/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
-            return View();
+            InternshipForm form = db.InternshipForms.Find(id);
+            InternshipFormViewModel model = Mapper.Map<InternshipForm, InternshipFormViewModel>(form);
+            return View(model);
         }
 
         // POST: InternshipForm/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
+            InternshipForm form = db.InternshipForms.Find(id);
+            db.InternshipForms.Remove(form);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                db.Dispose();
             }
-            catch
-            {
-                return View();
-            }
+            base.Dispose(disposing);
         }
     }
 }
+

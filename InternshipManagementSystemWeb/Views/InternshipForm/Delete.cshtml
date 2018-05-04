@@ -1,0 +1,41 @@
+﻿@model InternshipManagementSystemWeb.ViewModels.InternshipFormViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this form?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+       <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormPath)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <input type="button" value="Cancel" onclick="location.href='@Url.Action("Index", "InternshipForm")';" class="btn btn-default" />
+
+    </div>
+    }
+</div>

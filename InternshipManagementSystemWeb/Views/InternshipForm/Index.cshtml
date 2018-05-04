@@ -1,71 +1,65 @@
 ﻿@model IEnumerable<InternshipManagementSystemWeb.ViewModels.InternshipFormViewModel>
-
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Index";
+    ViewBag.Title = "Internship Forms";
 }
+<h2>Internship Forms</h2>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table id=" formsTable"">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.InternshipFormId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FormPath)
-        </th>
-        <th></th>
-    </tr>
+<div class="form-group">
+    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+    {
+        <span>
+            <input type="button" value="Add New Form" onclick="location.href='@Url.Action("Create", "InternshipForm")';" class="btn btn-default" />
+        </span>
+    }
+</div>
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.InternshipFormId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FormPath)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.InternshipFormId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.InternshipFormId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.InternshipFormId }) |
-        @Html.DisplayFor(modelItem => item.FormUpload)
-        <a href="@Url.Content(item.FormPath)">Download</a>
-    </td>
-</tr>
-}
+        <fieldset class="fieldset-border">
+            <div>
+                <div>
+                    <strong>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </strong>
+                </div>
 
-</table>
+                @*<div>
+                        @Html.DisplayFor(modelItem => item.FormPath)
+                    </div>*@
+            </div>
+
+            <div class="form-group">
+                <a href="@Url.Content(item.FormPath)" class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Download</a>
+                @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                {
+                    <span>
+                        <input type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "InternshipForm", new { id = item.InternshipFormId })';" class="btn btn-default" />
+                        <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "InternshipForm", new { id = item.InternshipFormId })';" class="btn btn-default" />
+                        <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "InternshipForm", new { id = item.InternshipFormId })';" class="btn btn-danger" />
+                    </span>
+                }
+            </div>
+        </fieldset>
+    }
 @section scripts
 {
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
-
     <script type="text/javascript">
-            $(document).ready(function () {
-                $('#formsTable').DataTable({
+        $(document).ready(function () {
+            $('#formsTable').DataTable({
 
-                    "scrollY": "80px",
-                    "scrollCollapse": true,
-                    "paging": false,
+                "scrollY": "80px",
+                "scrollCollapse": true,
+                "paging": false,
 
-                    "columnDefs": [
-                        { "orderable": false, "targets": -1 }
-                    ]
-                });
+                "columnDefs": [
+                    { "orderable": false, "targets": -1 }
+                ]
             });
+        });
     </script>
 }

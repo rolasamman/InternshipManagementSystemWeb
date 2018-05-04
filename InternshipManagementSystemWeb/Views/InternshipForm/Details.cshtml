@@ -3,41 +3,28 @@
 @{
     ViewBag.Title = "Details";
 }
+<h2>Internship Forms</h2>
 
-<h2>Details</h2>
-
-<div>
-    <h4>InternshipFormViewModel</h4>
+<div> 
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.InternshipFormId)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.InternshipFormId)
-        </dd>
+    <div class="form-group">
+     
+        <div>
+            <strong>
+                @Html.DisplayFor(model => model.Name)
+            </strong>
+        </div>
+    </div>
+         <div class="form-group">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FormPath)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FormUpload)
-            <a href="@Url.Content(Model.FormPath)">Course Outline</a>
-        </dd>
-
-    </dl>
+            <div>
+                @Html.DisplayFor(model => model.FormUpload)
+                <a href="@Url.Content(Model.FormPath)" class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Download</a>
+               <p>
+                <input type="button" value="Back to Forms" onclick="location.href='@Url.Action("Index", "InternshipForm")';" class="btn btn-default" />
+                   </p>
+            </div>
+        </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

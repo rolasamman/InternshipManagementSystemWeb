@@ -674,6 +674,7 @@
     <Content Include="Views\InternshipForm\Index.cshtml" />
     <Content Include="Views\InternshipForm\Details.cshtml" />
     <Content Include="Views\VisitOnSite\Index.cshtml" />
+    <Content Include="Views\InternshipForm\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

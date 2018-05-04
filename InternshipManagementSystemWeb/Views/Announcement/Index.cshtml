@@ -18,19 +18,15 @@
     @foreach (var item in Model){
 <fieldset class="fieldset-border" >
     <div>
-        @*<div>
-                @Html.DisplayFor(modelItem => item.AnnouncementId)
-            </div>*@
-
         <div>
             @Html.DisplayFor(modelItem => item.Subject)
         </div>
         <div>
             @Html.DisplayFor(modelItem => item.AnnouncementDate)
         </div>
-        <div>
+        @*<div>
             @Html.DisplayFor(modelItem => item.Description)
-        </div>
+        </div>*@
            
      </div>
      <div class="form-group">
