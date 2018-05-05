@@ -15,8 +15,8 @@ The application is constructed using ASP.NET MVC 5.
 ### How to get the application:
 1. Go to the Internship Management System Web page: https://github.com/rolasamman/InternshipManagementSystemWeb
 2. Press "Clone or Download" Button
-3. Copy the project's link and clone the application to you Visual Studio
-    Or Download the project to your desktop
+3. Copy the project's link and clone the application to you Visual Studio with the GitHub exention
+    or Download the project to your desktop
 4. Update the database in your studio 
 5. The login instructions can be found below
 
@@ -42,7 +42,10 @@ Each user will be have different authorization. Three main users will be able to
 * Password: dahstudent123
 
 ## License: 
-
+GNU GENERAL PUBLIC LICENSE(Version 3, 29 June 2007).
+     Copyright (C) 2007 Free Software Foundation, Inc.
+     Everyone is permitted to copy and distribute verbatim copies
+     of this license document, but changing it is not allowed.
 
 
 
