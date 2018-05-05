@@ -17,59 +17,45 @@
         <dd>
             @Html.DisplayFor(model => model.FirmId)
         </dd>*@
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FirmName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirmName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FirmDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirmDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NumberOfVacencies)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NumberOfVacencies)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IndustryField)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IndustryField)
-        </dd>
-
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Logo)
-        </dt>
-
+        </dt>*@
         <dd>
             @Html.DisplayFor(model => model.Logo)
         </dd>
-
+        <dt>
+            @Html.DisplayNameFor(model => model.FirmName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirmName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirmDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirmDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfVacencies)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfVacencies)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IndustryField)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IndustryField)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Address)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.MapLink)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.MapLink)
         </dd>
@@ -82,8 +68,6 @@
         </p>
 
 <div id="SupervisorList"></div>
-
-
     <div>
         <span>
             <input type="button" value="Back to Companies" onclick="location.href='@Url.Action("Index", "Firm")';" class="btn btn-default" />
