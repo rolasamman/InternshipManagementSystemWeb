@@ -1,0 +1,1389 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/rolas/source/repos/InternshipManagementSystemWeb/InternshipManagementSystemWeb",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "a6/K/z1q9PpRQXr5j+Pgcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "e59qxE+Lfv2vGatfiwsDHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "xVlQaX7Tk85omoiWv3O+Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "IMnSJGbizbKcq8Qkkl4kFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.App_Start.AutoMapperConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.App_Start.AutoMapperConfig.html",
+          "hash": "cl1mr107LS3M7zP5FQZcFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.App_Start.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.App_Start.html",
+          "hash": "/P8j4cE2mbI7TEum/T85rw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ApplicationSignInManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ApplicationSignInManager.html",
+          "hash": "IWXfaWX1GNmPXPpss1Vj+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ApplicationUserManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ApplicationUserManager.html",
+          "hash": "ZEg+yVEzlBun5eJqMX7Hyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.BundleConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.BundleConfig.html",
+          "hash": "/aKre1QxmRXNFXHlhi6ihA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.AccountController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.AccountController.html",
+          "hash": "uclIlwwaHS+BAaELYngNWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.AdminController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.AdminController.html",
+          "hash": "/4VG9lJNqass1CGXEexURw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.AnnouncementController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.AnnouncementController.html",
+          "hash": "sm9K8knz3wg4QKMsLU4luw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.AttendanceController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.AttendanceController.html",
+          "hash": "aCgZEMeAAKw5udNtSNzOoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.ComplainController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.ComplainController.html",
+          "hash": "Vb11jR4ajB7+wuLiY5FAHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.EmployeeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.EmployeeController.html",
+          "hash": "GKm3Mam41I9glBNuxjrYrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.FirmController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.FirmController.html",
+          "hash": "IsOQ4mnddHCFBdsrs3tR4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.HomeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.HomeController.html",
+          "hash": "ysSUrGPrBn7iHaFNsWnfiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.InstructorController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.InstructorController.html",
+          "hash": "ttLlkjMZSVn0neB9e21YVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.InternshipCourseController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.InternshipCourseController.html",
+          "hash": "y3vFXpluHpmF6ajf8HBwFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.InternshipCriterionController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.InternshipCriterionController.html",
+          "hash": "mvIvEy/cbqwVJrlk8tSMKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.InternshipEvaluationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.InternshipEvaluationController.html",
+          "hash": "JtHQXBdQJUCrWzTUL4MsqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.InternshipFormController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.InternshipFormController.html",
+          "hash": "/OWPHZm7qSO1a42qLypKzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.ManageController.ManageMessageId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.ManageController.ManageMessageId.html",
+          "hash": "WIIyK86M0Wuw3EJZFGorCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.ManageController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.ManageController.html",
+          "hash": "7sFGojD18DxGvm23n+wAsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.MeetingOnCampusController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.MeetingOnCampusController.html",
+          "hash": "xqRxhsZKi8Q0CT6huT23wA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.SectionController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.SectionController.html",
+          "hash": "ii2ZLyD1ea9fT3oK3mW8Cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.StudentController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.StudentController.html",
+          "hash": "ZCRZj8jfIZZI9AeLtMha5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.SupervisorController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.SupervisorController.html",
+          "hash": "4kQTAPDpAuE+IRRkPjltRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.SupervisorCriterionController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.SupervisorCriterionController.html",
+          "hash": "UKgg8gcexDb+EDImIxJ5oA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.SupervisorEvaluationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.SupervisorEvaluationController.html",
+          "hash": "KOnftyE9tnsR23uFSSUpkw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.VisitOnSiteController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.VisitOnSiteController.html",
+          "hash": "dl8LNka1499vtME7YQfibw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Controllers.html",
+          "hash": "ksLDvN+fpRXG6dcNyuMkFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.EmailService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.EmailService.html",
+          "hash": "nfVnVX4Rnz41bu4Soua4tA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.FilterConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.FilterConfig.html",
+          "hash": "iCr8/XS3Cc90TbqyjkJFGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.AddPhoneNumberViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.AddPhoneNumberViewModel.html",
+          "hash": "qCGXg/WGW9yK2eXTohX+OA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Admin.html",
+          "hash": "Dw/SOb2HBeZ6JDf+dmyWhg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Announcement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Announcement.html",
+          "hash": "XaleTOn3JzoBjfufDkxM1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ApplicationDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ApplicationDbContext.html",
+          "hash": "e7f03sQizDErz0N47Q7z8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ApplicationUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ApplicationUser.html",
+          "hash": "8ve9S8wNt79gFPv/ZrWWtA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Attendance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Attendance.html",
+          "hash": "+rfc1rzO41q7L/4yJ4Ew0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ChangePasswordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ChangePasswordViewModel.html",
+          "hash": "XsziNiwjjSiasY27LT7Zug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Complain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Complain.html",
+          "hash": "k3HoBylMB6UpSzISI1neFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ComplainStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ComplainStatus.html",
+          "hash": "GyoEqfYuOn1yKvI0DvAfEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ConfigureTwoFactorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ConfigureTwoFactorViewModel.html",
+          "hash": "/qEAlWdQHfefEi5IuzXRRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.CustomRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.CustomRole.html",
+          "hash": "2Meau6G8l9V8eFV/mF/0ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.CustomRoleStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.CustomRoleStore.html",
+          "hash": "v12ucprber5KOFIB26zxJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.CustomUserClaim.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.CustomUserClaim.html",
+          "hash": "zlQiJCR7mrCG3tcK4bfcKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.CustomUserLogin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.CustomUserLogin.html",
+          "hash": "rfESGMsY6U+JXl/jTgr1lQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.CustomUserRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.CustomUserRole.html",
+          "hash": "Rwj3yD+kCogkprqaMARq6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.CustomUserStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.CustomUserStore.html",
+          "hash": "bBVrVn/G7i9s7ZwkNwfmzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Department.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Department.html",
+          "hash": "EzI3Uhb8aVEW18vsGFxEcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Employee.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Employee.html",
+          "hash": "1a7RKauyvOFAbgxCPy2OsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ExternalLoginConfirmationViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ExternalLoginConfirmationViewModel.html",
+          "hash": "HM+HnMib1NKgc30/oltGng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ExternalLoginListViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ExternalLoginListViewModel.html",
+          "hash": "Q/Uh4I1UcTgbBe3yqtFNJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.FactorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.FactorViewModel.html",
+          "hash": "j6JBPGQnir84PwOD+U35uA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Firm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Firm.html",
+          "hash": "lgmdw2n2ngv7frC+cmLuog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ForgotPasswordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ForgotPasswordViewModel.html",
+          "hash": "XhRaivwCNkIRcL/xW8pd6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ForgotViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ForgotViewModel.html",
+          "hash": "XlMaBEL8EioaL+lxmruJFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.IndexViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.IndexViewModel.html",
+          "hash": "OESs0nbOup8r/s7mnSu3VQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Instructor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Instructor.html",
+          "hash": "pPUYzeFaS4GOjzdi6u8Dpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.InternshipCourse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.InternshipCourse.html",
+          "hash": "5FV/sEbuoPDTAwNWI8dSQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.InternshipCriterion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.InternshipCriterion.html",
+          "hash": "vvp/BAP9Suq9svAbY8KAeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.InternshipEvaluation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.InternshipEvaluation.html",
+          "hash": "pr9c9cqwwNuGmnRiiNQtSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.InternshipForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.InternshipForm.html",
+          "hash": "C26DWRvqcJqHU0eG2L/hKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.LoginViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.LoginViewModel.html",
+          "hash": "1zmyXVmCS6XrjQt9V9Smfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ManageLoginsViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ManageLoginsViewModel.html",
+          "hash": "lqTpNlom5KV1X/aYZKvDaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.MeetingOnCampus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.MeetingOnCampus.html",
+          "hash": "W32p3PoV+BPoEesBJkrjFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.RegisterViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.RegisterViewModel.html",
+          "hash": "Z9G977dM/Ij/LGgQpEYzgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.ResetPasswordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.ResetPasswordViewModel.html",
+          "hash": "Dw3UBNsgUcG/XXotwwtpUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Section.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Section.html",
+          "hash": "Cm1gdDngLTLM5MBAaH65gg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Semester.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Semester.html",
+          "hash": "1NyGJJlf0p0DbwhmG/6Maw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.SendCodeViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.SendCodeViewModel.html",
+          "hash": "RkcRDgaUYsQkshvVVLpMCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.SetPasswordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.SetPasswordViewModel.html",
+          "hash": "bPZTZGV1wdzzjs1X3Uk4vQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Student.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Student.html",
+          "hash": "XHvmdR7eLkW4cVNTwaRkww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.Supervisor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.Supervisor.html",
+          "hash": "7IHr/AB0Ie1ZcVLXAR1QAg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.SupervisorCriterion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.SupervisorCriterion.html",
+          "hash": "/IFyySa4p8BHEZppEwXfpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.SupervisorEvaluation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.SupervisorEvaluation.html",
+          "hash": "cMqT8CeceHfl3SlMgwfLSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.VerifyCodeViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.VerifyCodeViewModel.html",
+          "hash": "XEIJnHHsgDEavxF1mxvDZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.VerifyPhoneNumberViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.VerifyPhoneNumberViewModel.html",
+          "hash": "jjVJnB6MVZUx1Laz8qEfYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.VisitOnSite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.VisitOnSite.html",
+          "hash": "rR8QMox3DwfF8v9IzFfkOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Models.html",
+          "hash": "4Wvr4NIKCZcwaIyM3rNzqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.MvcApplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.MvcApplication.html",
+          "hash": "MUrmJ8LwLHD9YLCR7LRWOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.RouteConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.RouteConfig.html",
+          "hash": "alM2Xk3c/z4uBI9vLJxotg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.SmsService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.SmsService.html",
+          "hash": "U6uzzngIkSGkBhGNOvaHEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.Startup.html",
+          "hash": "nq4UUvJMpg064yd/iwsTYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.AdminViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.AdminViewModel.html",
+          "hash": "NpDEgZxg48Pqkzt4jCMBuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.AnnouncementViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.AnnouncementViewModel.html",
+          "hash": "uFrWIxmUvALRLuQ923v2oA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.AttendanceViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.AttendanceViewModel.html",
+          "hash": "jhKCeqgJcCwDCjlHNrAOBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.ComplainStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.ComplainStatus.html",
+          "hash": "tCEyVZkebi9chJ22QVdhKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.ComplainViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.ComplainViewModel.html",
+          "hash": "lbflmbJYlSH465GHq8ClRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.Department.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.Department.html",
+          "hash": "zsNU/ZqzX8w4zRYfw2vnVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.EmployeeViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.EmployeeViewModel.html",
+          "hash": "kftfV1HGgayA+kcp2s67Qg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.FirmViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.FirmViewModel.html",
+          "hash": "YMLhvljHjGRWWx67n2Hukg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.InstructorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.InstructorViewModel.html",
+          "hash": "5JTwhAT/uXVgZy7Lhjmbxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.InternshipCourseViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.InternshipCourseViewModel.html",
+          "hash": "Y5Q5t0a/fFQoI1QlpjxkYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.InternshipCriterionViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.InternshipCriterionViewModel.html",
+          "hash": "9aZ8/49dcztcxK//dI1FTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.InternshipEvaluationViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.InternshipEvaluationViewModel.html",
+          "hash": "zij6gC5qRxs8ppjkqJcNxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.InternshipFormViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.InternshipFormViewModel.html",
+          "hash": "ZkDO9OVewbemSv1GpbL4dA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.MeetingOnCampusViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.MeetingOnCampusViewModel.html",
+          "hash": "mEh6zUFqKwzxusYz9OOgJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.SectionViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.SectionViewModel.html",
+          "hash": "Vy+K658Dm6vgyTi6sR2mbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.Semester.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.Semester.html",
+          "hash": "GD2LhDl1R0bx4QKoLAW8vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.StudentAnswerViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.StudentAnswerViewModel.html",
+          "hash": "vcFfcwR3YN89xy1qTM8FOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.StudentViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.StudentViewModel.html",
+          "hash": "T9CM4k1aM54IM6hBt5iA0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.SupervisorAnswerViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.SupervisorAnswerViewModel.html",
+          "hash": "UTFZh1seX8zUDZDUTHKpfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.SupervisorCriterionViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.SupervisorCriterionViewModel.html",
+          "hash": "67QSjk/Tvcgn17os7Uur0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.SupervisorEvaluationViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.SupervisorEvaluationViewModel.html",
+          "hash": "Tz+ZDqF/8MHhxp/1DyBB8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.SupervisorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.SupervisorViewModel.html",
+          "hash": "8dlrK2+7UrxHYvNRFuYqrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.VisitOnSiteViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.VisitOnSiteViewModel.html",
+          "hash": "FnaYPj+UhJ/Xvd5Ai3qqbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.ViewModels.html",
+          "hash": "h89yLvKZBeVCEpvteIyQfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/InternshipManagementSystemWeb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/InternshipManagementSystemWeb.html",
+          "hash": "5sjUBD8MoqEyUhGfrA7GtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "GugGcnAiidpa4MLo8suJLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "frPdeW5hGroGiyexwMQIhg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

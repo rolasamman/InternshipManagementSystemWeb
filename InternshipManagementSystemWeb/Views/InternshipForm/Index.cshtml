@@ -32,11 +32,12 @@
 
             <div class="form-group">
                 <a href="@Url.Content(item.FormPath)" class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Download</a>
+                <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "InternshipForm", new { id = item.InternshipFormId })';" class="btn btn-default" />
+             
                 @if (ViewContext.HttpContext.User.IsInRole("Admin"))
                 {
                     <span>
                         <input type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "InternshipForm", new { id = item.InternshipFormId })';" class="btn btn-default" />
-                        <input type="button" value="Details" onclick="location.href='@Url.Action("Details", "InternshipForm", new { id = item.InternshipFormId })';" class="btn btn-default" />
                         <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "InternshipForm", new { id = item.InternshipFormId })';" class="btn btn-danger" />
                     </span>
                 }

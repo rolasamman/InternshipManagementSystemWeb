@@ -1,0 +1,745 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ApplicationDbContext
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ApplicationDbContext
+   ">
+    <meta name="generator" content="docfx 2.35.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext">
+  
+  
+  <h1 id="InternshipManagementSystemWeb_Models_ApplicationDbContext" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext" class="text-break">Class ApplicationDbContext
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.Data.Entity.DbContext</span></div>
+    <div class="level2"><span class="xref">Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.ApplicationUser.html">ApplicationUser</a>, <a class="xref" href="InternshipManagementSystemWeb.Models.CustomRole.html">CustomRole</a>, <span class="xref">System.Int32</span>, <a class="xref" href="InternshipManagementSystemWeb.Models.CustomUserLogin.html">CustomUserLogin</a>, <a class="xref" href="InternshipManagementSystemWeb.Models.CustomUserRole.html">CustomUserRole</a>, <a class="xref" href="InternshipManagementSystemWeb.Models.CustomUserClaim.html">CustomUserClaim</a>&gt;</div>
+    <div class="level3"><span class="xref">ApplicationDbContext</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><span class="xref">System.Data.Entity.Infrastructure.IObjectContextAdapter</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext&lt;InternshipManagementSystemWeb.Models.ApplicationUser, InternshipManagementSystemWeb.Models.CustomRole, System.Int32, InternshipManagementSystemWeb.Models.CustomUserLogin, InternshipManagementSystemWeb.Models.CustomUserRole, InternshipManagementSystemWeb.Models.CustomUserClaim&gt;.OnModelCreating(System.Data.Entity.DbModelBuilder)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext&lt;InternshipManagementSystemWeb.Models.ApplicationUser, InternshipManagementSystemWeb.Models.CustomRole, System.Int32, InternshipManagementSystemWeb.Models.CustomUserLogin, InternshipManagementSystemWeb.Models.CustomUserRole, InternshipManagementSystemWeb.Models.CustomUserClaim&gt;.ValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry, System.Collections.Generic.IDictionary&lt;System.Object, System.Object&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext&lt;InternshipManagementSystemWeb.Models.ApplicationUser, InternshipManagementSystemWeb.Models.CustomRole, System.Int32, InternshipManagementSystemWeb.Models.CustomUserLogin, InternshipManagementSystemWeb.Models.CustomUserRole, InternshipManagementSystemWeb.Models.CustomUserClaim&gt;.Users</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext&lt;InternshipManagementSystemWeb.Models.ApplicationUser, InternshipManagementSystemWeb.Models.CustomRole, System.Int32, InternshipManagementSystemWeb.Models.CustomUserLogin, InternshipManagementSystemWeb.Models.CustomUserRole, InternshipManagementSystemWeb.Models.CustomUserClaim&gt;.Roles</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext&lt;InternshipManagementSystemWeb.Models.ApplicationUser, InternshipManagementSystemWeb.Models.CustomRole, System.Int32, InternshipManagementSystemWeb.Models.CustomUserLogin, InternshipManagementSystemWeb.Models.CustomUserRole, InternshipManagementSystemWeb.Models.CustomUserClaim&gt;.RequireUniqueEmail</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.Set&lt;TEntity&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.Set(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.SaveChanges()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.SaveChangesAsync()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.SaveChangesAsync(System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.GetValidationErrors()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.ShouldValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.ValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry, System.Collections.Generic.IDictionary&lt;System.Object, System.Object&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.Entry&lt;TEntity&gt;(TEntity)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.Entry(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.Dispose(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.Database</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.ObjectContext</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.ChangeTracker</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Entity.DbContext.Configuration</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="InternshipManagementSystemWeb.Models.html">InternshipManagementSystemWeb.Models</a></h6>
+  <h6><strong>Assembly</strong>: InternshipManagementSystemWeb.dll</h6>
+  <h5 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ApplicationDbContext : IdentityDbContext&lt;ApplicationUser, CustomRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim&gt;, IDisposable, IObjectContextAdapter</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext__ctor_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.#ctor*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext__ctor" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.#ctor">ApplicationDbContext()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ApplicationDbContext()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Admins_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Admins*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Admins" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Admins">Admins</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Admin&gt; Admins { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Admin.html">Admin</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Announcements_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Announcements*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Announcements" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Announcements">Announcements</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Announcement&gt; Announcements { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Announcement.html">Announcement</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Attendances_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Attendances*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Attendances" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Attendances">Attendances</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Attendance&gt; Attendances { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Attendance.html">Attendance</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Complains_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Complains*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Complains" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Complains">Complains</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Complain&gt; Complains { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Complain.html">Complain</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Employees_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Employees*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Employees" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Employees">Employees</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Employee&gt; Employees { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Employee.html">Employee</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Firms_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Firms*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Firms" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Firms">Firms</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Firm&gt; Firms { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Firm.html">Firm</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Instructors_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Instructors*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Instructors" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Instructors">Instructors</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Instructor&gt; Instructors { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Instructor.html">Instructor</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_InternshipCourses_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.InternshipCourses*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_InternshipCourses" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.InternshipCourses">InternshipCourses</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;InternshipCourse&gt; InternshipCourses { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.InternshipCourse.html">InternshipCourse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_InternshipCriterions_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.InternshipCriterions*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_InternshipCriterions" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.InternshipCriterions">InternshipCriterions</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;InternshipCriterion&gt; InternshipCriterions { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.InternshipCriterion.html">InternshipCriterion</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_InternshipEvaluations_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.InternshipEvaluations*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_InternshipEvaluations" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.InternshipEvaluations">InternshipEvaluations</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;InternshipEvaluation&gt; InternshipEvaluations { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.InternshipEvaluation.html">InternshipEvaluation</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_InternshipForms_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.InternshipForms*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_InternshipForms" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.InternshipForms">InternshipForms</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;InternshipForm&gt; InternshipForms { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.InternshipForm.html">InternshipForm</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_MeetingOnCampus_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.MeetingOnCampus*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_MeetingOnCampus" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.MeetingOnCampus">MeetingOnCampus</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;MeetingOnCampus&gt; MeetingOnCampus { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.MeetingOnCampus.html">MeetingOnCampus</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Sections_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Sections*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Sections" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Sections">Sections</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Section&gt; Sections { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Section.html">Section</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Students_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Students*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Students" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Students">Students</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Student&gt; Students { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Student.html">Student</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_SupervisorCriterions_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.SupervisorCriterions*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_SupervisorCriterions" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.SupervisorCriterions">SupervisorCriterions</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;SupervisorCriterion&gt; SupervisorCriterions { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.SupervisorCriterion.html">SupervisorCriterion</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_SupervisorEvaluations_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.SupervisorEvaluations*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_SupervisorEvaluations" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.SupervisorEvaluations">SupervisorEvaluations</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;SupervisorEvaluation&gt; SupervisorEvaluations { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.SupervisorEvaluation.html">SupervisorEvaluation</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Supervisors_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Supervisors*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Supervisors" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Supervisors">Supervisors</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;Supervisor&gt; Supervisors { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.Supervisor.html">Supervisor</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_VisitOnSites_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.VisitOnSites*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_VisitOnSites" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.VisitOnSites">VisitOnSites</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DbSet&lt;VisitOnSite&gt; VisitOnSites { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbSet</span>&lt;<a class="xref" href="InternshipManagementSystemWeb.Models.VisitOnSite.html">VisitOnSite</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Create_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Create*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_Create" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.Create">Create()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ApplicationDbContext Create()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InternshipManagementSystemWeb.Models.ApplicationDbContext.html">ApplicationDbContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="InternshipManagementSystemWeb_Models_ApplicationDbContext_OnModelCreating_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.OnModelCreating*"></a>
+  <h4 id="InternshipManagementSystemWeb_Models_ApplicationDbContext_OnModelCreating_System_Data_Entity_DbModelBuilder_" data-uid="InternshipManagementSystemWeb.Models.ApplicationDbContext.OnModelCreating(System.Data.Entity.DbModelBuilder)">OnModelCreating(DbModelBuilder)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnModelCreating(DbModelBuilder modelBuilder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Entity.DbModelBuilder</span></td>
+        <td><span class="parametername">modelBuilder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext&lt;InternshipManagementSystemWeb.Models.ApplicationUser, InternshipManagementSystemWeb.Models.CustomRole, System.Int32, InternshipManagementSystemWeb.Models.CustomUserLogin, InternshipManagementSystemWeb.Models.CustomUserRole, InternshipManagementSystemWeb.Models.CustomUserClaim&gt;.OnModelCreating(System.Data.Entity.DbModelBuilder)</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">System.Data.Entity.Infrastructure.IObjectContextAdapter</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
